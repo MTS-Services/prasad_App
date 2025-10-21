@@ -21,6 +21,6 @@ class Management extends StatelessWidget {
         initialRoute: AppPages.INITIAL,
         getPages: AppPages.routes,
       ),
-    );;
+    );
   }
 }
