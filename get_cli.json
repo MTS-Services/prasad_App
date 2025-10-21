@@ -1,0 +1,8 @@
+{
+  "sub_folder": {
+    "shared_screen" : "lib/app/core",
+    "auth" : "lib/app/core/auth",
+    "customer" : "lib/app/customer",
+    "operator" : "lib/app/operator"
+  }
+}
