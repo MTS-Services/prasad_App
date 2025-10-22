@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prasad/app/data/app_text_styles.dart';
 import 'app_colors.dart';
 
 ThemeData themeData() {
@@ -15,6 +16,8 @@ ThemeData themeData() {
         backgroundColor: AppColors.primaryColor,
         foregroundColor: AppColors.whiteColor,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+          padding: const EdgeInsets.symmetric(vertical: 14),
+          textStyle: AppTextStyles.medium16
       ),
     ),
     outlinedButtonTheme: OutlinedButtonThemeData(

@@ -17,7 +17,7 @@ class Onboarding1View extends GetView<Onboarding1Controller> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(ImagePath.rectangle),
+            image: AssetImage(ImagePath.onboarding1),
             fit: BoxFit.cover,
           ),
         ),
@@ -39,9 +39,12 @@ class Onboarding1View extends GetView<Onboarding1Controller> {
                   color: AppColors.whiteColor,
                 ),
               ),
-              ElevatedButton(
-                onPressed: () {},
-                child: Text('Next', style: AppTextStyles.medium16),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  child: Text('Next', style: AppTextStyles.medium16),
+                ),
               ),
               SizedBox(height: 10.h),
             ],
