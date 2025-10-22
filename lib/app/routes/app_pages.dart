@@ -50,7 +50,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.OPERATOR_BOTTOM_NAVI_BAR;
+  static const INITIAL = Routes.ONBOARDING1;
 
   static final routes = [
     GetPage(

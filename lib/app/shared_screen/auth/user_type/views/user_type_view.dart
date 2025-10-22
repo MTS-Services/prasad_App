@@ -16,25 +16,53 @@ class UserTypeView extends GetView<UserTypeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text('User Type Selection', style: AppTextStyles.bold28),
-            SizedBox(height: 10.h),
-            Row(
+      body: SafeArea(
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              spacing: 30.h,
               children: [
+                SizedBox(height: 20.h,),
+                Text('User Type Selection', style: AppTextStyles.bold28),
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Flexible(
+                      child: TypeCard(
+                        title: "Customer",
+                        image: ImagePath.customerType,
+                        isSelected: true,
+                        onTap: () {
+                          Get.toNamed(Routes.LOGIN);
+                        },
+                      ),
+                    ),
+                    SizedBox(width: 10.w),
+                    Flexible(
+                      child: TypeCard(
+                        title: "Field Agent",
+                        image: ImagePath.customerType,
+                        isSelected: false,
+                        onTap: () {
+                          print("Customer selected!");
+                        },
+                      ),
+                    ),
+                  ],
+                ),
                 TypeCard(
-                  title: "Customer",
-                  image: ImagePath.customerType,
-                  isSelected: true,
-                  onTap: () {
-                    print("Customer selected!");
+                  title: "Drone Operator",
+                  image: ImagePath.operatorType,
+                  isSelected: false,
+                  onTap: (){
+
                   },
-                )
+                ),
               ],
             ),
-          ],
+          ),
         ),
       ),
     );
