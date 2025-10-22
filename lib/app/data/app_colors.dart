@@ -7,4 +7,5 @@ class AppColors{
   static const Color blackColor = Color(0xff000000);
   static const Color hintColor = Color(0xff7C7C7C);
   static const Color borderColorGrey = Color(0xffD9D9D9);
+  static const Color bottomNaviTextColor = Color(0xff989898);
 }

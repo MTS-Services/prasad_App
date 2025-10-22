@@ -14,6 +14,16 @@ abstract class Routes {
   static const ONBOARDING1 = _Paths.ONBOARDING1;
   static const ONBOARDING2 = _Paths.ONBOARDING2;
   static const ONBOARDING3 = _Paths.ONBOARDING3;
+  static const CUSTOMER_BOTTOM_NAVI_BAR = _Paths.CUSTOMER_BOTTOM_NAVI_BAR;
+  static const CUSTOMER_HISTORY = _Paths.CUSTOMER_HISTORY;
+  static const CUSTOMER_SERVICE = _Paths.CUSTOMER_SERVICE;
+  static const CUSTOMER_SUPPORT = _Paths.CUSTOMER_SUPPORT;
+  static const OPERATOR_SERVICE = _Paths.OPERATOR_SERVICE;
+  static const OPERATOR_HISTORY = _Paths.OPERATOR_HISTORY;
+  static const OPERATOR_PAYMENT = _Paths.OPERATOR_PAYMENT;
+  static const OPERATOR_FLEET = _Paths.OPERATOR_FLEET;
+  static const OPERATOR_BOTTOM_NAVI_BAR =
+      _Paths.OPERATOR_OPERATOR_BOTTOM_NAVI_BAR;
 }
 
 abstract class _Paths {
@@ -28,4 +38,14 @@ abstract class _Paths {
   static const ONBOARDING1 = '/onboarding1';
   static const ONBOARDING2 = '/onboarding2';
   static const ONBOARDING3 = '/onboarding3';
+  static const CUSTOMER_BOTTOM_NAVI_BAR = '/customer-bottom-navi-bar';
+  static const CUSTOMER_HISTORY = '/customer-history';
+  static const CUSTOMER_SERVICE = '/customer-service';
+  static const CUSTOMER_SUPPORT = '/customer-support';
+  static const OPERATOR_SERVICE = '/operator-service';
+  static const OPERATOR_HISTORY = '/operator-history';
+  static const OPERATOR_PAYMENT = '/operator-payment';
+  static const OPERATOR_FLEET = '/operator-fleet';
+  static const OPERATOR_OPERATOR_BOTTOM_NAVI_BAR =
+      '/operator-operator-bottom-navi-bar';
 }

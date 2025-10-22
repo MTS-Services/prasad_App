@@ -6,10 +6,17 @@ ThemeData themeData() {
   return ThemeData(
     fontFamily: 'Poppins',
     scaffoldBackgroundColor: AppColors.whiteColor,
-    appBarTheme: AppBarTheme(backgroundColor: AppColors.whiteColor,
-    iconTheme: IconThemeData(
-      color: AppColors.whiteColor,
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: AppColors.whiteColor,
+      elevation: 0,
+      selectedLabelStyle: AppTextStyles.medium12,
+      unselectedLabelStyle: AppTextStyles.medium12,
+      selectedItemColor: AppColors.primaryColor,
+      unselectedItemColor: AppColors.bottomNaviTextColor,
     ),
+    appBarTheme: AppBarTheme(
+      backgroundColor: AppColors.whiteColor,
+      iconTheme: IconThemeData(color: AppColors.whiteColor),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
