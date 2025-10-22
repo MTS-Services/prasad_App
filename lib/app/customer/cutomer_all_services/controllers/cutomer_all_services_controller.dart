@@ -1,9 +1,8 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CustomerHomeController extends GetxController {
-  //TODO: Implement CustomerHomeController
-
+class CutomerAllServicesController extends GetxController {
+  //TODO: Implement CutomerAllServicesController
   final TextEditingController searchController = TextEditingController();
 
   final count = 0.obs;

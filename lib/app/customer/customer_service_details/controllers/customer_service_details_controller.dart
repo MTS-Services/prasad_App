@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
-class HistoryController extends GetxController {
-  //TODO: Implement HistoryController
+class CustomerServiceDetailsController extends GetxController {
+  //TODO: Implement CustomerServiceDetailsController
 
   final count = 0.obs;
   @override

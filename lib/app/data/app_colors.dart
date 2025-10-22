@@ -7,4 +7,7 @@ class AppColors{
   static const Color blackColor = Color(0xff000000);
   static const Color hintColor = Color(0xff7C7C7C);
   static const Color borderColorGrey = Color(0xffD9D9D9);
+  static const Color notificationColor = Color(0xffEAEDF4);
+  static const Color cardColor = Color(0xffF5F7FA);
+  static const Color unseenColor = Color(0xffB18326);
 }
