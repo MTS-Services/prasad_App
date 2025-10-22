@@ -44,7 +44,7 @@ class Onboarding3View extends GetView<Onboarding3Controller> {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    Get.toNamed(Routes.LOGIN);
+                    Get.toNamed(Routes.USER_TYPE);
                   },
                   child: Text('Login'),
                 ),
