@@ -1,14 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:prasad/app/data/app_text_styles.dart';
 import 'app_colors.dart';
 
 ThemeData themeData() {
   return ThemeData(
     fontFamily: 'Poppins',
     scaffoldBackgroundColor: AppColors.whiteColor,
-    appBarTheme: AppBarTheme(backgroundColor: AppColors.whiteColor,
-    iconTheme: IconThemeData(
-      color: AppColors.whiteColor,
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: AppColors.whiteColor,
+      elevation: 0,
+      selectedLabelStyle: AppTextStyles.medium12,
+      unselectedLabelStyle: AppTextStyles.medium12,
+      selectedItemColor: AppColors.primaryColor,
+      unselectedItemColor: AppColors.bottomNaviTextColor,
     ),
+    appBarTheme: AppBarTheme(
+      backgroundColor: AppColors.whiteColor,
+      iconTheme: IconThemeData(color: AppColors.whiteColor),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
@@ -22,9 +30,7 @@ ThemeData themeData() {
         backgroundColor: AppColors.whiteColor,
         foregroundColor: AppColors.blackColor,
         side: const BorderSide(color: AppColors.borderColorGrey, width: 1.5),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(4),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
       ),
     ),
     inputDecorationTheme: InputDecorationTheme(

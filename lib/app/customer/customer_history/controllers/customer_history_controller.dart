@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
-class SplashController extends GetxController {
-  //TODO: Implement SplashController
+class CustomerHistoryController extends GetxController {
+  //TODO: Implement CustomerHistoryController
 
   final count = 0.obs;
   @override

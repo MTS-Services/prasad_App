@@ -2,20 +2,20 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import '../controllers/splash_controller.dart';
+import '../controllers/operator_history_controller.dart';
 
-class SplashView extends GetView<SplashController> {
-  const SplashView({super.key});
+class OperatorHistoryView extends GetView<OperatorHistoryController> {
+  const OperatorHistoryView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('SplashView'),
+        title: const Text('OperatorHistoryView'),
         centerTitle: true,
       ),
       body: const Center(
         child: Text(
-          'SplashView is working',
+          'OperatorHistoryView is working',
           style: TextStyle(fontSize: 20),
         ),
       ),

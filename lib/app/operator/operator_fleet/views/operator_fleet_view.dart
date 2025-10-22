@@ -2,20 +2,20 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import '../controllers/history_controller.dart';
+import '../controllers/operator_fleet_controller.dart';
 
-class HistoryView extends GetView<HistoryController> {
-  const HistoryView({super.key});
+class OperatorFleetView extends GetView<OperatorFleetController> {
+  const OperatorFleetView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('HistoryView'),
+        title: const Text('OperatorFleetView'),
         centerTitle: true,
       ),
       body: const Center(
         child: Text(
-          'HistoryView is working',
+          'OperatorFleetView is working',
           style: TextStyle(fontSize: 20),
         ),
       ),
