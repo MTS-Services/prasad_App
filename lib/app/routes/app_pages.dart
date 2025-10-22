@@ -14,14 +14,18 @@ import '../shared_screen/auth/sign_up/bindings/sign_up_binding.dart';
 import '../shared_screen/auth/sign_up/views/sign_up_view.dart';
 import '../shared_screen/auth/user_type/bindings/user_type_binding.dart';
 import '../shared_screen/auth/user_type/views/user_type_view.dart';
-
-
+import '../shared_screen/onboarding/onboarding1/bindings/onboarding1_binding.dart';
+import '../shared_screen/onboarding/onboarding1/views/onboarding1_view.dart';
+import '../shared_screen/onboarding/onboarding2/bindings/onboarding2_binding.dart';
+import '../shared_screen/onboarding/onboarding2/views/onboarding2_view.dart';
+import '../shared_screen/onboarding/onboarding3/bindings/onboarding3_binding.dart';
+import '../shared_screen/onboarding/onboarding3/views/onboarding3_view.dart';
 part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.CUSTOMER_HOME;
+  static const INITIAL = Routes.ONBOARDING1;
 
   static final routes = [
     GetPage(
@@ -58,6 +62,21 @@ class AppPages {
       name: _Paths.USER_TYPE,
       page: () => const UserTypeView(),
       binding: UserTypeBinding(),
+    ),
+    GetPage(
+      name: _Paths.ONBOARDING1,
+      page: () => const Onboarding1View(),
+      binding: Onboarding1Binding(),
+    ),
+    GetPage(
+      name: _Paths.ONBOARDING2,
+      page: () => const Onboarding2View(),
+      binding: Onboarding2Binding(),
+    ),
+    GetPage(
+      name: _Paths.ONBOARDING3,
+      page: () => const Onboarding3View(),
+      binding: Onboarding3Binding(),
     ),
   ];
 }
