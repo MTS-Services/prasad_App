@@ -24,6 +24,9 @@ abstract class Routes {
   static const OPERATOR_FLEET = _Paths.OPERATOR_FLEET;
   static const OPERATOR_BOTTOM_NAVI_BAR =
       _Paths.OPERATOR_OPERATOR_BOTTOM_NAVI_BAR;
+  static const CUTOMER_NOTIFICATION = _Paths.CUSTOMER_NOTIFICATION;
+  static const CUTOMER_ALL_SERVICES = _Paths.CUSTOMER_ALL_SERVICES;
+  static const CUSTOMER_SERVICE_DETAILS = _Paths.CUSTOMER_SERVICE_DETAILS;
 }
 
 abstract class _Paths {
@@ -48,4 +51,7 @@ abstract class _Paths {
   static const OPERATOR_FLEET = '/operator-fleet';
   static const OPERATOR_OPERATOR_BOTTOM_NAVI_BAR =
       '/operator-operator-bottom-navi-bar';
+  static const CUSTOMER_NOTIFICATION = '/customer-notification';
+  static const CUSTOMER_ALL_SERVICES = '/customer-all-services';
+  static const CUSTOMER_SERVICE_DETAILS = '/customer-service-details';
 }

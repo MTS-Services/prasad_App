@@ -16,6 +16,12 @@ import '../operator/operator_fleet/bindings/operator_fleet_binding.dart';
 import '../operator/operator_fleet/views/operator_fleet_view.dart';
 import '../operator/operator_history/bindings/operator_history_binding.dart';
 import '../operator/operator_history/views/operator_history_view.dart';
+import '../customer/customer_service_details/bindings/customer_service_details_binding.dart';
+import '../customer/customer_service_details/views/customer_service_details_view.dart';
+import '../customer/cutomer_all_services/bindings/cutomer_all_services_binding.dart';
+import '../customer/cutomer_all_services/views/customer_all_services_view.dart';
+import '../customer/cutomer_notification/bindings/cutomer_notification_binding.dart';
+import '../customer/cutomer_notification/views/customer_notification_view.dart';
 import '../operator/operator_home/bindings/operator_home_binding.dart';
 import '../operator/operator_home/views/operator_home_view.dart';
 import '../operator/operator_operator_bottom_navi_bar/bindings/operator_operator_bottom_navi_bar_binding.dart';
@@ -141,6 +147,21 @@ class AppPages {
       name: _Paths.ONBOARDING3,
       page: () => const Onboarding3View(),
       binding: Onboarding3Binding(),
+    ),
+    GetPage(
+      name: _Paths.CUSTOMER_NOTIFICATION,
+      page: () => const CustomerNotificationView(),
+      binding: CutomerNotificationBinding(),
+    ),
+    GetPage(
+      name: _Paths.CUSTOMER_ALL_SERVICES,
+      page: () => const CustomerAllServicesView(),
+      binding: CutomerAllServicesBinding(),
+    ),
+    GetPage(
+      name: _Paths.CUSTOMER_SERVICE_DETAILS,
+      page: () => const CustomerServiceDetailsView(),
+      binding: CustomerServiceDetailsBinding(),
     ),
   ];
 }

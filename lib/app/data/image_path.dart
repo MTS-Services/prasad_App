@@ -16,4 +16,6 @@ class ImagePath {
   static const String onboarding2 ='$baseUrl/onboarding2.png';
   static const String onboarding3 ='$baseUrl/onboarding3.png';
   static const String operatorType ='$baseUrl/operator_type.png';
+  static const String farmerPng ='$baseUrl/farmer.png';
+  static const String servicePng ='$baseUrl/service.png';
 }

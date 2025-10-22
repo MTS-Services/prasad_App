@@ -1,56 +1,45 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:get/get.dart';
-import 'package:prasad/app/data/app_colors.dart';
-import 'package:prasad/app/data/image_path.dart';
-import 'package:prasad/app/routes/app_pages.dart';
 
-import '../controllers/customer_home_controller.dart';
-import '../widget/custom_search_field.dart';
-import '../widget/section_header.dart';
-import '../widget/service_card.dart';
-import '../widget/welcome_header.dart';
+import '../../../data/app_colors.dart';
+import '../../../data/image_path.dart';
+import '../../customer_home/widget/custom_search_field.dart';
+import '../../customer_home/widget/service_card.dart';
+import '../../cutomer_notification/widget/back_button_card.dart';
+import '../controllers/cutomer_all_services_controller.dart';
 
-class CustomerHomeView extends GetView<CustomerHomeController> {
-  const CustomerHomeView({super.key});
-
+class CustomerAllServicesView extends GetView<CutomerAllServicesController> {
+  const CustomerAllServicesView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       body: SafeArea(
         child: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+            padding: const EdgeInsets.symmetric(horizontal: 15 , vertical: 15),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                WelcomeHeader(
-                  userName: "Sarah paul!",
-                  subtitle:
-                  "Here's what's happening with your services today.",
-                  profileImageUrl: ImagePath.farmerPng,
-                  onNotificationTap: () {
-                    Get.toNamed('/customer-notification');
-                  },
+                BackButtonCard(
+                  onTap: () => Get.back(),
+                  color: AppColors.primaryColor,
+                  icon: Icons.arrow_back,
+                  iconColor: Colors.white,
                 ),
-                SizedBox(height: 15.h),
+                SizedBox(height: 15.h,),
                 CustomSearchField(
                   controller: controller.searchController,
                   onChanged: (value) {
                     print("Searching: $value");
                   },
                 ),
-                SizedBox(height: 15.h),
-                SectionHeader(
-                  title: 'Services',
-                  onTap: () {
-                    Get.toNamed('/customer-all-services');
-                  },
-                ),
-                SizedBox(height: 10.h),
+                SizedBox(height: 15.h,),
                 ListView.builder(
-                  itemCount: 2,
+                  itemCount: 5,
                   physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
                   itemBuilder: (context, index) {
@@ -75,7 +64,7 @@ class CustomerHomeView extends GetView<CustomerHomeController> {
             ),
           ),
         ),
-      ),
+      )
     );
   }
 }
