@@ -2,6 +2,7 @@
   "sub_folder": {
     "shared_screen" : "lib/app/core",
     "auth" : "lib/app/core/auth",
+    "onboarding" : "lib/app/core/onboarding",
     "customer" : "lib/app/customer",
     "operator" : "lib/app/operator"
   }

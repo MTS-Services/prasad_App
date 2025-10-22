@@ -4,8 +4,6 @@ import '../customer/customer_home/bindings/customer_home_binding.dart';
 import '../customer/customer_home/views/customer_home_view.dart';
 import '../customer/customer_profile/bindings/customer_profile_binding.dart';
 import '../customer/customer_profile/views/customer_profile_view.dart';
-import '../customer/history/bindings/history_binding.dart';
-import '../customer/history/views/history_view.dart';
 import '../operator/operator_home/bindings/operator_home_binding.dart';
 import '../operator/operator_home/views/operator_home_view.dart';
 import '../operator/operator_profile/bindings/operator_profile_binding.dart';
@@ -16,9 +14,12 @@ import '../shared_screen/auth/sign_up/bindings/sign_up_binding.dart';
 import '../shared_screen/auth/sign_up/views/sign_up_view.dart';
 import '../shared_screen/auth/user_type/bindings/user_type_binding.dart';
 import '../shared_screen/auth/user_type/views/user_type_view.dart';
-import '../shared_screen/splash/bindings/splash_binding.dart';
-import '../shared_screen/splash/views/splash_view.dart';
-
+import '../shared_screen/onboarding/onboarding1/bindings/onboarding1_binding.dart';
+import '../shared_screen/onboarding/onboarding1/views/onboarding1_view.dart';
+import '../shared_screen/onboarding/onboarding2/bindings/onboarding2_binding.dart';
+import '../shared_screen/onboarding/onboarding2/views/onboarding2_view.dart';
+import '../shared_screen/onboarding/onboarding3/bindings/onboarding3_binding.dart';
+import '../shared_screen/onboarding/onboarding3/views/onboarding3_view.dart';
 part 'app_routes.dart';
 
 class AppPages {
@@ -58,19 +59,24 @@ class AppPages {
       binding: LoginBinding(),
     ),
     GetPage(
-      name: _Paths.SPLASH,
-      page: () => const SplashView(),
-      binding: SplashBinding(),
-    ),
-    GetPage(
       name: _Paths.USER_TYPE,
       page: () => const UserTypeView(),
       binding: UserTypeBinding(),
     ),
     GetPage(
-      name: _Paths.HISTORY,
-      page: () => const HistoryView(),
-      binding: HistoryBinding(),
+      name: _Paths.ONBOARDING1,
+      page: () => const Onboarding1View(),
+      binding: Onboarding1Binding(),
+    ),
+    GetPage(
+      name: _Paths.ONBOARDING2,
+      page: () => const Onboarding2View(),
+      binding: Onboarding2Binding(),
+    ),
+    GetPage(
+      name: _Paths.ONBOARDING3,
+      page: () => const Onboarding3View(),
+      binding: Onboarding3Binding(),
     ),
   ];
 }
