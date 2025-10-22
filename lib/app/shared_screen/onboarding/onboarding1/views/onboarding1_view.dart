@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:prasad/app/data/app_colors.dart';
 import 'package:prasad/app/data/app_text_styles.dart';
 import 'package:prasad/app/data/image_path.dart';
+import 'package:prasad/app/routes/app_pages.dart';
 
 import '../controllers/onboarding1_controller.dart';
 
@@ -25,7 +26,7 @@ class Onboarding1View extends GetView<Onboarding1Controller> {
           padding: const EdgeInsets.all(16.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
-            spacing: 16.h,
+            spacing: 20.h,
             children: [
               Text(
                 'Welcome to Smart Drone Services',
@@ -42,7 +43,9 @@ class Onboarding1View extends GetView<Onboarding1Controller> {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.toNamed(Routes.ONBOARDING2);
+                  },
                   child: Text('Next', style: AppTextStyles.medium16),
                 ),
               ),
