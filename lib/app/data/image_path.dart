@@ -1,4 +1,4 @@
 class ImagePath{
   static const String baseUrl ='assets/images';
-  static const String googleIcon ='$baseUrl/GoogleIcon.png';
+  static const String rectangle ='$baseUrl/Rectangle1.png';
 }
