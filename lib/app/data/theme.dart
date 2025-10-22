@@ -28,6 +28,7 @@ ThemeData themeData() {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(4),
         ),
+        textStyle: AppTextStyles.medium12
       ),
     ),
     inputDecorationTheme: InputDecorationTheme(
