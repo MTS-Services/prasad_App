@@ -2,10 +2,20 @@ import 'package:get/get.dart';
 
 import '../customer/customer_home/bindings/customer_home_binding.dart';
 import '../customer/customer_home/views/customer_home_view.dart';
+import '../customer/customer_note/bindings/customer_note_binding.dart';
+import '../customer/customer_note/views/customer_note_view.dart';
+import '../customer/customer_orders/bindings/customer_orders_binding.dart';
+import '../customer/customer_orders/views/customer_orders_view.dart';
 import '../customer/customer_profile/bindings/customer_profile_binding.dart';
 import '../customer/customer_profile/views/customer_profile_view.dart';
+import '../customer/customer_schedule/bindings/customer_schedule_binding.dart';
+import '../customer/customer_schedule/views/customer_schedule_view.dart';
 import '../customer/customer_service_details/bindings/customer_service_details_binding.dart';
 import '../customer/customer_service_details/views/customer_service_details_view.dart';
+import '../customer/customer_service_details_map/bindings/customer_service_details_map_binding.dart';
+import '../customer/customer_service_details_map/views/customer_service_details_map_view.dart';
+import '../customer/customer_service_traking/bindings/customer_service_traking_binding.dart';
+import '../customer/customer_service_traking/views/customer_service_traking_view.dart';
 import '../customer/cutomer_all_services/bindings/cutomer_all_services_binding.dart';
 import '../customer/cutomer_all_services/views/customer_all_services_view.dart';
 import '../customer/cutomer_notification/bindings/cutomer_notification_binding.dart';
@@ -78,6 +88,31 @@ class AppPages {
       name: _Paths.CUSTOMER_SERVICE_DETAILS,
       page: () => const CustomerServiceDetailsView(),
       binding: CustomerServiceDetailsBinding(),
+    ),
+    GetPage(
+      name: _Paths.CUSTOMER_SCHEDULE,
+      page: () => const CustomerScheduleView(),
+      binding: CustomerScheduleBinding(),
+    ),
+    GetPage(
+      name: _Paths.CUSTOMER_ORDERS,
+      page: () => const CustomerOrdersView(),
+      binding: CustomerOrdersBinding(),
+    ),
+    GetPage(
+      name: _Paths.CUSTOMER_SERVICE_TRAKING,
+      page: () => const CustomerServiceTrakingView(),
+      binding: CustomerServiceTrakingBinding(),
+    ),
+    GetPage(
+      name: _Paths.CUSTOMER_SERVICE_DETAILS_MAP,
+      page: () => const CustomerServiceDetailsMapView(),
+      binding: CustomerServiceDetailsMapBinding(),
+    ),
+    GetPage(
+      name: _Paths.CUSTOMER_NOTE,
+      page: () => const CustomerNoteView(),
+      binding: CustomerNoteBinding(),
     ),
   ];
 }

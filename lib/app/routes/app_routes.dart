@@ -14,6 +14,12 @@ abstract class Routes {
   static const CUTOMER_NOTIFICATION = _Paths.CUSTOMER_NOTIFICATION;
   static const CUTOMER_ALL_SERVICES = _Paths.CUSTOMER_ALL_SERVICES;
   static const CUSTOMER_SERVICE_DETAILS = _Paths.CUSTOMER_SERVICE_DETAILS;
+  static const CUSTOMER_SCHEDULE = _Paths.CUSTOMER_SCHEDULE;
+  static const CUSTOMER_ORDERS = _Paths.CUSTOMER_ORDERS;
+  static const CUSTOMER_SERVICE_TRAKING = _Paths.CUSTOMER_SERVICE_TRAKING;
+  static const CUSTOMER_SERVICE_DETAILS_MAP =
+      _Paths.CUSTOMER_SERVICE_DETAILS_MAP;
+  static const CUSTOMER_NOTE = _Paths.CUSTOMER_NOTE;
 }
 
 abstract class _Paths {
@@ -28,4 +34,9 @@ abstract class _Paths {
   static const CUSTOMER_NOTIFICATION = '/customer-notification';
   static const CUSTOMER_ALL_SERVICES = '/customer-all-services';
   static const CUSTOMER_SERVICE_DETAILS = '/customer-service-details';
+  static const CUSTOMER_SCHEDULE = '/customer-schedule';
+  static const CUSTOMER_ORDERS = '/customer-orders';
+  static const CUSTOMER_SERVICE_TRAKING = '/customer-service-traking';
+  static const CUSTOMER_SERVICE_DETAILS_MAP = '/customer-service-details-map';
+  static const CUSTOMER_NOTE = '/customer-note';
 }
