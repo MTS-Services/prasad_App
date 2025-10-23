@@ -27,6 +27,16 @@ abstract class Routes {
   static const CUTOMER_NOTIFICATION = _Paths.CUSTOMER_NOTIFICATION;
   static const CUTOMER_ALL_SERVICES = _Paths.CUSTOMER_ALL_SERVICES;
   static const CUSTOMER_SERVICE_DETAILS = _Paths.CUSTOMER_SERVICE_DETAILS;
+  static const GMAIL_VERIFY = _Paths.GMAIL_VERIFY;
+  static const CREATE_PASS = _Paths.CREATE_PASS;
+  static const RECOVERY_PASS = _Paths.RECOVERY_PASS;
+  static const CONFIRM_YOUR_GMAIL = _Paths.CONFIRM_YOUR_GMAIL;
+  static const NEW_PASSWORD = _Paths.NEW_PASSWORD;
+  static const WAITING_APPROVAL = _Paths.WAITING_APPROVAL;
+  static const MAP = _Paths.MAP;
+  static const CUSTOMER_INFO1 = _Paths.CUSTOMER_INFO1;
+  static const CUSTOMER_SERVICE_LOCATION = _Paths.CUSTOMER_SERVICE_LOCATION;
+  static const CUSTOMER_INFO2 = _Paths.CUSTOMER_INFO2;
 }
 
 abstract class _Paths {
@@ -54,4 +64,14 @@ abstract class _Paths {
   static const CUSTOMER_NOTIFICATION = '/customer-notification';
   static const CUSTOMER_ALL_SERVICES = '/customer-all-services';
   static const CUSTOMER_SERVICE_DETAILS = '/customer-service-details';
+  static const GMAIL_VERIFY = '/gmail-verify';
+  static const CREATE_PASS = '/create-pass';
+  static const RECOVERY_PASS = '/recovery-pass';
+  static const CONFIRM_YOUR_GMAIL = '/confirm-your-gmail';
+  static const NEW_PASSWORD = '/new-password';
+  static const WAITING_APPROVAL = '/waiting-approval';
+  static const MAP = '/map';
+  static const CUSTOMER_INFO1 = '/customer-info1';
+  static const CUSTOMER_SERVICE_LOCATION = '/customer-service-location';
+  static const CUSTOMER_INFO2 = '/customer-info2';
 }

@@ -2,13 +2,16 @@ class ImagePath {
   static const String baseUrl ='assets/images';
   static const String imageUrl = 'assets/images';
   static const String iconUrl = 'assets/icons';
-  static const String googleIcon = '$imageUrl/GoogleIcon.png';
   static const String homeIcon = '$iconUrl/home.png';
   static const String historyIcon = '$iconUrl/history.png';
   static const String profileIcon = '$iconUrl/profile.png';
   static const String supportIcon = '$iconUrl/support.png';
   static const String serviceIcon = '$iconUrl/service.png';
   static const String paymentIcon = '$iconUrl/moneyIcon.png';
+  static const String facebook = '$iconUrl/facebook.png';
+  static const String google = '$iconUrl/google.png';
+  static const String finger = '$iconUrl/finger_icon.png';
+  static const String appleIcon = '$iconUrl/apple.png';
   static const String fleetIcon = '$iconUrl/fleet.png';
   static const String fieldAgentType ='$baseUrl/field_agent_type.png';
   static const String onboarding1 ='$baseUrl/onboarding1.png';
@@ -18,5 +21,7 @@ class ImagePath {
   static const String farmerPng ='$baseUrl/farmer.png';
   static const String servicePng ='$baseUrl/service.png';
   static const String customerType ='$baseUrl/customer_type.png';
-  static const String login_logo ='$baseUrl/login_logo.png';
+  static const String loginLogo ='$baseUrl/login_logo.png';
+  static const String waitingImage ='$baseUrl/waiting_image.jpg';
+  static const String file ='$baseUrl/file.png';
 }

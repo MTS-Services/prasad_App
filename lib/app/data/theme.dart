@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:prasad/app/data/app_text_styles.dart';
 import 'app_colors.dart';
 
@@ -30,12 +31,13 @@ ThemeData themeData() {
     outlinedButtonTheme: OutlinedButtonThemeData(
       style: OutlinedButton.styleFrom(
         backgroundColor: AppColors.whiteColor,
-        foregroundColor: AppColors.blackColor,
-        side: const BorderSide(color: AppColors.borderColorGrey, width: 1.5),
+        foregroundColor: AppColors.primaryColor,
+        padding: EdgeInsets.symmetric(vertical: 12.h),
+        side: const BorderSide(color: AppColors.primaryColor, width: 1.5),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(4),
         ),
-        textStyle: AppTextStyles.medium12
+        textStyle: AppTextStyles.medium16,
       ),
     ),
     inputDecorationTheme: InputDecorationTheme(
@@ -54,7 +56,7 @@ ThemeData themeData() {
         borderRadius: BorderRadius.circular(8),
         borderSide: BorderSide(color: AppColors.borderColorBlue),
       ),
-      hintStyle: const TextStyle(color: AppColors.borderColorBlue),
+      hintStyle: const TextStyle(color: AppColors.hintColor),
     ),
   );
 }

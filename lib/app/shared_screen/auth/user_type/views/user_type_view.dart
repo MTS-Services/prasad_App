@@ -43,7 +43,7 @@ class UserTypeView extends GetView<UserTypeController> {
                     Flexible(
                       child: TypeCard(
                         title: "Field Agent",
-                        image: ImagePath.customerType,
+                        image: ImagePath.fieldAgentType,
                         isSelected: false,
                         onTap: () {
                           print("Customer selected!");

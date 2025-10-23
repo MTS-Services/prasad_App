@@ -45,7 +45,7 @@ class TypeCard extends StatelessWidget {
             children: [
               isSelected
                   ? Align(
-                      alignment: AlignmentGeometry.topRight,
+                      alignment: Alignment.topRight,
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Icon(

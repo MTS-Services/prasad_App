@@ -1,8 +1,10 @@
 {
   "sub_folder": {
-    "shared_screen" : "lib/app/core",
-    "auth" : "lib/app/core/auth",
-    "onboarding" : "lib/app/core/onboarding",
+    "shared_screen" : "lib/app/shared_screen",
+    "auth" : "lib/app/shared_screen/auth",
+    "onboarding" : "lib/app/shared_screen/onboarding",
+    "common_screen" : "lib/app/shared_screen/common_screen",
+    "customer_registration" : "lib/app/customer/customer_registration",
     "customer" : "lib/app/customer",
     "operator" : "lib/app/operator"
   }
