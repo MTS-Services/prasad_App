@@ -19,9 +19,7 @@ class OperatorAllServicesView extends GetView<OperatorAllServicesController> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                BackButtonCard(
-                  onTap: () => Get.back(),
-                ),
+                BackButtonCard(onTap: () => Get.back()),
                 SizedBox(height: 10.h),
                 ListView.builder(
                   itemCount: 3,
@@ -40,6 +38,7 @@ class OperatorAllServicesView extends GetView<OperatorAllServicesController> {
                         'https://media.istockphoto.com/id/1135210442/vector/blue-political-world-map-with-country-borders-and-white-state-name-labels-hand-drawn.jpg?s=612x612&w=0&k=20&c=lgrbr-46iQQUBTcCHau3I_JT2Zfsjoauw43iw6wwCwY=',
                     acceptOnPress: () {},
                     declineOnpress: () {},
+                    isAccepted: true,
                   ),
                 ),
               ],

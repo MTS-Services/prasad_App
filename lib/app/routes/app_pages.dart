@@ -32,6 +32,8 @@ import '../operator/operator_profile/bindings/operator_profile_binding.dart';
 import '../operator/operator_profile/views/operator_profile_view.dart';
 import '../operator/operator_service/bindings/operator_service_binding.dart';
 import '../operator/operator_service/views/operator_service_view.dart';
+import '../operator/operator_services_details/bindings/operator_services_details_binding.dart';
+import '../operator/operator_services_details/views/operator_services_details_view.dart';
 import '../shared_screen/auth/login/bindings/login_binding.dart';
 import '../shared_screen/auth/login/views/login_view.dart';
 import '../shared_screen/auth/sign_up/bindings/sign_up_binding.dart';
@@ -162,6 +164,11 @@ class AppPages {
       name: _Paths.OPERATOR_ALL_SERVICES,
       page: () => const OperatorAllServicesView(),
       binding: OperatorAllServicesBinding(),
+    ),
+    GetPage(
+      name: _Paths.OPERATOR_SERVICES_DETAILS,
+      page: () => const OperatorServicesDetailsView(),
+      binding: OperatorServicesDetailsBinding(),
     ),
   ];
 }

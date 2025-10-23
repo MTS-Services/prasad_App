@@ -27,7 +27,8 @@ abstract class Routes {
   static const CUTOMER_NOTIFICATION = _Paths.CUSTOMER_NOTIFICATION;
   static const CUTOMER_ALL_SERVICES = _Paths.CUSTOMER_ALL_SERVICES;
   static const CUSTOMER_SERVICE_DETAILS = _Paths.CUSTOMER_SERVICE_DETAILS;
-  static const OPERATOR_ALL_SERVICES =_Paths.OPERATOR_ALL_SERVICES;
+  static const OPERATOR_ALL_SERVICES = _Paths.OPERATOR_ALL_SERVICES;
+  static const OPERATOR_SERVICES_DETAILS = _Paths.OPERATOR_SERVICES_DETAILS;
 }
 
 abstract class _Paths {
@@ -56,4 +57,5 @@ abstract class _Paths {
   static const CUSTOMER_ALL_SERVICES = '/customer-all-services';
   static const CUSTOMER_SERVICE_DETAILS = '/customer-service-details';
   static const OPERATOR_ALL_SERVICES = '/operator-all-services';
+  static const OPERATOR_SERVICES_DETAILS = '/operator-services-details';
 }

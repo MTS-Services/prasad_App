@@ -36,8 +36,9 @@ class OperatorServiceView extends GetView<OperatorServiceController> {
                     headerText: 'ORD-YYYYMMDD-XXXX',
                     imageUrl:
                         'https://media.istockphoto.com/id/1135210442/vector/blue-political-world-map-with-country-borders-and-white-state-name-labels-hand-drawn.jpg?s=612x612&w=0&k=20&c=lgrbr-46iQQUBTcCHau3I_JT2Zfsjoauw43iw6wwCwY=',
-                    acceptOnPress: () {},
-                    declineOnpress: () {},
+                    acceptOnPress: () =>
+                        Get.toNamed('/operator-services-details'),
+                    isAccepted: false,
                   ),
                 ),
               ],

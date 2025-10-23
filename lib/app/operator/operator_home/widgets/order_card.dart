@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../data/app_colors.dart';
 import '../../../data/app_text_styles.dart';
+import 'radius_image.dart';
 
 class OrderCard extends StatelessWidget {
   const OrderCard({
@@ -17,6 +18,7 @@ class OrderCard extends StatelessWidget {
     required this.price,
     this.acceptOnPress,
     this.declineOnpress,
+    required this.isAccepted,
   });
   final String headerText,
       imageUrl,
@@ -27,6 +29,7 @@ class OrderCard extends StatelessWidget {
       distance,
       price;
   final Function()? acceptOnPress, declineOnpress;
+  final bool isAccepted;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -41,15 +44,15 @@ class OrderCard extends StatelessWidget {
         children: [
           Text(headerText, style: AppTextStyles.medium20),
           SizedBox(height: 10.h),
-          ClipRRect(
-            borderRadius: BorderRadiusGeometry.circular(4),
-            child: Image.network(imageUrl),
-          ),
+          RadiusImage(imageUrl: imageUrl),
           SizedBox(height: 15.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Date : $date', style: AppTextStyles.regular16),
+              Expanded(
+                child: Text('Date : $date', style: AppTextStyles.regular16),
+              ),
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -75,26 +78,31 @@ class OrderCard extends StatelessWidget {
           Text('\$$price', style: AppTextStyles.bold24),
           SizedBox(height: 10),
           Row(
-            spacing: 10.w,
             children: [
               Expanded(
                 child: ElevatedButton(
                   onPressed: acceptOnPress,
-                  child: Text('Accept Order', style: AppTextStyles.medium16),
+                  child: Text('Start Service', style: AppTextStyles.medium16),
                 ),
               ),
-              Expanded(
-                child: ElevatedButton(
-                  onPressed: declineOnpress,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.whiteColor,
-                    foregroundColor: AppColors.blackColor,
-                    elevation: 0,
-                    shape: BeveledRectangleBorder(side: BorderSide(width: 0.5)),
+              if (isAccepted) ...[
+                SizedBox(width: 10),
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: declineOnpress,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: AppColors.whiteColor,
+                      foregroundColor: AppColors.blackColor,
+                      elevation: 0,
+                      shape: BeveledRectangleBorder(
+                        borderRadius: BorderRadiusGeometry.circular(4.r),
+                        side: BorderSide(width: 0.5),
+                      ),
+                    ),
+                    child: Text('Decline', style: AppTextStyles.medium16),
                   ),
-                  child: Text('Decline', style: AppTextStyles.medium16),
                 ),
-              ),
+              ],
             ],
           ),
         ],
