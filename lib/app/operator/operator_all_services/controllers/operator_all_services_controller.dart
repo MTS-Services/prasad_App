@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
-class OperatorFleetController extends GetxController {
-  //TODO: Implement OperatorFleetController
+class OperatorAllServicesController extends GetxController {
+  //TODO: Implement OperatorAllServicesController
 
   final count = 0.obs;
   @override

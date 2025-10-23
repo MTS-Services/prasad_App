@@ -2,24 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
-import 'package:prasad/app/data/app_text_styles.dart';
+import 'package:prasad/app/customer/cutomer_notification/widget/back_button_card.dart';
 
 import '../../operator_home/widgets/order_card.dart';
-import '../controllers/operator_service_controller.dart';
+import '../controllers/operator_all_services_controller.dart';
 
-class OperatorServiceView extends GetView<OperatorServiceController> {
-  const OperatorServiceView({super.key});
+class OperatorAllServicesView extends GetView<OperatorAllServicesController> {
+  const OperatorAllServicesView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 15.h),
+            padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 15.h),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Active', style: AppTextStyles.bold24),
+                BackButtonCard(
+                  onTap: () => Get.back(),
+                ),
                 SizedBox(height: 10.h),
                 ListView.builder(
                   itemCount: 3,

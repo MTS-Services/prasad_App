@@ -10,6 +10,7 @@ class ImagePath {
   static const String serviceIcon = '$iconUrl/service.png';
   static const String paymentIcon = '$iconUrl/moneyIcon.png';
   static const String fleetIcon = '$iconUrl/fleet.png';
+  static const String editIcon = '$iconUrl/edit.png';
   static const String fieldAgentType ='$baseUrl/field_agent_type.png';
   static const String onboarding1 ='$baseUrl/onboarding1.png';
   static const String onboarding2 ='$baseUrl/onboarding2.png';
