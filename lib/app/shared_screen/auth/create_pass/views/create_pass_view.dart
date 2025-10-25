@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:prasad/app/data/app_text_styles.dart';
 import 'package:prasad/app/shared_screen/common_widget/custom_text_field_login.dart';
+import 'package:prasad/app/shared_screen/common_widget/custom_elevated_and_outline_button.dart';
 
 import '../../../../data/app_colors.dart';
 import '../../../../routes/app_pages.dart';
@@ -24,7 +25,13 @@ class CreatePassView extends GetView<CreatePassController> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(height: 50.w),
-                Center(child: Text("Create Password", style: AppTextStyles.bold40,textAlign: TextAlign.center,)),
+                Center(
+                  child: Text(
+                    "Create Password",
+                    style: AppTextStyles.bold40,
+                    textAlign: TextAlign.center,
+                  ),
+                ),
                 CustomTextFieldLogin(
                   name: 'Password',
                   hintText: 'enter your password',
@@ -33,28 +40,13 @@ class CreatePassView extends GetView<CreatePassController> {
                   name: 'Confirm Password',
                   hintText: 'enter your password',
                 ),
-                Column(
-                  spacing: 16.w,
-                  children: [
-                    SizedBox(
-                      width: double.infinity,
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        child: Text("Next"),
-                      ),
-                    ),
-                    SizedBox(
-                      width: double.infinity,
-                      child: OutlinedButton(
-                        onPressed: () {},
-                        style: OutlinedButton.styleFrom(
-                        ),
-                        child: Text('Back'),
-                      ),
-                    ),
-                  ],
+                CustomElevatedAndOutlineButton(
+                  elevateText: 'Next',
+                  outlineText: "Back",
+                  elevatedOnPressed: () => Get.toNamed(Routes.CUSTOMER_INFO1),
+                  outlineOnPressed: () => Get.back(),
                 ),
-                SizedBox(height: 10.w,),
+                SizedBox(height: 10.w),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

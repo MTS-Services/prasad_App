@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
+import 'package:prasad/app/shared_screen/common_widget/custom_elevated_and_outline_button.dart';
 import 'package:prasad/app/shared_screen/common_widget/show_password_row.dart';
 
 import '../../../../data/app_colors.dart';
@@ -12,6 +13,7 @@ import '../controllers/new_password_controller.dart';
 
 class NewPasswordView extends GetView<NewPasswordController> {
   const NewPasswordView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,40 +26,27 @@ class NewPasswordView extends GetView<NewPasswordController> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(height: 50.w),
-                Text("Create New Password", style: AppTextStyles.bold40,textAlign: TextAlign.center,),
+                Text(
+                  "Create New Password",
+                  style: AppTextStyles.bold40,
+                  textAlign: TextAlign.center,
+                ),
                 Text(
                   '',
                   style: AppTextStyles.regular20,
                   textAlign: TextAlign.center,
                 ),
-                CustomTextFieldLogin(
-                  name: 'Password',
-                  hintText: '******',
-                ),
+                CustomTextFieldLogin(name: 'Password', hintText: '******'),
                 CustomTextFieldLogin(
                   name: 'Confirm Password',
                   hintText: '******',
                 ),
-                ShowPasswordRow(isChecked: true,onChanged: (v){},),
-                Column(
-                  spacing: 16.w,
-                  children: [
-                    SizedBox(
-                      width: double.infinity,
-                      child: ElevatedButton(
-                        onPressed: () => Get.toNamed(Routes.WAITING_APPROVAL),
-                        child: Text("Update Password"),
-                      ),
-                    ),
-                    SizedBox(
-                      width: double.infinity,
-                      child: OutlinedButton(
-                        onPressed: () {},
-                        style: OutlinedButton.styleFrom(),
-                        child: Text('Back'),
-                      ),
-                    ),
-                  ],
+                ShowPasswordRow(isChecked: true, onChanged: (v) {}),
+                CustomElevatedAndOutlineButton(
+                  elevateText: "Update Password",
+                  outlineText: "Back",
+                  elevatedOnPressed: () => Get.toNamed(Routes.LOGIN),
+                  outlineOnPressed: () => Get.back(),
                 ),
                 SizedBox(height: 10.w),
               ],

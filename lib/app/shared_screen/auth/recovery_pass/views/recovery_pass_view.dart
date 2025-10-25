@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
+import 'package:prasad/app/shared_screen/common_widget/custom_elevated_and_outline_button.dart';
 
 import '../../../../data/app_colors.dart';
 import '../../../../data/app_text_styles.dart';
@@ -24,7 +25,11 @@ class RecoveryPassView extends GetView<RecoveryPassController> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(height: 50.w),
-                Text("Forgot Your Password?", style: AppTextStyles.bold40,textAlign: TextAlign.center,),
+                Text(
+                  "Forgot Your Password?",
+                  style: AppTextStyles.bold40,
+                  textAlign: TextAlign.center,
+                ),
                 Text(
                   'Enter your email address. We will send a message with a code to reset your password.',
                   style: AppTextStyles.regular20,
@@ -34,25 +39,11 @@ class RecoveryPassView extends GetView<RecoveryPassController> {
                   name: 'Email',
                   hintText: 'example@gmail.com',
                 ),
-                Column(
-                  spacing: 16.w,
-                  children: [
-                    SizedBox(
-                      width: double.infinity,
-                      child: ElevatedButton(
-                        onPressed: () => Get.toNamed(Routes.CONFIRM_YOUR_GMAIL),
-                        child: Text("Next"),
-                      ),
-                    ),
-                    SizedBox(
-                      width: double.infinity,
-                      child: OutlinedButton(
-                        onPressed: () {},
-                        style: OutlinedButton.styleFrom(),
-                        child: Text('Back'),
-                      ),
-                    ),
-                  ],
+                CustomElevatedAndOutlineButton(
+                  elevateText: "Next",
+                  outlineText: "Back",
+                  elevatedOnPressed: () => Get.toNamed(Routes.CONFIRM_YOUR_GMAIL),
+                  outlineOnPressed: () => Get.back(),
                 ),
                 SizedBox(height: 10.w),
               ],

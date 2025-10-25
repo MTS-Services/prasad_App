@@ -31,7 +31,7 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
       title: Text(
-        title ?? 'Hello Word ',
+        title ?? '',
         style: AppTextStyles.medium16.copyWith(color: Colors.black),
       ),
       actions: [

@@ -50,14 +50,14 @@ class CustomDropdownField extends StatelessWidget {
                 value: item,
                 child: Text(
                   item,
-                  style: AppTextStyles.regular16.copyWith(fontSize: 15.sp),
+                  style: AppTextStyles.regular16,
                   overflow: TextOverflow.ellipsis,
+                  maxLines: 1,
                 ),
               ),
             )
                 .toList(),
             onChanged: onChanged,
-
             buttonStyleData: ButtonStyleData(
               width: double.infinity,
               padding: EdgeInsets.symmetric(horizontal: 12.w),

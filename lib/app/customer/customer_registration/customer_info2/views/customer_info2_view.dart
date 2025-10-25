@@ -1,22 +1,89 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
 
+import '../../../../data/app_text_styles.dart';
+import '../../../../routes/app_pages.dart';
+import '../../../../shared_screen/common_widget/custom_dropdown_field.dart';
+import '../../../../shared_screen/common_widget/custom_elevated_and_outline_button.dart';
+import '../../../../shared_screen/common_widget/custom_location_field.dart';
+import '../../../../shared_screen/common_widget/custom_text_field_login.dart';
 import '../controllers/customer_info2_controller.dart';
 
 class CustomerInfo2View extends GetView<CustomerInfo2Controller> {
   const CustomerInfo2View({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('CustomerInfo2View'),
-        centerTitle: true,
-      ),
-      body: const Center(
-        child: Text(
-          'CustomerInfo2View is working',
-          style: TextStyle(fontSize: 20),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: SingleChildScrollView(
+            child: Column(
+              spacing: 12.h,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('Customer Info', style: AppTextStyles.bold24),
+                CustomTextFieldLogin(
+                  name: 'KYC Number',
+                  hintText: 'KYC number',
+                ),
+                Text('Latitude/Longitude', style: AppTextStyles.medium16),
+                CustomLocationField(
+                  hintText: 'Enter your Latitude',
+                  icon: Icons.attach_file,
+                ),
+                Text('Street*', style: AppTextStyles.medium16),
+                TextFormField(
+                  maxLines: 3,
+                  decoration: InputDecoration(hintText: 'Enter Street'),
+                ),
+                Row(
+                  spacing: 10.w,
+                  children: [
+                    Flexible(
+                      child: CustomTextFieldLogin(
+                        name: 'City*',
+                        hintText: "Enter City",
+                      ),
+                    ),
+                    Flexible(
+                      child: CustomTextFieldLogin(
+                        name: 'State*',
+                        hintText: "Enter State",
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  spacing: 10.w,
+                  children: [
+                    Flexible(
+                      child: CustomTextFieldLogin(
+                        name: 'Postal code*',
+                        hintText: "Enter code",
+                      ),
+                    ),
+                    Flexible(
+                      child: CustomTextFieldLogin(
+                        name: 'Country*',
+                        hintText: "Enter Country",
+                      ),
+                    ),
+                  ],
+                ),
+                Obx(() => CustomDropdownField(
+                  label: "Industry*",
+                  items: controller.items,
+                  selectedValue: controller.selectedValue.value,
+                  onChanged: controller.onSelectedItem,
+                ),)
+
+              ],
+            ),
+          ),
         ),
       ),
     );
