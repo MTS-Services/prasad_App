@@ -20,6 +20,7 @@ abstract class Routes {
   static const CUSTOMER_SERVICE_DETAILS_MAP =
       _Paths.CUSTOMER_SERVICE_DETAILS_MAP;
   static const CUSTOMER_NOTE = _Paths.CUSTOMER_NOTE;
+  static const CUSTOMER_SUPPORT = _Paths.CUSTOMER_SUPPORT;
 }
 
 abstract class _Paths {
@@ -39,4 +40,5 @@ abstract class _Paths {
   static const CUSTOMER_SERVICE_TRAKING = '/customer-service-traking';
   static const CUSTOMER_SERVICE_DETAILS_MAP = '/customer-service-details-map';
   static const CUSTOMER_NOTE = '/customer-note';
+  static const CUSTOMER_SUPPORT = '/customer-support';
 }

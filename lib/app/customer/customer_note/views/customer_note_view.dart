@@ -99,11 +99,13 @@ class CustomerNoteView extends GetView<CustomerNoteController> {
                     hintStyle: TextStyle(color: Colors.grey.shade500),
                   ),
                 ),
-                SizedBox(height: 20.h),
+                SizedBox(height: 50.h),
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.offNamed('/customer-support');
+                    },
                     child: Text("Request Reschedule"),
                   ),
                 ),

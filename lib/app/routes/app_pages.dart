@@ -16,6 +16,8 @@ import '../customer/customer_service_details_map/bindings/customer_service_detai
 import '../customer/customer_service_details_map/views/customer_service_details_map_view.dart';
 import '../customer/customer_service_traking/bindings/customer_service_traking_binding.dart';
 import '../customer/customer_service_traking/views/customer_service_traking_view.dart';
+import '../customer/customer_support/bindings/customer_support_binding.dart';
+import '../customer/customer_support/views/customer_support_view.dart';
 import '../customer/cutomer_all_services/bindings/cutomer_all_services_binding.dart';
 import '../customer/cutomer_all_services/views/customer_all_services_view.dart';
 import '../customer/cutomer_notification/bindings/cutomer_notification_binding.dart';
@@ -113,6 +115,11 @@ class AppPages {
       name: _Paths.CUSTOMER_NOTE,
       page: () => const CustomerNoteView(),
       binding: CustomerNoteBinding(),
+    ),
+    GetPage(
+      name: _Paths.CUSTOMER_SUPPORT,
+      page: () => const CustomerSupportView(),
+      binding: CustomerSupportBinding(),
     ),
   ];
 }
