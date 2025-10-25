@@ -1,6 +1,4 @@
 part of 'app_pages.dart';
-// DO NOT EDIT. This is code generated via package:get_cli/get_cli.dart
-
 abstract class Routes {
   Routes._();
 
@@ -28,7 +26,7 @@ abstract class Routes {
   static const CUSTOMER_SERVICE_DETAILS = _Paths.CUSTOMER_SERVICE_DETAILS;
   static const OPERATOR_ALL_SERVICES = _Paths.OPERATOR_ALL_SERVICES;
   static const OPERATOR_SERVICES_DETAILS = _Paths.OPERATOR_SERVICES_DETAILS;
-  static const OPERATOR_FEEDBACK_SERVICE =_Paths.OPERATOR_FEEDBACK_SERVICE;
+  static const OPERATOR_FEEDBACK_SERVICE = _Paths.OPERATOR_FEEDBACK_SERVICE;
   static const GMAIL_VERIFY = _Paths.GMAIL_VERIFY;
   static const CREATE_PASS = _Paths.CREATE_PASS;
   static const RECOVERY_PASS = _Paths.RECOVERY_PASS;
@@ -46,6 +44,9 @@ abstract class Routes {
       _Paths.CUSTOMER_SERVICE_DETAILS_MAP;
   static const CUSTOMER_NOTE = _Paths.CUSTOMER_NOTE;
   static const CUSTOMER_CHAT_ROOM = _Paths.CUSTOMER_CHAT_ROOM;
+  static const CUSTOMER_COMPLETE_SERVICE_DETAILS =
+      _Paths.CUSTOMER_COMPLETE_SERVICE_DETAILS;
+  static const CUSTOMER_RATING = _Paths.CUSTOMER_RATING;
 }
 
 abstract class _Paths {
@@ -91,4 +92,7 @@ abstract class _Paths {
   static const OPERATOR_ALL_SERVICES = '/operator-all-services';
   static const OPERATOR_SERVICES_DETAILS = '/operator-services-details';
   static const OPERATOR_FEEDBACK_SERVICE = '/operator-feedback-service';
+  static const CUSTOMER_COMPLETE_SERVICE_DETAILS =
+      '/customer-complete-service-details';
+  static const CUSTOMER_RATING = '/customer-rating';
 }

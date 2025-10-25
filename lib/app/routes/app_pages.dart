@@ -2,10 +2,12 @@ import 'package:get/get.dart';
 
 import '../customer/customer_bottom_navi_bar/bindings/customer_bottom_navi_bar_binding.dart';
 import '../customer/customer_bottom_navi_bar/views/customer_bottom_navi_bar_view.dart';
-import '../customer/customer_history/bindings/customer_history_binding.dart';
-import '../customer/customer_history/views/customer_history_view.dart';
 import '../customer/customer_chat_room/bindings/customer_chat_room_binding.dart';
 import '../customer/customer_chat_room/views/customer_chat_room_view.dart';
+import '../customer/customer_complete_service_details/bindings/customer_complete_service_details_binding.dart';
+import '../customer/customer_complete_service_details/views/customer_complete_service_details_view.dart';
+import '../customer/customer_history/bindings/customer_history_binding.dart';
+import '../customer/customer_history/views/customer_history_view.dart';
 import '../customer/customer_home/bindings/customer_home_binding.dart';
 import '../customer/customer_home/views/customer_home_view.dart';
 import '../customer/customer_note/bindings/customer_note_binding.dart';
@@ -14,6 +16,8 @@ import '../customer/customer_orders/bindings/customer_orders_binding.dart';
 import '../customer/customer_orders/views/customer_orders_view.dart';
 import '../customer/customer_profile/bindings/customer_profile_binding.dart';
 import '../customer/customer_profile/views/customer_profile_view.dart';
+import '../customer/customer_rating/bindings/customer_rating_binding.dart';
+import '../customer/customer_rating/views/customer_rating_view.dart';
 import '../customer/customer_registration/customer_info1/bindings/customer_info1_binding.dart';
 import '../customer/customer_registration/customer_info1/views/customer_info1_view.dart';
 import '../customer/customer_registration/customer_info2/bindings/customer_info2_binding.dart';
@@ -24,8 +28,6 @@ import '../customer/customer_schedule/bindings/customer_schedule_binding.dart';
 import '../customer/customer_schedule/views/customer_schedule_view.dart';
 import '../customer/customer_service_details/bindings/customer_service_details_binding.dart';
 import '../customer/customer_service_details/views/customer_service_details_view.dart';
-import '../customer/customer_support/bindings/customer_support_binding.dart';
-import '../customer/customer_support/views/customer_support_view.dart';
 import '../customer/customer_service_details_map/bindings/customer_service_details_map_binding.dart';
 import '../customer/customer_service_details_map/views/customer_service_details_map_view.dart';
 import '../customer/customer_service_traking/bindings/customer_service_traking_binding.dart';
@@ -288,6 +290,23 @@ class AppPages {
       name: _Paths.OPERATOR_FEEDBACK_SERVICE,
       page: () => const OperatorFeedbackServiceView(),
       binding: OperatorFeedbackServiceBinding(),
+    ),
+    GetPage(
+      name: _Paths.CUSTOMER_COMPLETE_SERVICE_DETAILS,
+      page: () => const CustomerCompleteServiceDetailsView(),
+      binding: CustomerCompleteServiceDetailsBinding(),
+      children: [
+        GetPage(
+          name: _Paths.CUSTOMER_COMPLETE_SERVICE_DETAILS,
+          page: () => const CustomerCompleteServiceDetailsView(),
+          binding: CustomerCompleteServiceDetailsBinding(),
+        ),
+      ],
+    ),
+    GetPage(
+      name: _Paths.CUSTOMER_RATING,
+      page: () => const CustomerRatingView(),
+      binding: CustomerRatingBinding(),
     ),
   ];
 }
