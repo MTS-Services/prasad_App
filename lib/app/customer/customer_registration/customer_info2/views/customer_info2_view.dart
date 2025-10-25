@@ -79,7 +79,7 @@ class CustomerInfo2View extends GetView<CustomerInfo2Controller> {
                   items: controller.items,
                   selectedValue: controller.selectedValue.value,
                   onChanged: controller.onSelectedItem,
-                ),)
+                ),),
 
               ],
             ),

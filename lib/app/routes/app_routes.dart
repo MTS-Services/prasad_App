@@ -28,7 +28,7 @@ abstract class Routes {
   static const CUSTOMER_SERVICE_DETAILS = _Paths.CUSTOMER_SERVICE_DETAILS;
   static const OPERATOR_ALL_SERVICES = _Paths.OPERATOR_ALL_SERVICES;
   static const OPERATOR_SERVICES_DETAILS = _Paths.OPERATOR_SERVICES_DETAILS;
-  static const OPERATOR_FEEDBACK_SERVICE =_Paths.OPERATOR_FEEDBACK_SERVICE;
+  static const OPERATOR_FEEDBACK_SERVICE = _Paths.OPERATOR_FEEDBACK_SERVICE;
   static const GMAIL_VERIFY = _Paths.GMAIL_VERIFY;
   static const CREATE_PASS = _Paths.CREATE_PASS;
   static const RECOVERY_PASS = _Paths.RECOVERY_PASS;
@@ -46,10 +46,18 @@ abstract class Routes {
       _Paths.CUSTOMER_SERVICE_DETAILS_MAP;
   static const CUSTOMER_NOTE = _Paths.CUSTOMER_NOTE;
   static const CUSTOMER_CHAT_ROOM = _Paths.CUSTOMER_CHAT_ROOM;
+  static const OPERATOR_INFO1 = _Paths.OPERATOR_INFO1;
+  static const OPERATOR_DRONE_DETAILS = _Paths.OPERATOR_DRONE_DETAILS;
+  static const OPERATOR_CERTIFICATION = _Paths.OPERATOR_CERTIFICATION;
+  static const OPERETOR_EQUIPMENT_DETAILS = _Paths.OPERETOR_EQUIPMENT_DETAILS;
+  static const OPERETOR_EXPERIENCE_AND_RECORDS = _Paths.OPERETOR_EXPERIENCE_AND_RECORDS;
+  static const OPERETOR_PAYMENT_SETUP = _Paths.OPERETOR_PAYMENT_SETUP;
+  static const OPERETOR_WAITING_CONFIRMATION = _Paths.OPERETOR_WAITING_CONFIRMATION;
 }
 
 abstract class _Paths {
   _Paths._();
+
   static const CUSTOMER_HOME = '/customer-home';
   static const CUSTOMER_PROFILE = '/customer-profile';
   static const OPERATOR_PROFILE = '/operator-profile';
@@ -91,4 +99,12 @@ abstract class _Paths {
   static const OPERATOR_ALL_SERVICES = '/operator-all-services';
   static const OPERATOR_SERVICES_DETAILS = '/operator-services-details';
   static const OPERATOR_FEEDBACK_SERVICE = '/operator-feedback-service';
+  static const OPERATOR_INFO1 = '/operator-info1';
+  static const OPERATOR_DRONE_DETAILS = '/operator-drone-details';
+  static const OPERATOR_CERTIFICATION = '/operator-certification';
+  static const OPERETOR_EQUIPMENT_DETAILS = '/operetor-equipment-details';
+  static const OPERETOR_EXPERIENCE_AND_RECORDS =
+      '/operetor-experience-and-records';
+  static const OPERETOR_PAYMENT_SETUP = '/operetor-payment-setup';
+  static const OPERETOR_WAITING_CONFIRMATION = '/operetor-waiting-confirmation';
 }
