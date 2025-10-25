@@ -29,6 +29,8 @@ abstract class Routes {
   static const CUSTOMER_SERVICE_DETAILS = _Paths.CUSTOMER_SERVICE_DETAILS;
   static const CUSTOMER_EDIT_PROFILE = _Paths.CUSTOMER_EDIT_PROFILE;
   static const LANGUAGE = _Paths.LANGUAGE;
+  static const OPERATOR_EDIT_PROFILE = _Paths.OPERATOR_EDIT_PROFILE;
+  static const Operator_LANGUAGE =  _Paths.LANGUAGE;
 }
 
 abstract class _Paths {
@@ -57,5 +59,7 @@ abstract class _Paths {
   static const CUSTOMER_ALL_SERVICES = '/customer-all-services';
   static const CUSTOMER_SERVICE_DETAILS = '/customer-service-details';
   static const CUSTOMER_EDIT_PROFILE = '/customer-edit-profile';
-  static const LANGUAGE = '/language';
+  static const LANGUAGE = '/operator_language';
+  static const OPERATOR_EDIT_PROFILE = '/operator-edit-profile';
+  static const Operator_LANGUAGE = '/operator_language';
 }

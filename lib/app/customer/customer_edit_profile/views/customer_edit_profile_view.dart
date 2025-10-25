@@ -68,11 +68,11 @@ class CustomerEditProfileView extends GetView<CustomerEditProfileController> {
                   Text('Email', style: AppTextStyles.regular16),
                   buildTextFormField(controller.emailController, 'Email'),
                   const SizedBox(height: 7),
-                  Text('Geo Radius 1', style: AppTextStyles.regular16),
-                  buildTextFormField(controller.geo1Controller, 'Geo 1'),
+                  Text('Geo Radius 1', style: AppTextStyles.regular16,),
+                  buildTextFormField(controller.geo1Controller, 'Geo 1',suffixIcon: Icons.location_on_outlined),
                   const SizedBox(height: 7),
                   Text('Geo Radius 2', style: AppTextStyles.regular16),
-                  buildTextFormField(controller.geo2Controller, 'Geo 2'),
+                  buildTextFormField(controller.geo2Controller, 'Geo 2',suffixIcon: Icons.location_on_outlined),
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
@@ -95,11 +95,12 @@ class CustomerEditProfileView extends GetView<CustomerEditProfileController> {
     );
   }
 
-  Widget buildTextFormField(TextEditingController controller ,String title, {bool obscureText = false}) {
+  Widget buildTextFormField(TextEditingController controller ,String title, {bool obscureText = false,IconData? suffixIcon,}) {
     return TextFormField(
                  controller: controller,
                   decoration: InputDecoration(
                     hintText: title,
+                      suffixIcon: suffixIcon != null ? Icon(suffixIcon) : null,
                     contentPadding: EdgeInsets.symmetric(horizontal: 12,vertical: 15),
                     filled: true,
                     fillColor: AppColors.whiteColor,

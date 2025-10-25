@@ -22,6 +22,8 @@ import '../customer/cutomer_notification/bindings/cutomer_notification_binding.d
 import '../customer/cutomer_notification/views/customer_notification_view.dart';
 import '../customer/language/bindings/language_binding.dart';
 import '../customer/language/views/language_view.dart';
+import '../operator/operator_edit_profile/bindings/operator_edit_profile_binding.dart';
+import '../operator/operator_edit_profile/views/operator_edit_profile_view.dart';
 import '../operator/operator_fleet/bindings/operator_fleet_binding.dart';
 import '../operator/operator_fleet/views/operator_fleet_view.dart';
 import '../operator/operator_history/bindings/operator_history_binding.dart';
@@ -54,7 +56,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.CUSTOMER_PROFILE;
+  static const INITIAL = Routes.OPERATOR_PROFILE;
 
   static final routes = [
     GetPage(
@@ -176,6 +178,18 @@ class AppPages {
       name: _Paths.LANGUAGE,
       page: () => const LanguageView(),
       binding: LanguageBinding(),
+      children: [
+        GetPage(
+          name: _Paths.LANGUAGE,
+          page: () => const LanguageView(),
+          binding: LanguageBinding(),
+        ),
+      ],
+    ),
+    GetPage(
+      name: _Paths.OPERATOR_EDIT_PROFILE,
+      page: () => const OperatorEditProfileView(),
+      binding: OperatorEditProfileBinding(),
     ),
   ];
 }
