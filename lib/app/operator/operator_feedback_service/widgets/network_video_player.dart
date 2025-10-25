@@ -1,10 +1,7 @@
-import 'dart:typed_data';
-
 import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:video_player/video_player.dart';
-import 'package:video_thumbnail/video_thumbnail.dart';
 
 class NetworkVideoPlayer extends StatefulWidget {
   final String videoUrl;
@@ -20,7 +17,6 @@ class _NetworkVideoPlayerState extends State<NetworkVideoPlayer> {
   ChewieController? _chewieController;
   bool _isLoading = true;
   bool _showPlayer = false;
-  Uint8List? _thumbnail;
 
   @override
   void initState() {
@@ -30,13 +26,6 @@ class _NetworkVideoPlayerState extends State<NetworkVideoPlayer> {
 
   Future<void> _initializeVideoPlayer() async {
     try {
-      _thumbnail = await VideoThumbnail.thumbnailData(
-        video: widget.videoUrl,
-        imageFormat: ImageFormat.PNG,
-        maxWidth: 400, // thumbnail size
-        quality: 80,
-      );
-
       _videoPlayerController = VideoPlayerController.network(widget.videoUrl);
       await _videoPlayerController.initialize();
 
@@ -44,6 +33,9 @@ class _NetworkVideoPlayerState extends State<NetworkVideoPlayer> {
         videoPlayerController: _videoPlayerController,
         autoPlay: false,
         looping: false,
+        allowFullScreen: true,
+        allowMuting: true,
+        showControls: true,
       );
 
       setState(() => _isLoading = false);
@@ -72,42 +64,61 @@ class _NetworkVideoPlayerState extends State<NetworkVideoPlayer> {
       child: _isLoading
           ? Center(child: CircularProgressIndicator(color: Colors.white))
           : !_showPlayer
-          ? Stack(
-              alignment: Alignment.center,
-              children: [
-                ClipRRect(
+              ? _buildPlaceholder()
+              : ClipRRect(
                   borderRadius: BorderRadius.circular(8.r),
-                  child: _thumbnail != null
-                      ? Image.memory(
-                          _thumbnail!,
-                          fit: BoxFit.cover,
-                          width: double.infinity,
-                        )
-                      : Container(color: Colors.black26),
+                  child: Chewie(controller: _chewieController!),
                 ),
-                GestureDetector(
-                  onTap: () {
-                    setState(() => _showPlayer = true);
-                  },
-                  child: Container(
-                    padding: EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.8),
-                      shape: BoxShape.circle,
-                    ),
-                    child: Icon(
-                      Icons.play_arrow,
-                      size: 40,
-                      color: Colors.black,
-                    ),
-                  ),
+    );
+  }
+
+  Widget _buildPlaceholder() {
+    return GestureDetector(
+      onTap: () {
+        setState(() => _showPlayer = true);
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.grey[900],
+          borderRadius: BorderRadius.circular(8.r),
+        ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                padding: EdgeInsets.all(16.r),
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(0.9),
+                  shape: BoxShape.circle,
                 ),
-              ],
-            )
-          : ClipRRect(
-              borderRadius: BorderRadius.circular(8.r),
-              child: Chewie(controller: _chewieController!),
-            ),
+                child: Icon(
+                  Icons.play_arrow,
+                  size: 40.r,
+                  color: Colors.black,
+                ),
+              ),
+              SizedBox(height: 12.h),
+              Text(
+                'Tap to play video',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              SizedBox(height: 4.h),
+              Text(
+                'Video content',
+                style: TextStyle(
+                  color: Colors.white70,
+                  fontSize: 12.sp,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
