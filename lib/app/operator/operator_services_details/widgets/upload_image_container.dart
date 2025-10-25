@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
 
-class ImageContainer extends StatelessWidget {
+class UploadImageContainer extends StatelessWidget {
   final int index;
   final XFile? imageFile;
   final VoidCallback onTap;
 
-  const ImageContainer({
+  const UploadImageContainer({
     super.key,
     required this.index,
     this.imageFile,
@@ -23,9 +23,7 @@ class ImageContainer extends StatelessWidget {
         decoration: BoxDecoration(
           color: const Color(0xffD9D9D9),
           borderRadius: BorderRadius.circular(8.r),
-          border: Border.all(
-            color: Colors.grey.shade300,
-          ),
+          border: Border.all(color: Colors.grey.shade300),
         ),
         child: imageFile != null
             ? ClipRRect(
@@ -41,14 +39,15 @@ class ImageContainer extends StatelessWidget {
             : Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.add_photo_alternate, size: 40.h, color: Colors.grey),
+                  Icon(
+                    Icons.add_photo_alternate,
+                    size: 40.h,
+                    color: Colors.grey,
+                  ),
                   SizedBox(height: 8.h),
                   Text(
                     'Add Image',
-                    style: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 12.sp,
-                    ),
+                    style: TextStyle(color: Colors.grey, fontSize: 12.sp),
                   ),
                 ],
               ),

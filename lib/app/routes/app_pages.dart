@@ -20,6 +20,8 @@ import '../customer/cutomer_notification/bindings/cutomer_notification_binding.d
 import '../customer/cutomer_notification/views/customer_notification_view.dart';
 import '../operator/operator_all_services/bindings/operator_all_services_binding.dart';
 import '../operator/operator_all_services/views/operator_all_services_view.dart';
+import '../operator/operator_feedback_service/bindings/operator_feedback_service_binding.dart';
+import '../operator/operator_feedback_service/views/operator_feedback_service_view.dart';
 import '../operator/operator_history/bindings/operator_history_binding.dart';
 import '../operator/operator_history/views/operator_history_view.dart';
 import '../operator/operator_home/bindings/operator_home_binding.dart';
@@ -169,6 +171,11 @@ class AppPages {
       name: _Paths.OPERATOR_SERVICES_DETAILS,
       page: () => const OperatorServicesDetailsView(),
       binding: OperatorServicesDetailsBinding(),
+    ),
+    GetPage(
+      name: _Paths.OPERATOR_FEEDBACK_SERVICE,
+      page: () => const OperatorFeedbackServiceView(),
+      binding: OperatorFeedbackServiceBinding(),
     ),
   ];
 }

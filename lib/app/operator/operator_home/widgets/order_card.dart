@@ -44,7 +44,7 @@ class OrderCard extends StatelessWidget {
         children: [
           Text(headerText, style: AppTextStyles.medium20),
           SizedBox(height: 10.h),
-          RadiusImage(imageUrl: imageUrl),
+          RadiusImage(imageUrl: imageUrl,hasHight: false,),
           SizedBox(height: 15.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

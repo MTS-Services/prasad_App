@@ -6,7 +6,7 @@ import 'package:prasad/app/data/app_text_styles.dart';
 import 'package:prasad/app/operator/operator_home/widgets/radius_image.dart';
 
 import '../controllers/operator_services_details_controller.dart';
-import '../widgets/image_container.dart';
+import '../widgets/upload_image_container.dart';
 import '../widgets/video_container.dart';
 
 class OperatorServicesDetailsView
@@ -26,6 +26,7 @@ class OperatorServicesDetailsView
                 BackButtonCard(onTap: () => Get.back()),
                 SizedBox(height: 10.h),
                 RadiusImage(
+                  hasHight: false,
                   imageUrl:
                       'https://plus.unsplash.com/premium_photo-1681488098851-e3913f3b1908?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bWFwfGVufDB8fDB8fHww&fm=jpg&q=60&w=3000',
                 ),
@@ -73,7 +74,7 @@ class OperatorServicesDetailsView
                     physics: NeverScrollableScrollPhysics(),
                     children: [
                       for (int i = 0; i < 4; i++)
-                        ImageContainer(
+                        UploadImageContainer(
                           index: i,
                           imageFile: controller.selectedImages.length > i
                               ? controller.selectedImages[i]
