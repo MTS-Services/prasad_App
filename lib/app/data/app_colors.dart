@@ -19,4 +19,6 @@ class AppColors{
   static const Color listBgColor = Color(0xFFF4F8F7);
   static const Color chatColor = Color(0xFFD7CFFF);
   static const Color chatBubbleColor = Color(0xFFF1F1F1);
+  static const Color darkGrayColor = Color(0xffF5F7FA);
+  static const Color white300 = Color(0xffBDBDBD);
 }
