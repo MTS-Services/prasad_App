@@ -36,4 +36,5 @@ class ImagePath {
   static const String loginLogo ='$baseUrl/login_logo.png';
   static const String waitingImage ='$baseUrl/waiting_image.jpg';
   static const String file ='$baseUrl/file.png';
+  static const String farmer ='$baseUrl/Farmer.png';
 }

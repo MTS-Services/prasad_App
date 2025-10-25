@@ -53,6 +53,9 @@ abstract class Routes {
   static const OPERETOR_EXPERIENCE_AND_RECORDS = _Paths.OPERETOR_EXPERIENCE_AND_RECORDS;
   static const OPERETOR_PAYMENT_SETUP = _Paths.OPERETOR_PAYMENT_SETUP;
   static const OPERETOR_WAITING_CONFIRMATION = _Paths.OPERETOR_WAITING_CONFIRMATION;
+  static const CUSTOMER_COMPLETE_SERVICE_DETAILS =
+      _Paths.CUSTOMER_COMPLETE_SERVICE_DETAILS;
+  static const CUSTOMER_RATING = _Paths.CUSTOMER_RATING;
 }
 
 abstract class _Paths {
@@ -107,4 +110,7 @@ abstract class _Paths {
       '/operetor-experience-and-records';
   static const OPERETOR_PAYMENT_SETUP = '/operetor-payment-setup';
   static const OPERETOR_WAITING_CONFIRMATION = '/operetor-waiting-confirmation';
+  static const CUSTOMER_COMPLETE_SERVICE_DETAILS =
+      '/customer-complete-service-details';
+  static const CUSTOMER_RATING = '/customer-rating';
 }

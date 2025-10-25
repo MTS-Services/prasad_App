@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prasad/app/data/app_colors.dart';
+import 'package:prasad/app/data/app_text_styles.dart';
 
 class ServiceCard extends StatelessWidget {
   final String imageUrl;
@@ -86,12 +87,15 @@ class ServiceCard extends StatelessWidget {
                 ),
                 ElevatedButton(
                   onPressed: onPressed,
-                  child: Text(
-                    buttonText,
-                    style: const TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    child: Text(
+                      buttonText,
+                      style: const TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
