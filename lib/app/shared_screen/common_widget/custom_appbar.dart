@@ -31,7 +31,7 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
       title: Text(
-        title ?? 'Hello Word ',
+        title ?? '',
         style: AppTextStyles.medium16.copyWith(color: Colors.black),
       ),
       actions: [
@@ -47,3 +47,5 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
+
+

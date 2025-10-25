@@ -11,4 +11,6 @@ class AppColors{
   static const Color notificationColor = Color(0xffEAEDF4);
   static const Color cardColor = Color(0xffF5F7FA);
   static const Color unseenColor = Color(0xffB18326);
+  static const Color darkGrayColor = Color(0xffF5F7FA);
+  static const Color white300 = Color(0xffBDBDBD);
 }

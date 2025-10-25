@@ -6,6 +6,7 @@ class ImagePath {
   static const String homeIcon = '$iconUrl/home.png';
   static const String historyIcon = '$iconUrl/history.png';
   static const String profileIcon = '$iconUrl/profile.png';
+  static const String logOut = '$iconUrl/log-out.png';
   static const String supportIcon = '$iconUrl/support.png';
   static const String serviceIcon = '$iconUrl/service.png';
   static const String paymentIcon = '$iconUrl/moneyIcon.png';
@@ -19,4 +20,6 @@ class ImagePath {
   static const String servicePng ='$baseUrl/service.png';
   static const String customerType ='$baseUrl/customer_type.png';
   static const String login_logo ='$baseUrl/login_logo.png';
+  static const String person ='$baseUrl/person.jpg';
+  static const String languageIcon ='$iconUrl/languageIcon.png';
 }

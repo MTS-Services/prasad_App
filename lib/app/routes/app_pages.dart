@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 
 import '../customer/customer_bottom_navi_bar/bindings/customer_bottom_navi_bar_binding.dart';
 import '../customer/customer_bottom_navi_bar/views/customer_bottom_navi_bar_view.dart';
+import '../customer/customer_edit_profile/bindings/customer_edit_profile_binding.dart';
+import '../customer/customer_edit_profile/views/customer_edit_profile_view.dart';
 import '../customer/customer_history/bindings/customer_history_binding.dart';
 import '../customer/customer_history/views/customer_history_view.dart';
 import '../customer/customer_home/bindings/customer_home_binding.dart';
@@ -10,18 +12,20 @@ import '../customer/customer_profile/bindings/customer_profile_binding.dart';
 import '../customer/customer_profile/views/customer_profile_view.dart';
 import '../customer/customer_service/bindings/customer_service_binding.dart';
 import '../customer/customer_service/views/customer_service_view.dart';
-import '../customer/customer_support/bindings/customer_support_binding.dart';
-import '../customer/customer_support/views/customer_support_view.dart';
-import '../operator/operator_fleet/bindings/operator_fleet_binding.dart';
-import '../operator/operator_fleet/views/operator_fleet_view.dart';
-import '../operator/operator_history/bindings/operator_history_binding.dart';
-import '../operator/operator_history/views/operator_history_view.dart';
 import '../customer/customer_service_details/bindings/customer_service_details_binding.dart';
 import '../customer/customer_service_details/views/customer_service_details_view.dart';
+import '../customer/customer_support/bindings/customer_support_binding.dart';
+import '../customer/customer_support/views/customer_support_view.dart';
 import '../customer/cutomer_all_services/bindings/cutomer_all_services_binding.dart';
 import '../customer/cutomer_all_services/views/customer_all_services_view.dart';
 import '../customer/cutomer_notification/bindings/cutomer_notification_binding.dart';
 import '../customer/cutomer_notification/views/customer_notification_view.dart';
+import '../customer/language/bindings/language_binding.dart';
+import '../customer/language/views/language_view.dart';
+import '../operator/operator_fleet/bindings/operator_fleet_binding.dart';
+import '../operator/operator_fleet/views/operator_fleet_view.dart';
+import '../operator/operator_history/bindings/operator_history_binding.dart';
+import '../operator/operator_history/views/operator_history_view.dart';
 import '../operator/operator_home/bindings/operator_home_binding.dart';
 import '../operator/operator_home/views/operator_home_view.dart';
 import '../operator/operator_operator_bottom_navi_bar/bindings/operator_operator_bottom_navi_bar_binding.dart';
@@ -50,7 +54,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.ONBOARDING1;
+  static const INITIAL = Routes.CUSTOMER_PROFILE;
 
   static final routes = [
     GetPage(
@@ -60,7 +64,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.CUSTOMER_PROFILE,
-      page: () => const CustomerProfileView(),
+      page: () => CustomerProfileView(),
       binding: CustomerProfileBinding(),
     ),
     GetPage(
@@ -162,6 +166,16 @@ class AppPages {
       name: _Paths.CUSTOMER_SERVICE_DETAILS,
       page: () => const CustomerServiceDetailsView(),
       binding: CustomerServiceDetailsBinding(),
+    ),
+    GetPage(
+      name: _Paths.CUSTOMER_EDIT_PROFILE,
+      page: () => const CustomerEditProfileView(),
+      binding: CustomerEditProfileBinding(),
+    ),
+    GetPage(
+      name: _Paths.LANGUAGE,
+      page: () => const LanguageView(),
+      binding: LanguageBinding(),
     ),
   ];
 }
