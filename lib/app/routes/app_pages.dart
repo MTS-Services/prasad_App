@@ -4,8 +4,14 @@ import '../customer/customer_bottom_navi_bar/bindings/customer_bottom_navi_bar_b
 import '../customer/customer_bottom_navi_bar/views/customer_bottom_navi_bar_view.dart';
 import '../customer/customer_history/bindings/customer_history_binding.dart';
 import '../customer/customer_history/views/customer_history_view.dart';
+import '../customer/customer_chat_room/bindings/customer_chat_room_binding.dart';
+import '../customer/customer_chat_room/views/customer_chat_room_view.dart';
 import '../customer/customer_home/bindings/customer_home_binding.dart';
 import '../customer/customer_home/views/customer_home_view.dart';
+import '../customer/customer_note/bindings/customer_note_binding.dart';
+import '../customer/customer_note/views/customer_note_view.dart';
+import '../customer/customer_orders/bindings/customer_orders_binding.dart';
+import '../customer/customer_orders/views/customer_orders_view.dart';
 import '../customer/customer_profile/bindings/customer_profile_binding.dart';
 import '../customer/customer_profile/views/customer_profile_view.dart';
 import '../customer/customer_registration/customer_info1/bindings/customer_info1_binding.dart';
@@ -14,10 +20,16 @@ import '../customer/customer_registration/customer_info2/bindings/customer_info2
 import '../customer/customer_registration/customer_info2/views/customer_info2_view.dart';
 import '../customer/customer_registration/customer_service_location/bindings/customer_service_location_binding.dart';
 import '../customer/customer_registration/customer_service_location/views/customer_service_location_view.dart';
-import '../customer/customer_service/bindings/customer_service_binding.dart';
-import '../customer/customer_service/views/customer_service_view.dart';
+import '../customer/customer_schedule/bindings/customer_schedule_binding.dart';
+import '../customer/customer_schedule/views/customer_schedule_view.dart';
 import '../customer/customer_service_details/bindings/customer_service_details_binding.dart';
 import '../customer/customer_service_details/views/customer_service_details_view.dart';
+import '../customer/customer_support/bindings/customer_support_binding.dart';
+import '../customer/customer_support/views/customer_support_view.dart';
+import '../customer/customer_service_details_map/bindings/customer_service_details_map_binding.dart';
+import '../customer/customer_service_details_map/views/customer_service_details_map_view.dart';
+import '../customer/customer_service_traking/bindings/customer_service_traking_binding.dart';
+import '../customer/customer_service_traking/views/customer_service_traking_view.dart';
 import '../customer/customer_support/bindings/customer_support_binding.dart';
 import '../customer/customer_support/views/customer_support_view.dart';
 import '../customer/cutomer_all_services/bindings/cutomer_all_services_binding.dart';
@@ -74,7 +86,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.ONBOARDING1;
+  static const INITIAL = Routes.CUSTOMER_BOTTOM_NAVI_BAR;
 
   static final routes = [
     GetPage(
@@ -121,11 +133,6 @@ class AppPages {
       name: _Paths.CUSTOMER_HISTORY,
       page: () => const CustomerHistoryView(),
       binding: CustomerHistoryBinding(),
-    ),
-    GetPage(
-      name: _Paths.CUSTOMER_SERVICE,
-      page: () => const CustomerServiceView(),
-      binding: CustomerServiceBinding(),
     ),
     GetPage(
       name: _Paths.CUSTOMER_SUPPORT,
@@ -181,6 +188,41 @@ class AppPages {
       name: _Paths.CUSTOMER_SERVICE_DETAILS,
       page: () => const CustomerServiceDetailsView(),
       binding: CustomerServiceDetailsBinding(),
+    ),
+    GetPage(
+      name: _Paths.CUSTOMER_SCHEDULE,
+      page: () => const CustomerScheduleView(),
+      binding: CustomerScheduleBinding(),
+    ),
+    GetPage(
+      name: _Paths.CUSTOMER_ORDERS,
+      page: () => const CustomerOrdersView(),
+      binding: CustomerOrdersBinding(),
+    ),
+    GetPage(
+      name: _Paths.CUSTOMER_SERVICE_TRAKING,
+      page: () => const CustomerServiceTrakingView(),
+      binding: CustomerServiceTrakingBinding(),
+    ),
+    GetPage(
+      name: _Paths.CUSTOMER_SERVICE_DETAILS_MAP,
+      page: () => const CustomerServiceDetailsMapView(),
+      binding: CustomerServiceDetailsMapBinding(),
+    ),
+    GetPage(
+      name: _Paths.CUSTOMER_NOTE,
+      page: () => const CustomerNoteView(),
+      binding: CustomerNoteBinding(),
+    ),
+    GetPage(
+      name: _Paths.CUSTOMER_SUPPORT,
+      page: () => const CustomerSupportView(),
+      binding: CustomerSupportBinding(),
+    ),
+    GetPage(
+      name: _Paths.CUSTOMER_CHAT_ROOM,
+      page: () => const CustomerChatRoomView(),
+      binding: CustomerChatRoomBinding(),
     ),
     GetPage(
       name: _Paths.GMAIL_VERIFY,

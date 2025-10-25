@@ -16,7 +16,6 @@ abstract class Routes {
   static const ONBOARDING3 = _Paths.ONBOARDING3;
   static const CUSTOMER_BOTTOM_NAVI_BAR = _Paths.CUSTOMER_BOTTOM_NAVI_BAR;
   static const CUSTOMER_HISTORY = _Paths.CUSTOMER_HISTORY;
-  static const CUSTOMER_SERVICE = _Paths.CUSTOMER_SERVICE;
   static const CUSTOMER_SUPPORT = _Paths.CUSTOMER_SUPPORT;
   static const OPERATOR_SERVICE = _Paths.OPERATOR_SERVICE;
   static const OPERATOR_HISTORY = _Paths.OPERATOR_HISTORY;
@@ -40,6 +39,13 @@ abstract class Routes {
   static const CUSTOMER_INFO1 = _Paths.CUSTOMER_INFO1;
   static const CUSTOMER_SERVICE_LOCATION = _Paths.CUSTOMER_SERVICE_LOCATION;
   static const CUSTOMER_INFO2 = _Paths.CUSTOMER_INFO2;
+  static const CUSTOMER_SCHEDULE = _Paths.CUSTOMER_SCHEDULE;
+  static const CUSTOMER_ORDERS = _Paths.CUSTOMER_ORDERS;
+  static const CUSTOMER_SERVICE_TRAKING = _Paths.CUSTOMER_SERVICE_TRAKING;
+  static const CUSTOMER_SERVICE_DETAILS_MAP =
+      _Paths.CUSTOMER_SERVICE_DETAILS_MAP;
+  static const CUSTOMER_NOTE = _Paths.CUSTOMER_NOTE;
+  static const CUSTOMER_CHAT_ROOM = _Paths.CUSTOMER_CHAT_ROOM;
 }
 
 abstract class _Paths {
@@ -56,7 +62,6 @@ abstract class _Paths {
   static const ONBOARDING3 = '/onboarding3';
   static const CUSTOMER_BOTTOM_NAVI_BAR = '/customer-bottom-navi-bar';
   static const CUSTOMER_HISTORY = '/customer-history';
-  static const CUSTOMER_SERVICE = '/customer-service';
   static const CUSTOMER_SUPPORT = '/customer-support';
   static const OPERATOR_SERVICE = '/operator-service';
   static const OPERATOR_HISTORY = '/operator-history';
@@ -67,6 +72,12 @@ abstract class _Paths {
   static const CUSTOMER_NOTIFICATION = '/customer-notification';
   static const CUSTOMER_ALL_SERVICES = '/customer-all-services';
   static const CUSTOMER_SERVICE_DETAILS = '/customer-service-details';
+  static const CUSTOMER_SCHEDULE = '/customer-schedule';
+  static const CUSTOMER_ORDERS = '/customer-orders';
+  static const CUSTOMER_SERVICE_TRAKING = '/customer-service-traking';
+  static const CUSTOMER_SERVICE_DETAILS_MAP = '/customer-service-details-map';
+  static const CUSTOMER_NOTE = '/customer-note';
+  static const CUSTOMER_CHAT_ROOM = '/customer-chat-room';
   static const GMAIL_VERIFY = '/gmail-verify';
   static const CREATE_PASS = '/create-pass';
   static const RECOVERY_PASS = '/recovery-pass';

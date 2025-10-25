@@ -103,7 +103,9 @@ class CustomerServiceDetailsView
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.toNamed("/customer-schedule");
+                    },
                     child: Text(
                       "Create an order",
                       style: TextStyle(fontSize: 14.sp),

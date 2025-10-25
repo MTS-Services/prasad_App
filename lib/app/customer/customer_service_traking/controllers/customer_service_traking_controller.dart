@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
-class CustomerServiceController extends GetxController {
-  //TODO: Implement CustomerServiceController
+class CustomerServiceTrakingController extends GetxController {
+  //TODO: Implement CustomerServiceTrakingController
 
   final count = 0.obs;
   @override
