@@ -11,4 +11,7 @@ class ImagePath{
   static const String cardPng ='$baseUrl/cardPng.png';
   static const String googlePay ='$baseUrl/googlePng.png';
   static const String mapPng ='$baseUrl/map.png';
+  static const String support ='$baseUrl/support.png';
+  static const String liveChat ='$baseUrl/liveChat.png';
+  static const String liveCall ='$baseUrl/liveCall.png';
 }

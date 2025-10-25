@@ -21,6 +21,7 @@ abstract class Routes {
       _Paths.CUSTOMER_SERVICE_DETAILS_MAP;
   static const CUSTOMER_NOTE = _Paths.CUSTOMER_NOTE;
   static const CUSTOMER_SUPPORT = _Paths.CUSTOMER_SUPPORT;
+  static const CUSTOMER_CHAT_ROOM = _Paths.CUSTOMER_CHAT_ROOM;
 }
 
 abstract class _Paths {
@@ -41,4 +42,5 @@ abstract class _Paths {
   static const CUSTOMER_SERVICE_DETAILS_MAP = '/customer-service-details-map';
   static const CUSTOMER_NOTE = '/customer-note';
   static const CUSTOMER_SUPPORT = '/customer-support';
+  static const CUSTOMER_CHAT_ROOM = '/customer-chat-room';
 }

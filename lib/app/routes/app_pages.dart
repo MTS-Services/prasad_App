@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../customer/customer_chat_room/bindings/customer_chat_room_binding.dart';
+import '../customer/customer_chat_room/views/customer_chat_room_view.dart';
 import '../customer/customer_home/bindings/customer_home_binding.dart';
 import '../customer/customer_home/views/customer_home_view.dart';
 import '../customer/customer_note/bindings/customer_note_binding.dart';
@@ -120,6 +122,11 @@ class AppPages {
       name: _Paths.CUSTOMER_SUPPORT,
       page: () => const CustomerSupportView(),
       binding: CustomerSupportBinding(),
+    ),
+    GetPage(
+      name: _Paths.CUSTOMER_CHAT_ROOM,
+      page: () => const CustomerChatRoomView(),
+      binding: CustomerChatRoomBinding(),
     ),
   ];
 }

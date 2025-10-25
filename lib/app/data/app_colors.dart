@@ -13,4 +13,7 @@ class AppColors{
   static const Color trackingColor = Color(0xffD6E1EF);
   static const Color circularColor = Color(0xFFB5F38C);
   static const Color buttonColor = Color(0xFFFFC107);
+  static const Color listBgColor = Color(0xFFF4F8F7);
+  static const Color chatColor = Color(0xFFD7CFFF);
+  static const Color chatBubbleColor = Color(0xFFF1F1F1);
 }
