@@ -24,6 +24,7 @@ class WelcomeHeader extends StatelessWidget {
         borderRadius: BorderRadius.circular(8.r),
       ),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Expanded(
             child: Column(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prasad/app/data/app_text_styles.dart';
 
 class SectionHeader extends StatelessWidget {
   final String title;
@@ -17,23 +18,12 @@ class SectionHeader extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
-          title,
-          style: const TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            color: Colors.black87,
-          ),
-        ),
+        Text(title, style: AppTextStyles.bold24),
         GestureDetector(
           onTap: onTap,
           child: Text(
             actionText,
-            style: const TextStyle(
-              fontSize: 16,
-              color: Colors.green,
-              fontWeight: FontWeight.w600,
-            ),
+            style: AppTextStyles.medium16.apply(color: Colors.green),
           ),
         ),
       ],

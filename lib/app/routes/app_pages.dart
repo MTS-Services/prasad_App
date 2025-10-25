@@ -24,8 +24,10 @@ import '../customer/cutomer_all_services/bindings/cutomer_all_services_binding.d
 import '../customer/cutomer_all_services/views/customer_all_services_view.dart';
 import '../customer/cutomer_notification/bindings/cutomer_notification_binding.dart';
 import '../customer/cutomer_notification/views/customer_notification_view.dart';
-import '../operator/operator_fleet/bindings/operator_fleet_binding.dart';
-import '../operator/operator_fleet/views/operator_fleet_view.dart';
+import '../operator/operator_all_services/bindings/operator_all_services_binding.dart';
+import '../operator/operator_all_services/views/operator_all_services_view.dart';
+import '../operator/operator_feedback_service/bindings/operator_feedback_service_binding.dart';
+import '../operator/operator_feedback_service/views/operator_feedback_service_view.dart';
 import '../operator/operator_history/bindings/operator_history_binding.dart';
 import '../operator/operator_history/views/operator_history_view.dart';
 import '../operator/operator_home/bindings/operator_home_binding.dart';
@@ -38,6 +40,8 @@ import '../operator/operator_profile/bindings/operator_profile_binding.dart';
 import '../operator/operator_profile/views/operator_profile_view.dart';
 import '../operator/operator_service/bindings/operator_service_binding.dart';
 import '../operator/operator_service/views/operator_service_view.dart';
+import '../operator/operator_services_details/bindings/operator_services_details_binding.dart';
+import '../operator/operator_services_details/views/operator_services_details_view.dart';
 import '../shared_screen/auth/confirm_your_gmail/bindings/confirm_your_gmail_binding.dart';
 import '../shared_screen/auth/confirm_your_gmail/views/confirm_your_gmail_view.dart';
 import '../shared_screen/auth/create_pass/bindings/create_pass_binding.dart';
@@ -70,7 +74,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.CUSTOMER_INFO1;
+  static const INITIAL = Routes.ONBOARDING1;
 
   static final routes = [
     GetPage(
@@ -142,11 +146,6 @@ class AppPages {
       name: _Paths.OPERATOR_PAYMENT,
       page: () => const OperatorPaymentView(),
       binding: OperatorPaymentBinding(),
-    ),
-    GetPage(
-      name: _Paths.OPERATOR_FLEET,
-      page: () => const OperatorFleetView(),
-      binding: OperatorFleetBinding(),
     ),
     GetPage(
       name: _Paths.OPERATOR_OPERATOR_BOTTOM_NAVI_BAR,
@@ -232,6 +231,21 @@ class AppPages {
       name: _Paths.CUSTOMER_INFO2,
       page: () => const CustomerInfo2View(),
       binding: CustomerInfo2Binding(),
+    ),
+    GetPage(
+      name: _Paths.OPERATOR_ALL_SERVICES,
+      page: () => const OperatorAllServicesView(),
+      binding: OperatorAllServicesBinding(),
+    ),
+    GetPage(
+      name: _Paths.OPERATOR_SERVICES_DETAILS,
+      page: () => const OperatorServicesDetailsView(),
+      binding: OperatorServicesDetailsBinding(),
+    ),
+    GetPage(
+      name: _Paths.OPERATOR_FEEDBACK_SERVICE,
+      page: () => const OperatorFeedbackServiceView(),
+      binding: OperatorFeedbackServiceBinding(),
     ),
   ];
 }

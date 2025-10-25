@@ -2,24 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
-import 'package:prasad/app/data/app_text_styles.dart';
+import 'package:prasad/app/customer/cutomer_notification/widget/back_button_card.dart';
 
 import '../../operator_home/widgets/order_card.dart';
-import '../controllers/operator_service_controller.dart';
+import '../controllers/operator_all_services_controller.dart';
 
-class OperatorServiceView extends GetView<OperatorServiceController> {
-  const OperatorServiceView({super.key});
+class OperatorAllServicesView extends GetView<OperatorAllServicesController> {
+  const OperatorAllServicesView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 15.h),
+            padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 15.h),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Active', style: AppTextStyles.bold24),
+                BackButtonCard(onTap: () => Get.back()),
                 SizedBox(height: 10.h),
                 ListView.builder(
                   itemCount: 3,
@@ -36,9 +36,9 @@ class OperatorServiceView extends GetView<OperatorServiceController> {
                     headerText: 'ORD-YYYYMMDD-XXXX',
                     imageUrl:
                         'https://media.istockphoto.com/id/1135210442/vector/blue-political-world-map-with-country-borders-and-white-state-name-labels-hand-drawn.jpg?s=612x612&w=0&k=20&c=lgrbr-46iQQUBTcCHau3I_JT2Zfsjoauw43iw6wwCwY=',
-                    acceptOnPress: () =>
-                        Get.toNamed('/operator-services-details'),
-                    isAccepted: false,
+                    acceptOnPress: () {},
+                    declineOnpress: () {},
+                    isAccepted: true,
                   ),
                 ),
               ],
