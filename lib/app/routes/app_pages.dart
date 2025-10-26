@@ -113,7 +113,7 @@ part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
-  static const INITIAL = Routes.OPERATOR_INFO1;
+  static const INITIAL = Routes.OPERATOR_BOTTOM_NAVI_BAR;
   static final routes = [
     GetPage(
       name: _Paths.CUSTOMER_HOME,

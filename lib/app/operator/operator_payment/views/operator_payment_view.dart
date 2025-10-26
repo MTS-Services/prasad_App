@@ -3,11 +3,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
 import 'package:prasad/app/data/app_text_styles.dart';
+import 'package:prasad/app/operator/operator_payment/widgets/email_alert_dialog.dart';
 
 import '../controllers/operator_payment_controller.dart';
 import '../widgets/day_dropdown.dart';
+import '../widgets/otp_alartdialog.dart';
 import '../widgets/payment_container.dart';
 import '../widgets/payment_info_container.dart';
+import '../widgets/payment_method_dialog.dart';
+import '../widgets/success_alartdialog.dart';
 
 class OperatorPaymentView extends GetView<OperatorPaymentController> {
   const OperatorPaymentView({super.key});
@@ -72,7 +76,41 @@ class OperatorPaymentView extends GetView<OperatorPaymentController> {
                   secondaryAccountNumber: '*****_*****_1234',
                   primaryStatus: 'primary',
                   secondryStatus: 'Secondry',
-                  newPaymentOnPressed: () {},
+                  newPaymentOnPressed: () => showDialog(
+                    context: context,
+                    builder: (context) => PaymentMethodDialog(
+                      onPlaceOrder: () {
+                        Navigator.of(context).pop();
+                        showDialog(
+                          context: context,
+                          builder: (context) {
+                            return EmailAlertDialog(
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                                showDialog(
+                                  context: context,
+                                  builder: (context) => OtpAlertDialog(
+                                    controller: controller,
+                                    resendOnTap: () {},
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                      showDialog(
+                                        context: context,
+                                        builder: (context) =>
+                                            SuccessAlertDialog(
+                                              onPressed: () {},
+                                            ),
+                                      );
+                                    },
+                                  ),
+                                );
+                              },
+                            );
+                          },
+                        );
+                      },
+                    ),
+                  ),
                 ),
                 SizedBox(height: 10.h),
                 SizedBox(
@@ -93,3 +131,4 @@ class OperatorPaymentView extends GetView<OperatorPaymentController> {
     );
   }
 }
+
