@@ -93,7 +93,7 @@ class OperatorEditProfileView extends GetView<OperatorEditProfileController> {
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {},
-                      child: Text('Add a new service'),
+                      child: Text('Add a new service  +'),
                     ),
                   ),
                   const SizedBox(height: 7),

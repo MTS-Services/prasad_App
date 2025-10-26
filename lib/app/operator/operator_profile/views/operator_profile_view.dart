@@ -85,6 +85,7 @@ class OperatorProfileView extends GetView<OperatorProfileController> {
                   const SizedBox(height: 7),
                   listTileContainer(
                     onTap: (){
+                      Get.toNamed(Routes.ASSET_TYPE_DRONE);
                     },
                     imagePath: ImagePath.languageIcon,
                     title: 'Asset Type',
