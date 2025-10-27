@@ -36,18 +36,25 @@ import '../customer/customer_service_traking/bindings/customer_service_traking_b
 import '../customer/customer_service_traking/views/customer_service_traking_view.dart';
 import '../customer/customer_support/bindings/customer_support_binding.dart';
 import '../customer/customer_support/bindings/customer_support_binding.dart';
-import '../customer/customer_support/views/customer_support_view.dart';
-import '../customer/customer_support/views/customer_support_view.dart';
 import '../customer/customer_support/bindings/customer_support_binding.dart';
+import '../customer/customer_support/views/customer_support_view.dart';
+import '../customer/customer_support/views/customer_support_view.dart';
 import '../customer/customer_support/views/customer_support_view.dart';
 import '../customer/cutomer_all_services/bindings/cutomer_all_services_binding.dart';
 import '../customer/cutomer_all_services/views/customer_all_services_view.dart';
 import '../customer/cutomer_notification/bindings/cutomer_notification_binding.dart';
 import '../customer/cutomer_notification/views/customer_notification_view.dart';
+import '../customer/language/bindings/language_binding.dart';
+import '../customer/language/views/language_view.dart';
 import '../operator/operator_all_services/bindings/operator_all_services_binding.dart';
 import '../operator/operator_all_services/views/operator_all_services_view.dart';
+import '../operator/operator_edit_profile/bindings/operator_edit_profile_binding.dart';
+import '../operator/operator_edit_profile/views/operator_edit_profile_view.dart';
 import '../operator/operator_feedback_service/bindings/operator_feedback_service_binding.dart';
 import '../operator/operator_feedback_service/views/operator_feedback_service_view.dart';
+import '../operator/operator_fleet/bindings/operator_fleet_binding.dart';
+import '../operator/operator_fleet/views/operator_fleet_view.dart';
+import '../operator/operator_history/bindings/operator_history_binding.dart';
 import '../operator/operator_history/bindings/operator_history_binding.dart';
 import '../operator/operator_history/views/operator_history_view.dart';
 import '../customer/language/bindings/language_binding.dart';
@@ -117,9 +124,7 @@ part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
-
-  static const INITIAL = Routes.OPERATOR_PROFILE;
-
+  static const INITIAL = Routes.OPERATOR_INFO1;
   static final routes = [
     GetPage(
       name: _Paths.CUSTOMER_HOME,
@@ -397,6 +402,11 @@ class AppPages {
       name: _Paths.ASSET_TYPE_EQUIPEMENT,
       page: () => const AssetTypeEquipementView(),
       binding: AssetTypeEquipementBinding(),
+    ),
+    GetPage(
+      name: _Paths.OPERATOR_FLEET,
+      page: () => const OperatorFleetView(),
+      binding: OperatorFleetBinding(),
     ),
   ];
 }
