@@ -115,7 +115,7 @@ part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
-  static const INITIAL = Routes.CUSTOMER_LANGUAGE;
+  static const INITIAL = Routes.ONBOARDING1;
   static final routes = [
     GetPage(
       name: _Paths.CUSTOMER_HOME,

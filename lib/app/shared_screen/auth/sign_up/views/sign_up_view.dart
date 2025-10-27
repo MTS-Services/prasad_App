@@ -38,6 +38,14 @@ class SignUpView extends GetView<SignUpController> {
                   name: 'Email',
                   hintText: 'example@gmail.com',
                 ),
+                CustomTextFieldLogin(
+                  name: 'Password',
+                  hintText: '*****',
+                ),
+                CustomTextFieldLogin(
+                  name: 'Confirm Password',
+                  hintText: '*******',
+                ),
 
                 SizedBox(height: 10.h),
                 Row(

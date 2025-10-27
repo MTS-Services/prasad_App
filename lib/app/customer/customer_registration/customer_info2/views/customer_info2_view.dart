@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
+import 'package:prasad/app/customer/customer_home/views/customer_home_view.dart';
 
 import '../../../../data/app_text_styles.dart';
 import '../../../../routes/app_pages.dart';
@@ -74,13 +75,20 @@ class CustomerInfo2View extends GetView<CustomerInfo2Controller> {
                     ),
                   ],
                 ),
-                Obx(() => CustomDropdownField(
-                  label: "Industry*",
-                  items: controller.items,
-                  selectedValue: controller.selectedValue.value,
-                  onChanged: controller.onSelectedItem,
-                ),),
-
+                Obx(
+                  () => CustomDropdownField(
+                    label: "Industry*",
+                    items: controller.items,
+                    selectedValue: controller.selectedValue.value,
+                    onChanged: controller.onSelectedItem,
+                  ),
+                ),
+                CustomElevatedAndOutlineButton(
+                  elevateText: "Confirm Registration",
+                  outlineText: 'Add a New Service',
+                  elevatedOnPressed: () => Get.offAndToNamed(Routes.CUSTOMER_HOME),
+                  outlineOnPressed: (){},
+                ),
               ],
             ),
           ),

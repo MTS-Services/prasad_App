@@ -6,6 +6,7 @@ import 'package:prasad/app/data/app_colors.dart';
 import 'package:prasad/app/data/app_text_styles.dart';
 import 'package:prasad/app/data/image_path.dart';
 import 'package:prasad/app/routes/app_pages.dart';
+import 'package:prasad/app/shared_screen/auth/user_type/widget/type_card.dart';
 
 import '../../../common_widget/custom_text_field_login.dart';
 import '../controllers/login_controller.dart';
@@ -36,10 +37,12 @@ class LoginView extends GetView<LoginController> {
                   style: AppTextStyles.regular20,
                 ),
                 CustomTextFieldLogin(
+                  controller: controller.emailController,
                   name: 'Email',
                   hintText: 'example@gmail.com',
                 ),
                 CustomTextFieldLogin(
+                  controller: controller.passwordController,
                   name: 'Password',
                   hintText: 'Aex@8465',
                 ),
@@ -59,7 +62,22 @@ class LoginView extends GetView<LoginController> {
                       child: SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            final email = controller.emailController.text.trim();
+                            final password = controller.passwordController.text.trim();
+                            if (email == "customer@gmail.com" && password == "123456") {
+                              Get.offAllNamed(Routes.CUSTOMER_INFO1);
+                            } else if (email == "operator@gmail.com" && password == "123456") {
+                              Get.offAllNamed(Routes.OPERATOR_INFO1);
+                            } else {
+                              Get.snackbar(
+                                "Login Failed",
+                                "Invalid email or password",
+                                backgroundColor: Colors.redAccent,
+                                colorText: Colors.white,
+                              );
+                            }
+                          },
                           child: Text("Log In"),
                         ),
                       ),

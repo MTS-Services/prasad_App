@@ -6,11 +6,12 @@ import '../../data/app_text_styles.dart';
 class CustomTextFieldLogin extends StatelessWidget {
   final String name;
   final String hintText;
+  final TextEditingController? controller;
 
   const CustomTextFieldLogin({
     super.key,
     required this.name,
-    required this.hintText,
+    required this.hintText, this.controller,
   });
 
   @override
@@ -22,7 +23,9 @@ class CustomTextFieldLogin extends StatelessWidget {
           child: Text(name, style: AppTextStyles.medium16),
         ),
         SizedBox(height: 6.h),
-        TextFormField(decoration: InputDecoration(hintText: hintText)),
+        TextFormField(
+            controller: controller,
+            decoration: InputDecoration(hintText: hintText)),
       ],
     );
   }

@@ -1,7 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../data/app_colors.dart';
 import '../../../data/app_text_styles.dart';
 import '../../../data/image_path.dart';

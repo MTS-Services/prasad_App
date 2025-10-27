@@ -50,7 +50,7 @@ class GmailVerifyView extends GetView<GmailVerifyController> {
                         width: double.infinity,
                         child: ElevatedButton(
                           onPressed: () {
-                            Get.toNamed(Routes.CREATE_PASS);
+                            Get.toNamed(Routes.LOGIN);
                           },
                           child: Text("Next"),
                         ),

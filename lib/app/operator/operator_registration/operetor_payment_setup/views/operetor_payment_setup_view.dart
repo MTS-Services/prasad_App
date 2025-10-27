@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
 import 'package:prasad/app/data/app_text_styles.dart';
+import 'package:prasad/app/operator/operator_registration/operetor_payment_setup/widget/account_payment_info_add.dart';
 
 import '../../../../data/app_colors.dart';
 import '../../../../routes/app_pages.dart';
@@ -25,13 +26,11 @@ class OperetorPaymentSetupView extends GetView<OperetorPaymentSetupController> {
                 Text('Payment Setup', style: AppTextStyles.bold24),
                 Text('Set up secure payment for your earnings', style: AppTextStyles.regular16),
                 Text('Need Add payment',style: AppTextStyles.bold24,),
-                Text('Add a New Payment Method', style: AppTextStyles.medium16),
-
-
+                AccountPaymentInfoAdd(),
                 CustomElevatedAndOutlineButton(
                   elevateText: "Submit for verification",
                   outlineText: "Back",
-                  elevatedOnPressed: () => Get.toNamed(Routes.OPERETOR_WAITING_CONFIRMATION),
+                  elevatedOnPressed: () => Get.offAndToNamed(Routes.OPERATOR_HOME),
                   outlineOnPressed: () => Get.back(),
                 ),
                 Row(

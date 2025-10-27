@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
+import 'package:prasad/app/shared_screen/auth/login/views/login_view.dart';
 
 import '../../../../data/app_colors.dart';
 import '../../../../data/app_text_styles.dart';
@@ -46,7 +47,7 @@ class UserTypeView extends GetView<UserTypeController> {
                         image: ImagePath.fieldAgentType,
                         isSelected: false,
                         onTap: () {
-                          print("Customer selected!");
+                          Get.to(LoginView());
                         },
                       ),
                     ),
@@ -57,7 +58,7 @@ class UserTypeView extends GetView<UserTypeController> {
                   image: ImagePath.operatorType,
                   isSelected: false,
                   onTap: (){
-
+                    Get.to(LoginView());
                   },
                 ),
               ],
