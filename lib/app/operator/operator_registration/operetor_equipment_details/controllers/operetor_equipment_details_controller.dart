@@ -1,23 +1,10 @@
 import 'package:get/get.dart';
 
 class OperetorEquipmentDetailsController extends GetxController {
-  //TODO: Implement OperetorEquipmentDetailsController
+  var items = ['Dhaka', 'Chattogram', 'Sylhet', 'Khulna'].obs;
+  var selectedValue = RxnString();
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  void onItemSelected(String? value) {
+    selectedValue.value = value;
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }

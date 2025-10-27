@@ -121,7 +121,7 @@ class OperatorDroneDetailsView extends GetView<OperatorDroneDetailsController> {
                   CustomElevatedAndOutlineButton(
                     elevateText: "Continue",
                     outlineText: "Back",
-                    elevatedOnPressed: () => Get.toNamed(Routes.OPERATOR_INFO1),
+                    elevatedOnPressed: () => Get.toNamed(Routes.OPERATOR_CERTIFICATION),
                     outlineOnPressed: () => Get.back(),
                   ),
                   Row(

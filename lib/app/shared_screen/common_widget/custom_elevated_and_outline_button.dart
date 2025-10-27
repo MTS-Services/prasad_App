@@ -17,22 +17,20 @@ class CustomElevatedAndOutlineButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 10.h),
-      child: Column(
+      child: Row(
         spacing: 16.w,
         children: [
-          SizedBox(
-            width: double.infinity,
-            child: ElevatedButton(
-              onPressed: elevatedOnPressed,
-              child: Text(elevateText),
-            ),
-          ),
-          SizedBox(
-            width: double.infinity,
+          Expanded(
             child: OutlinedButton(
               onPressed: outlineOnPressed,
               style: OutlinedButton.styleFrom(),
               child: Text(outlineText),
+            ),
+          ),
+          Expanded(
+            child: ElevatedButton(
+              onPressed: elevatedOnPressed,
+              child: Text(elevateText),
             ),
           ),
         ],
