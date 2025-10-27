@@ -86,7 +86,7 @@ class CustomerInfo2View extends GetView<CustomerInfo2Controller> {
                 CustomElevatedAndOutlineButton(
                   elevateText: "Confirm Registration",
                   outlineText: 'Add a New Service',
-                  elevatedOnPressed: () => Get.offAndToNamed(Routes.CUSTOMER_HOME),
+                  elevatedOnPressed: () => Get.offAndToNamed(Routes.CUSTOMER_BOTTOM_NAVI_BAR),
                   outlineOnPressed: (){},
                 ),
               ],

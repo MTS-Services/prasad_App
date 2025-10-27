@@ -30,7 +30,7 @@ class OperetorPaymentSetupView extends GetView<OperetorPaymentSetupController> {
                 CustomElevatedAndOutlineButton(
                   elevateText: "Submit for verification",
                   outlineText: "Back",
-                  elevatedOnPressed: () => Get.offAndToNamed(Routes.OPERATOR_HOME),
+                  elevatedOnPressed: () => Get.offAndToNamed(Routes.OPERATOR_BOTTOM_NAVI_BAR),
                   outlineOnPressed: () => Get.back(),
                 ),
                 Row(
