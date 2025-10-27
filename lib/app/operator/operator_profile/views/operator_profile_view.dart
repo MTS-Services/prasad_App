@@ -92,9 +92,7 @@ class OperatorProfileView extends GetView<OperatorProfileController> {
                   ),
                   const SizedBox(height: 7),
                   listTileContainer(
-                    onTap: (){
-                      Get.toNamed(Routes.Operator_LANGUAGE);
-                    },
+                    onTap: (){},
                     imagePath: ImagePath.languageIcon,
                     title: 'Language',
                   ),

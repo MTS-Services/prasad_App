@@ -59,11 +59,11 @@ abstract class Routes {
       _Paths.CUSTOMER_COMPLETE_SERVICE_DETAILS;
   static const CUSTOMER_RATING = _Paths.CUSTOMER_RATING;
   static const CUSTOMER_EDIT_PROFILE = _Paths.CUSTOMER_EDIT_PROFILE;
-  static const LANGUAGE = _Paths.LANGUAGE;
   static const OPERATOR_EDIT_PROFILE = _Paths.OPERATOR_EDIT_PROFILE;
-  static const Operator_LANGUAGE = _Paths.LANGUAGE;
   static const ASSET_TYPE_DRONE = _Paths.ASSET_TYPE_DRONE;
   static const ASSET_TYPE_EQUIPEMENT = _Paths.ASSET_TYPE_EQUIPEMENT;
+  static const CUSTOMER_LANGUAGE = _Paths.CUSTOMER_LANGUAGE;
+  static const OPERATOR_LANGUAGE = _Paths.OPERATOR_LANGUAGE;
 }
 
 abstract class _Paths {
@@ -122,9 +122,9 @@ abstract class _Paths {
       '/customer-complete-service-details';
   static const CUSTOMER_RATING = '/customer-rating';
   static const CUSTOMER_EDIT_PROFILE = '/customer-edit-profile';
-  static const LANGUAGE = '/operator_language';
   static const OPERATOR_EDIT_PROFILE = '/operator-edit-profile';
-  static const Operator_LANGUAGE = '/operator_language';
   static const ASSET_TYPE_DRONE = '/asset-type-drone';
   static const ASSET_TYPE_EQUIPEMENT = '/asset-type-equipement';
+  static const CUSTOMER_LANGUAGE = '/customer-language';
+  static const OPERATOR_LANGUAGE = '/operator-language';
 }

@@ -12,6 +12,8 @@ import '../customer/customer_history/bindings/customer_history_binding.dart';
 import '../customer/customer_history/views/customer_history_view.dart';
 import '../customer/customer_home/bindings/customer_home_binding.dart';
 import '../customer/customer_home/views/customer_home_view.dart';
+import '../customer/customer_language/bindings/customer_language_binding.dart';
+import '../customer/customer_language/views/customer_language_view.dart';
 import '../customer/customer_note/bindings/customer_note_binding.dart';
 import '../customer/customer_note/views/customer_note_view.dart';
 import '../customer/customer_orders/bindings/customer_orders_binding.dart';
@@ -35,17 +37,15 @@ import '../customer/customer_service_details_map/views/customer_service_details_
 import '../customer/customer_service_traking/bindings/customer_service_traking_binding.dart';
 import '../customer/customer_service_traking/views/customer_service_traking_view.dart';
 import '../customer/customer_support/bindings/customer_support_binding.dart';
-import '../customer/customer_support/bindings/customer_support_binding.dart';
-import '../customer/customer_support/bindings/customer_support_binding.dart';
-import '../customer/customer_support/views/customer_support_view.dart';
-import '../customer/customer_support/views/customer_support_view.dart';
 import '../customer/customer_support/views/customer_support_view.dart';
 import '../customer/cutomer_all_services/bindings/cutomer_all_services_binding.dart';
 import '../customer/cutomer_all_services/views/customer_all_services_view.dart';
 import '../customer/cutomer_notification/bindings/cutomer_notification_binding.dart';
 import '../customer/cutomer_notification/views/customer_notification_view.dart';
-import '../customer/language/bindings/language_binding.dart';
-import '../customer/language/views/language_view.dart';
+import '../operator/asset_type_drone/bindings/asset_type_drone_binding.dart';
+import '../operator/asset_type_drone/views/asset_type_drone_view.dart';
+import '../operator/asset_type_equipement/bindings/asset_type_equipement_binding.dart';
+import '../operator/asset_type_equipement/views/asset_type_equipement_view.dart';
 import '../operator/operator_all_services/bindings/operator_all_services_binding.dart';
 import '../operator/operator_all_services/views/operator_all_services_view.dart';
 import '../operator/operator_edit_profile/bindings/operator_edit_profile_binding.dart';
@@ -55,20 +55,11 @@ import '../operator/operator_feedback_service/views/operator_feedback_service_vi
 import '../operator/operator_fleet/bindings/operator_fleet_binding.dart';
 import '../operator/operator_fleet/views/operator_fleet_view.dart';
 import '../operator/operator_history/bindings/operator_history_binding.dart';
-import '../operator/operator_history/bindings/operator_history_binding.dart';
-import '../operator/operator_history/views/operator_history_view.dart';
-import '../customer/language/bindings/language_binding.dart';
-import '../customer/language/views/language_view.dart';
-import '../operator/asset_type_drone/bindings/asset_type_drone_binding.dart';
-import '../operator/asset_type_drone/views/asset_type_drone_view.dart';
-import '../operator/asset_type_equipement/bindings/asset_type_equipement_binding.dart';
-import '../operator/asset_type_equipement/views/asset_type_equipement_view.dart';
-import '../operator/operator_edit_profile/bindings/operator_edit_profile_binding.dart';
-import '../operator/operator_edit_profile/views/operator_edit_profile_view.dart';
-import '../operator/operator_history/bindings/operator_history_binding.dart';
 import '../operator/operator_history/views/operator_history_view.dart';
 import '../operator/operator_home/bindings/operator_home_binding.dart';
 import '../operator/operator_home/views/operator_home_view.dart';
+import '../operator/operator_language/bindings/operator_language_binding.dart';
+import '../operator/operator_language/views/operator_language_view.dart';
 import '../operator/operator_operator_bottom_navi_bar/bindings/operator_operator_bottom_navi_bar_binding.dart';
 import '../operator/operator_operator_bottom_navi_bar/views/operator_operator_bottom_navi_bar_view.dart';
 import '../operator/operator_payment/bindings/operator_payment_binding.dart';
@@ -124,7 +115,7 @@ part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
-  static const INITIAL = Routes.OPERATOR_INFO1;
+  static const INITIAL = Routes.CUSTOMER_LANGUAGE;
   static final routes = [
     GetPage(
       name: _Paths.CUSTOMER_HOME,
@@ -230,18 +221,6 @@ class AppPages {
       name: _Paths.CUSTOMER_EDIT_PROFILE,
       page: () => const CustomerEditProfileView(),
       binding: CustomerEditProfileBinding(),
-    ),
-    GetPage(
-      name: _Paths.LANGUAGE,
-      page: () => const LanguageView(),
-      binding: LanguageBinding(),
-      children: [
-        GetPage(
-          name: _Paths.LANGUAGE,
-          page: () => const LanguageView(),
-          binding: LanguageBinding(),
-        ),
-      ],
     ),
     GetPage(
       name: _Paths.OPERATOR_EDIT_PROFILE,
@@ -407,6 +386,16 @@ class AppPages {
       name: _Paths.OPERATOR_FLEET,
       page: () => const OperatorFleetView(),
       binding: OperatorFleetBinding(),
+    ),
+    GetPage(
+      name: _Paths.CUSTOMER_LANGUAGE,
+      page: () => const CustomerLanguageView(),
+      binding: CustomerLanguageBinding(),
+    ),
+    GetPage(
+      name: _Paths.OPERATOR_LANGUAGE,
+      page: () => const OperatorLanguageView(),
+      binding: OperatorLanguageBinding(),
     ),
   ];
 }

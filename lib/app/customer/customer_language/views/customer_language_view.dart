@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:prasad/app/data/app_colors.dart';
-import 'package:prasad/app/shared_screen/common_widget/custom_appbar.dart';
-import '../controllers/language_controller.dart';
+import '../../../data/app_colors.dart';
+import '../../../shared_screen/common_widget/custom_appbar.dart';
+import '../controllers/customer_language_controller.dart';
 
-class LanguageView extends GetView<LanguageController> {
-  const LanguageView({super.key});
-
+class CustomerLanguageView extends GetView<CustomerLanguageController> {
+  const CustomerLanguageView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

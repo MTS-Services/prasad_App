@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
-
 import '../../../data/app_colors.dart';
 import '../../../shared_screen/common_widget/custom_appbar.dart';
 import '../controllers/operator_language_controller.dart';
 
-class LanguageView extends GetView<OperatorLanguageController> {
-  const LanguageView({super.key});
+class OperatorLanguageView extends GetView<OperatorLanguageController> {
+  const OperatorLanguageView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

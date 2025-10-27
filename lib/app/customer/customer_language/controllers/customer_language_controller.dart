@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
 
-class LanguageController extends GetxController {
-
+class CustomerLanguageController extends GetxController {
   final languages = [
     "Hindi",
     "Gujarati",
@@ -18,5 +17,4 @@ class LanguageController extends GetxController {
   void selectLanguage(String lang) {
     selectedLanguage.value = lang;
   }
-
 }

@@ -112,9 +112,7 @@ class CustomerProfileView extends GetView<CustomerProfileController> {
                   buildContainer('*******'),
                   const SizedBox(height: 7),
                   listTileContainer(
-                    onTap: (){
-                      Get.toNamed(Routes.LANGUAGE);
-                    },
+                    onTap: (){},
                     imagePath: ImagePath.languageIcon,
                     title: 'Language',
                   ),
