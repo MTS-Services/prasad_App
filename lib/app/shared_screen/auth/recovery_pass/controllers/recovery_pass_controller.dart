@@ -1,23 +1,12 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class RecoveryPassController extends GetxController {
-  //TODO: Implement RecoveryPassController
-
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
+  final emailController = TextEditingController();
 
   @override
   void onClose() {
+    emailController.dispose();
     super.onClose();
   }
-
-  void increment() => count.value++;
 }

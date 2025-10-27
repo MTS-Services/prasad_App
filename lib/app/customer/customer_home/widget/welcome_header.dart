@@ -7,13 +7,14 @@ class WelcomeHeader extends StatelessWidget {
   final String subtitle;
   final String profileImageUrl;
   final VoidCallback? onNotificationTap;
+  final VoidCallback? onProfileTap;
 
   const WelcomeHeader({
     super.key,
     required this.userName,
     required this.subtitle,
     required this.profileImageUrl,
-    this.onNotificationTap,
+    this.onNotificationTap, this.onProfileTap,
   });
 
   @override
@@ -49,9 +50,12 @@ class WelcomeHeader extends StatelessWidget {
               ],
             ),
           ),
-          CircleAvatar(
-            radius: 16.r,
-            backgroundImage: AssetImage(profileImageUrl),
+          GestureDetector(
+            onTap: onProfileTap,
+            child: CircleAvatar(
+              radius: 16.r,
+              backgroundImage: AssetImage(profileImageUrl),
+            ),
           ),
           SizedBox(width: 10.w),
           InkWell(

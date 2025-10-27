@@ -9,7 +9,7 @@ import '../../../../data/app_text_styles.dart';
 import '../../../common_widget/custom_text_field_login.dart';
 import '../../../common_widget/custom_elevated_and_outline_button.dart';
 import '../controllers/confirm_your_gmail_controller.dart';
-
+//forget pass screen
 class ConfirmYourGmailView extends GetView<ConfirmYourGmailController> {
   const ConfirmYourGmailView({super.key});
 

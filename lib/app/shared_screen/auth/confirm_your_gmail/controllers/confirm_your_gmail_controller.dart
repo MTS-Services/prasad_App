@@ -1,23 +1,12 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class ConfirmYourGmailController extends GetxController {
-  //TODO: Implement ConfirmYourGmailController
+  TextEditingController codeController = TextEditingController();
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
+  void onClose(){
+    codeController.dispose();
     super.onClose();
   }
 
-  void increment() => count.value++;
 }

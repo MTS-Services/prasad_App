@@ -47,7 +47,7 @@ class UserTypeView extends GetView<UserTypeController> {
                         image: ImagePath.fieldAgentType,
                         isSelected: false,
                         onTap: () {
-                          Get.to(LoginView());
+                          Get.toNamed(Routes.LOGIN);
                         },
                       ),
                     ),
@@ -58,7 +58,7 @@ class UserTypeView extends GetView<UserTypeController> {
                   image: ImagePath.operatorType,
                   isSelected: false,
                   onTap: (){
-                    Get.to(LoginView());
+                    Get.toNamed(Routes.LOGIN);
                   },
                 ),
               ],

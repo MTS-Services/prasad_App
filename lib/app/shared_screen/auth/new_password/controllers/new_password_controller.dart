@@ -1,23 +1,14 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class NewPasswordController extends GetxController {
-  //TODO: Implement NewPasswordController
-
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController confirmPasswordController = TextEditingController();
 
   @override
   void onClose() {
+      passwordController.dispose();
+      confirmPasswordController.dispose();
     super.onClose();
   }
-
-  void increment() => count.value++;
 }

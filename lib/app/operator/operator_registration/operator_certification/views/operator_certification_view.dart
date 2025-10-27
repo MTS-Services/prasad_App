@@ -32,18 +32,25 @@ class OperatorCertificationView
                 CustomTextFieldLogin(
                   name: 'License_Number (Unique)',
                   hintText: 'Enter your address',
+                  controller: controller.licenseNumberController,
                 ),
                 CustomTextFieldLogin(
                   name: 'License_Issue_Date',
                   hintText: 'Enter your Date',
+                  controller: controller.issueDateController,
+
                 ),
                 CustomTextFieldLogin(
                   name: 'License_Expiry_Date',
                   hintText: 'Enter your Date',
+                  controller: controller.expiryDateController,
+
                 ),
                 CustomTextFieldLogin(
                   name: 'Additional information',
                   hintText: 'Additional information',
+                  controller: controller.additionalInfoController,
+
                 ),
 
                 Text('Import License/Certification', style: AppTextStyles.medium16),

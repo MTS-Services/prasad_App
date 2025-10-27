@@ -29,6 +29,7 @@ class CustomerHomeView extends GetView<CustomerHomeController> {
                   userName: "Sarah paul!",
                   subtitle:
                   "Here's what's happening with your services today.",
+                  onProfileTap: () => Get.toNamed(Routes.CUSTOMER_PROFILE),
                   profileImageUrl: ImagePath.farmerPng,
                   onNotificationTap: () {
                     Get.toNamed('/customer-notification');
