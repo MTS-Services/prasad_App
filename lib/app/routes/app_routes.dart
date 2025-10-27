@@ -59,7 +59,9 @@ abstract class Routes {
   static const CUSTOMER_EDIT_PROFILE = _Paths.CUSTOMER_EDIT_PROFILE;
   static const LANGUAGE = _Paths.LANGUAGE;
   static const OPERATOR_EDIT_PROFILE = _Paths.OPERATOR_EDIT_PROFILE;
-  static const Operator_LANGUAGE =  _Paths.LANGUAGE;
+  static const Operator_LANGUAGE = _Paths.LANGUAGE;
+  static const ASSET_TYPE_DRONE = _Paths.ASSET_TYPE_DRONE;
+  static const ASSET_TYPE_EQUIPEMENT = _Paths.ASSET_TYPE_EQUIPEMENT;
 }
 
 abstract class _Paths {
@@ -121,4 +123,6 @@ abstract class _Paths {
   static const LANGUAGE = '/operator_language';
   static const OPERATOR_EDIT_PROFILE = '/operator-edit-profile';
   static const Operator_LANGUAGE = '/operator_language';
+  static const ASSET_TYPE_DRONE = '/asset-type-drone';
+  static const ASSET_TYPE_EQUIPEMENT = '/asset-type-equipement';
 }

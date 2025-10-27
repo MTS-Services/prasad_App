@@ -52,6 +52,10 @@ import '../operator/operator_history/bindings/operator_history_binding.dart';
 import '../operator/operator_history/views/operator_history_view.dart';
 import '../customer/language/bindings/language_binding.dart';
 import '../customer/language/views/language_view.dart';
+import '../operator/asset_type_drone/bindings/asset_type_drone_binding.dart';
+import '../operator/asset_type_drone/views/asset_type_drone_view.dart';
+import '../operator/asset_type_equipement/bindings/asset_type_equipement_binding.dart';
+import '../operator/asset_type_equipement/views/asset_type_equipement_view.dart';
 import '../operator/operator_edit_profile/bindings/operator_edit_profile_binding.dart';
 import '../operator/operator_edit_profile/views/operator_edit_profile_view.dart';
 import '../operator/operator_history/bindings/operator_history_binding.dart';
@@ -113,7 +117,9 @@ part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
-  static const INITIAL = Routes.OPERATOR_INFO1;
+
+  static const INITIAL = Routes.OPERATOR_PROFILE;
+
   static final routes = [
     GetPage(
       name: _Paths.CUSTOMER_HOME,
@@ -381,6 +387,16 @@ class AppPages {
       name: _Paths.CUSTOMER_RATING,
       page: () => const CustomerRatingView(),
       binding: CustomerRatingBinding(),
+    ),
+    GetPage(
+      name: _Paths.ASSET_TYPE_DRONE,
+      page: () => const AssetTypeDroneView(),
+      binding: AssetTypeDroneBinding(),
+    ),
+    GetPage(
+      name: _Paths.ASSET_TYPE_EQUIPEMENT,
+      page: () => const AssetTypeEquipementView(),
+      binding: AssetTypeEquipementBinding(),
     ),
   ];
 }
