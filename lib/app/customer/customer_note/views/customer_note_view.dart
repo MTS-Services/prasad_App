@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
+import 'package:prasad/app/customer/customer_bottom_navi_bar/controllers/customer_bottom_navi_bar_controller.dart';
+import 'package:prasad/app/customer/customer_bottom_navi_bar/views/customer_bottom_navi_bar_view.dart';
 import 'package:prasad/app/data/app_text_styles.dart';
+import 'package:prasad/app/routes/app_pages.dart';
 
 import '../../../data/app_colors.dart';
 import '../../cutomer_notification/widget/back_button_card.dart';
@@ -16,6 +19,7 @@ class CustomerNoteView extends GetView<CustomerNoteController> {
 
   @override
   Widget build(BuildContext context) {
+    final bottomController = Get.put(CustomerBottomNaviBarController());
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -104,7 +108,8 @@ class CustomerNoteView extends GetView<CustomerNoteController> {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                      Get.offNamed('/customer-support');
+                      bottomController.changeIndex(1);
+                      Get.to(()=> CustomerBottomNaviBarView());
                     },
                     child: Text("Request Reschedule"),
                   ),

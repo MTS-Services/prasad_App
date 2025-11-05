@@ -164,7 +164,9 @@ class CustomerProfileView extends GetView<CustomerProfileController> {
                   ),
                   const SizedBox(height: 7),
                   listTileContainer(
-                    onTap: (){},
+                    onTap: (){
+                      Get.offAndToNamed( Routes.LOGIN);
+                    },
                     imagePath: ImagePath.logOut,
                     title: 'Log Out',
                   ),

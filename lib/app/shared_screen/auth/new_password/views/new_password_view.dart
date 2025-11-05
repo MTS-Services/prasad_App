@@ -41,7 +41,12 @@ class NewPasswordView extends GetView<NewPasswordController> {
                   name: 'Confirm Password',
                   hintText: '******',
                 ),
-                ShowPasswordRow(isChecked: true, onChanged: (v) {}),
+                Obx(
+                  () => ShowPasswordRow(
+                    isChecked: controller.check.value,
+                    onChanged: controller.showPassword,
+                  ),
+                ),
                 CustomElevatedAndOutlineButton(
                   elevateText: "Update Password",
                   outlineText: "Back",

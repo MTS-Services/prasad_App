@@ -1,23 +1,9 @@
 import 'package:get/get.dart';
 
 class UserTypeController extends GetxController {
-  //TODO: Implement UserTypeController
+  var selectedType = ''.obs;
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  void selectType(String type) {
+    selectedType.value = type;
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }

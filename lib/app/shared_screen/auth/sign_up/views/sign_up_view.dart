@@ -25,7 +25,6 @@ class SignUpView extends GetView<SignUpController> {
               mainAxisAlignment: MainAxisAlignment.center,
               spacing: 20.h,
               children: [
-                SizedBox(height: 10.h,),
                 Text(
                   'Sign Up',
                   style: AppTextStyles.bold40,
@@ -39,6 +38,10 @@ class SignUpView extends GetView<SignUpController> {
                   hintText: 'example@gmail.com',
                 ),
                 CustomTextFieldLogin(
+                  name: 'Phone',
+                  hintText: '01*********',
+                ),
+                CustomTextFieldLogin(
                   name: 'Password',
                   hintText: '*****',
                 ),
@@ -46,8 +49,6 @@ class SignUpView extends GetView<SignUpController> {
                   name: 'Confirm Password',
                   hintText: '*******',
                 ),
-
-                SizedBox(height: 10.h),
                 Row(
                   children: [
                     Flexible(
@@ -112,7 +113,7 @@ class SignUpView extends GetView<SignUpController> {
                   ),
                 ),
 
-                Row(
+                Row (
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Flexible(
@@ -128,7 +129,7 @@ class SignUpView extends GetView<SignUpController> {
                       flex: 1,
                       child: GestureDetector(
                         onTap: () {
-                          Get.toNamed(Routes.LOGIN);
+                          Get.toNamed(Routes.USER_TYPE);
                         },
                         child: Text(
                           "Sign In",

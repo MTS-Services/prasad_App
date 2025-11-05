@@ -24,13 +24,22 @@ class CustomerInfo1View extends GetView<CustomerInfo1Controller> {
                 spacing: 12.h,
                 children: [
                   Text('Customer Info', style: AppTextStyles.bold24),
-                  CustomTextFieldLogin(
-                    name: 'First name',
-                    hintText: 'Enter your name',
-                  ),
-                  CustomTextFieldLogin(
-                    name: 'Middle name',
-                    hintText: 'Enter your middle name',
+                  Row(
+                    spacing: 10.w,
+                    children: [
+                      Expanded(
+                        child: CustomTextFieldLogin(
+                          name: 'First name',
+                          hintText: 'Enter your name',
+                        ),
+                      ),
+                      Expanded(
+                        child: CustomTextFieldLogin(
+                          name: 'Middle name',
+                          hintText: 'Enter your middle name',
+                        ),
+                      ),
+                    ],
                   ),
                   CustomTextFieldLogin(
                     name: 'Last name',
@@ -55,7 +64,7 @@ class CustomerInfo1View extends GetView<CustomerInfo1Controller> {
                     onChanged: controller.onDistrictSelected,
                   ),
                   CustomDropdownField(
-                    label: 'Mandal',
+                    label: '* Mandal',
                     items: controller.mandals,
                     selectedValue: controller.selectedMandal.value,
                     onChanged: controller.onMandalSelected,
@@ -74,7 +83,10 @@ class CustomerInfo1View extends GetView<CustomerInfo1Controller> {
                   ),
 
                   Text('Upload Profile', style: AppTextStyles.medium16),
-                  FileUploadContainer(),
+                  Obx(() => FileUploadContainer(
+                    onTap: controller.pickImage,
+                    image: controller.selectedImage.value,
+                  )),
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(

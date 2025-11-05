@@ -24,8 +24,8 @@ ThemeData themeData() {
         backgroundColor: AppColors.primaryColor,
         foregroundColor: AppColors.whiteColor,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
-          padding: const EdgeInsets.symmetric(vertical: 14),
-          textStyle: AppTextStyles.medium16
+          padding: const EdgeInsets.symmetric(vertical: 14,horizontal: 4 ),
+          textStyle: AppTextStyles.medium16.copyWith(overflow: TextOverflow.ellipsis,), alignment: Alignment.center,
       ),
     ),
     outlinedButtonTheme: OutlinedButtonThemeData(

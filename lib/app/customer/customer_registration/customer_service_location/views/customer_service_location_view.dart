@@ -23,50 +23,115 @@ class CustomerServiceLocationView
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: SingleChildScrollView(
-            child: Column(
-              spacing: 12.h,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('Service Locations', style: AppTextStyles.bold24),
-                CustomTextFieldLogin(
-                  name: 'Location Name',
-                  hintText: 'e.g., North GeoCoordinates',
-                ),
-                Text('Latitude/Longitude', style: AppTextStyles.medium16),
-                CustomLocationField(hintText: 'Enter your Latitude'),
-                Row(
-                  spacing: 10.w,
-                  children: [
-                    Expanded(
-                      child: CustomTextFieldLogin(
-                        name: 'Land Size',
-                        hintText: "0",
+            child: Obx(
+              () => Column(
+                spacing: 12.h,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Service Locations', style: AppTextStyles.bold24),
+                  CustomDropdownField(
+                    label: "Service",
+                    items: controller.serviceItems,
+                    selectedValue: controller.serviceValue.value,
+                    onChanged: controller.onSelectedItem,
+                  ),
+                  Text("Sub Services", style: AppTextStyles.medium20),
+                  Column(
+                    children: List.generate(controller.subServices.length, (
+                      index,
+                    ) {
+                      final sub = controller.subServices[index];
+                      return Row(
+                        children: [
+                          Checkbox(
+                            value:
+                                controller.isSelectedMap[sub]?.value ?? false,
+                            onChanged: (val) =>
+                                controller.checkBoxSelected(sub, val),
+                          ),
+                          Text(sub),
+                        ],
+                      );
+                    }),
+                  ),
+                  CustomTextFieldLogin(
+                    name: 'Location Name',
+                    hintText: 'e.g., North GeoCoordinates',
+                  ),
+                  Text('Latitude/Longitude', style: AppTextStyles.medium16),
+                  Row(
+                    spacing: 10.w,
+                    children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Start Location',
+                              style: AppTextStyles.medium16,
+                            ),
+                            CustomLocationField(
+                              hintText: 'Latitude/Longitude',
+                              onPressed: () => Get.toNamed(Routes.MAP),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('End Location', style: AppTextStyles.medium16),
+                            CustomLocationField(
+                              hintText: 'Latitude/Longitude',
+                              onPressed: () => Get.toNamed(Routes.MAP),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    spacing: 10.w,
+                    children: [
+                      Expanded(
+                        child: CustomTextFieldLogin(
+                          name: 'Size/distance',
+                          hintText: "0",
+                        ),
+                      ),
+                      Expanded(
+                        child: CustomDropdownField(
+                          label: "Unit",
+                          items: controller.items,
+                          selectedValue: controller.selectedValue.value,
+                          onChanged: controller.onItemSelected,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Text('Access Instructions', style: AppTextStyles.medium16),
+                  TextFormField(
+                    maxLines: 3,
+                    decoration: InputDecoration(hintText: 'Enter Instruction'),
+                  ),
+                  GestureDetector(
+                    onTap: () => Get.toNamed(Routes.MAP),
+                    child: Text(
+                      ' + Add Location',
+                      style: AppTextStyles.medium16.apply(
+                        color: AppColors.primaryColor,
                       ),
                     ),
-                    Obx(() => Expanded(
-                      child: CustomDropdownField(
-                        label: "Unit",
-                        items: controller.items,
-                        selectedValue: controller.selectedValue.value,
-                        onChanged: controller.onItemSelected,
-                      ),
-                    ),)
-                  ],
-                ),
-                Text('Access Instructions', style: AppTextStyles.medium16),
-                TextFormField(
-                  maxLines: 3,
-                  decoration: InputDecoration(
-                    hintText: 'Enter Instruction'
                   ),
-                ),
-                CustomElevatedAndOutlineButton(
-                  elevateText: 'Save',
-                  outlineText: "Add Location",
-                  elevatedOnPressed: () => Get.toNamed(Routes.CUSTOMER_INFO2),
-                  outlineOnPressed: () => Get.toNamed(Routes.MAP),
-                ),
-              ],
+                  CustomElevatedAndOutlineButton(
+                    elevateText: 'Save',
+                    outlineText: "Back",
+                    elevatedOnPressed: () => Get.toNamed(Routes.CUSTOMER_INFO2),
+                    outlineOnPressed: () => Get.back(),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -74,4 +139,3 @@ class CustomerServiceLocationView
     );
   }
 }
-

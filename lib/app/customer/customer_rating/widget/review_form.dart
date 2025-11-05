@@ -88,26 +88,6 @@ class ReviewForm extends StatelessWidget {
           ),
           const SizedBox(height: 12),
 
-          // Tips
-          const Text(
-            "Tips",
-            style: TextStyle(fontWeight: FontWeight.w600, fontSize: 15),
-          ),
-          const SizedBox(height: 8),
-          TextField(
-            controller: tipController,
-            keyboardType: TextInputType.number,
-            decoration: InputDecoration(
-              hintText: "\$30",
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
-              ),
-              contentPadding:
-              const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-            ),
-          ),
-          const SizedBox(height: 16),
-
           // Review
           const Text(
             "Review",

@@ -76,36 +76,6 @@ class OperetorEquipmentDetailsView
                     elevatedOnPressed: () => Get.toNamed(Routes.OPERETOR_EXPERIENCE_AND_RECORDS),
                     outlineOnPressed: () => Get.back(),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Flexible(
-                        flex: 2,
-                        child: Text(
-                          "Already have an account? ",
-                          style: AppTextStyles.regular16,
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 1,
-                        ),
-                      ),
-                      Flexible(
-                        flex: 1,
-                        child: GestureDetector(
-                          onTap: () {
-                            Get.toNamed(Routes.LOGIN);
-                          },
-                          child: Text(
-                            "Sign In",
-                            style: AppTextStyles.medium16.copyWith(
-                              color: AppColors.primaryColor,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                            maxLines: 1,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
                   SizedBox(),
                 ],
               ),

@@ -40,7 +40,7 @@ class CustomerBottomNaviBarView
     return BottomNavigationBarItem(
       icon: Image.asset(
         imagePath,
-        height: isSelected ? 28.h : 26.h,
+        height: isSelected ? 24.h : 22.h,
         color: isSelected
             ? AppColors.primaryColor
             : AppColors.bottomNaviTextColor, // Change colors as needed

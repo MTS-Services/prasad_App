@@ -1,23 +1,25 @@
+import 'dart:io';
+
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 
 class OperetorExperienceAndRecordsController extends GetxController {
-  //TODO: Implement OperetorExperienceAndRecordsController
+  final Rx<File?> selectedImage = Rx<File?>(null);
+  final ImagePicker _picker = ImagePicker();
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  // Pick image from gallery
+  Future<void> pickImage() async {
+    final XFile? pickedFile = await _picker.pickImage(source: ImageSource.gallery);
+    if (pickedFile != null) {
+      selectedImage.value = File(pickedFile.path);
+    }
   }
 
-  @override
-  void onReady() {
-    super.onReady();
+  // Pick image from camera (optional)
+  Future<void> takePhoto() async {
+    final XFile? photo = await _picker.pickImage(source: ImageSource.camera);
+    if (photo != null) {
+      selectedImage.value = File(photo.path);
+    }
   }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }

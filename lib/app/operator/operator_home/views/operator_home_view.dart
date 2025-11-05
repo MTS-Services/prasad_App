@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:prasad/app/customer/customer_home/widget/section_header.dart';
 import 'package:prasad/app/customer/customer_home/widget/welcome_header.dart';
 import 'package:prasad/app/data/image_path.dart';
+import 'package:prasad/app/routes/app_pages.dart';
 
 import '../controllers/operator_home_controller.dart';
 import '../widgets/order_card.dart';
@@ -25,6 +26,7 @@ class OperatorHomeView extends GetView<OperatorHomeController> {
                   subtitle:
                       'Here is what is happening with your service today.',
                   profileImageUrl: ImagePath.fieldAgentType,
+                  onProfileTap: () => Get.toNamed(Routes.OPERATOR_PROFILE),
                   onNotificationTap: () {
                     Get.toNamed('/customer-notification');
                   },

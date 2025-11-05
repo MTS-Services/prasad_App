@@ -152,7 +152,7 @@ class OperatorProfileView extends GetView<OperatorProfileController> {
                   ),
                   const SizedBox(height: 7),
                   listTileContainer(
-                    onTap: (){},
+                    onTap: ()=> Get.offAllNamed(Routes.LOGIN),
                     imagePath: ImagePath.logOut,
                     title: 'Log Out',
                   ),

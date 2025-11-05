@@ -138,9 +138,12 @@ class CustomerServiceTrakingView
                 SizedBox(height: 15),
                 SizedBox(
                   width: double.infinity,
-                  child: ElevatedButton(onPressed: () {
-                    Get.offNamed("/customer-service-details-map");
-                  }, child: Text("Next"),),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Get.offNamed("/customer-service-details-map");
+                    },
+                    child: Text("Next"),
+                  ),
                 ),
               ],
             ),

@@ -107,7 +107,7 @@ class CustomerServiceDetailsView
                       Get.toNamed("/customer-schedule");
                     },
                     child: Text(
-                      "Create an order",
+                      "Request A Service",
                       style: TextStyle(fontSize: 14.sp),
                     ),
                   ),

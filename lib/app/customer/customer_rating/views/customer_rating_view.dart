@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:prasad/app/data/app_text_styles.dart';
+import 'package:prasad/app/shared_screen/common_widget/custom_appbar.dart';
 import '../../../operator/operator_feedback_service/widgets/image_container.dart';
 import '../../../operator/operator_feedback_service/widgets/network_video_player.dart';
 import '../controllers/customer_rating_controller.dart';
@@ -14,6 +15,7 @@ class CustomerRatingView extends GetView<CustomerRatingController> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey.shade200,
+      appBar: CustomAppbar(),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
@@ -65,7 +67,6 @@ class CustomerRatingView extends GetView<CustomerRatingController> {
                 tipController: controller.tipController,
                 reviewController: controller.reviewController,
                 onSubmit: () {
-                  print("Tips: ${controller.reviewController.text}");
                   print("Review: ${controller.reviewController.text}");
                 },
               ),

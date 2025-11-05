@@ -40,7 +40,7 @@ class OperatorBottomNaviBarView
     return BottomNavigationBarItem(
       icon: Image.asset(
         imagePath,
-        height: isSelected ? 28.h : 26.h,
+        height: isSelected ? 22.h : 20.h,
         color: isSelected
             ? AppColors.primaryColor
             : AppColors.bottomNaviTextColor, // Change colors as needed

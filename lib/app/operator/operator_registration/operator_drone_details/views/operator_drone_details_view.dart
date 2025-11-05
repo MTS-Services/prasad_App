@@ -31,6 +31,7 @@ class OperatorDroneDetailsView extends GetView<OperatorDroneDetailsController> {
 
                   CustomDropdownField(
                     label: 'Asset Type*',
+                    hintText: "Start with Asset ID",
                     items: controller.assetTypes,
                     selectedValue: controller.selectedAssetType.value,
                     onChanged: controller.onAssetTypeChanged,
@@ -150,22 +151,6 @@ class OperatorDroneDetailsView extends GetView<OperatorDroneDetailsController> {
                   outlineOnPressed: () => Get.back(),
                 ),
 
-                // Sign In link
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text("Already have an account? ",
-                        style: AppTextStyles.regular16),
-                    GestureDetector(
-                      onTap: () => Get.toNamed(Routes.LOGIN),
-                      child: Text(
-                        "Sign In",
-                        style: AppTextStyles.medium16
-                            .copyWith(color: AppColors.primaryColor),
-                      ),
-                    ),
-                  ],
-                ),
               ],
             ),
           ),

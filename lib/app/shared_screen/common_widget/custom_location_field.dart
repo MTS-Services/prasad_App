@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../data/app_colors.dart';
 import '../../data/app_text_styles.dart';
 
@@ -19,19 +18,27 @@ class CustomLocationField extends StatelessWidget {
         border: Border.all(color: AppColors.blackColor),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 8),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              hintText,
-              style: AppTextStyles.regular12.copyWith(
-                color: AppColors.hintColor,
+            Flexible(
+              flex: 4,
+              child: Text(
+                hintText,
+                style: AppTextStyles.regular12.copyWith(
+                  color: AppColors.hintColor,
+                ),
+                overflow: TextOverflow.ellipsis,
+                maxLines: 1,
               ),
             ),
-            IconButton(
-              onPressed: onPressed,
-              icon: Icon(icon ?? Icons.add_location_alt_outlined),
+            Flexible(
+              flex: 1,
+              child: IconButton(
+                onPressed: onPressed,
+                icon: Icon(icon ?? Icons.add_location_alt_outlined),
+              ),
             ),
           ],
         ),

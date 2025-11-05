@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:prasad/app/customer/customer_home/views/customer_home_view.dart';
 
+import '../../../../data/app_colors.dart';
 import '../../../../data/app_text_styles.dart';
 import '../../../../routes/app_pages.dart';
 import '../../../../shared_screen/common_widget/custom_dropdown_field.dart';
@@ -22,7 +23,7 @@ class CustomerInfo2View extends GetView<CustomerInfo2Controller> {
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: SingleChildScrollView(
-            child: Column(
+            child: Obx(() => Column(
               spacing: 12.h,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -33,8 +34,9 @@ class CustomerInfo2View extends GetView<CustomerInfo2Controller> {
                 ),
                 Text('Latitude/Longitude', style: AppTextStyles.medium16),
                 CustomLocationField(
-                  hintText: 'Enter your Latitude',
+                  hintText: 'Enter your Latitude/Longitude',
                   icon: Icons.attach_file,
+                  onPressed: () => controller.pickFileFromGallery(),
                 ),
                 Text('Street*', style: AppTextStyles.medium16),
                 TextFormField(
@@ -75,22 +77,39 @@ class CustomerInfo2View extends GetView<CustomerInfo2Controller> {
                     ),
                   ],
                 ),
-                Obx(
-                  () => CustomDropdownField(
-                    label: "Industry*",
-                    items: controller.items,
-                    selectedValue: controller.selectedValue.value,
-                    onChanged: controller.onSelectedItem,
+                CustomDropdownField(
+                  label: "Industry*",
+                  items: controller.items,
+                  selectedValue: controller.selectedValue.value,
+                  onChanged: controller.onSelectedItem,
+                ),
+                Text("Sub Services", style: AppTextStyles.medium20),
+                Column(
+                  children: List.generate(
+                    controller.subServices.length,
+                        (index) {
+                      final sub = controller.subServices[index];
+                      return Row(
+                        children: [
+                          Checkbox(
+                            value: controller.isSelectedMap[sub]?.value ?? false,
+                            onChanged: (val) => controller.checkBoxSelected(sub, val),
+                          ),
+                          Text(sub),
+                        ],
+                      );
+                    },
                   ),
                 ),
                 CustomElevatedAndOutlineButton(
                   elevateText: "Confirm Registration",
-                  outlineText: 'Add a New Service',
-                  elevatedOnPressed: () => Get.offAndToNamed(Routes.CUSTOMER_BOTTOM_NAVI_BAR),
-                  outlineOnPressed: (){},
+                  outlineText: 'Back',
+                  elevatedOnPressed: () =>
+                      Get.offAndToNamed(Routes.CUSTOMER_BOTTOM_NAVI_BAR),
+                  outlineOnPressed: () {},
                 ),
               ],
-            ),
+            ),)
           ),
         ),
       ),

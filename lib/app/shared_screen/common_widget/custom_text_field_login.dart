@@ -7,11 +7,12 @@ class CustomTextFieldLogin extends StatelessWidget {
   final String name;
   final String hintText;
   final TextEditingController? controller;
+  final String? Function(String?)? validator;
 
   const CustomTextFieldLogin({
     super.key,
     required this.name,
-    required this.hintText, this.controller,
+    required this.hintText, this.controller, this.validator,
   });
 
   @override
@@ -24,6 +25,7 @@ class CustomTextFieldLogin extends StatelessWidget {
         ),
         SizedBox(height: 6.h),
         TextFormField(
+          validator: validator,
             controller: controller,
             decoration: InputDecoration(hintText: hintText)),
       ],

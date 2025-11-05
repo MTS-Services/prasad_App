@@ -29,10 +29,24 @@ class OperatorInfo1View extends GetView<OperatorInfo1Controller> {
                 children: [
                   Text('Drone Operator Info', style: AppTextStyles.bold24),
 
-                  CustomTextFieldLogin(
-                    name: 'First name',
-                    hintText: 'Enter your name',
-                    controller: controller.firstNameController,
+                  Row(
+                    spacing: 10.w,
+                    children: [
+                      Expanded(
+                        child: CustomTextFieldLogin(
+                          name: 'First name',
+                          hintText: 'Enter your name',
+                          controller: controller.firstNameController,
+                        ),
+                      ),
+                      Expanded(
+                        child: CustomTextFieldLogin(
+                          name: 'Middle name',
+                          hintText: 'Enter your name',
+                          controller: controller.firstNameController,
+                        ),
+                      ),
+                    ],
                   ),
                   CustomTextFieldLogin(
                     name: 'Last name',
@@ -53,11 +67,15 @@ class OperatorInfo1View extends GetView<OperatorInfo1Controller> {
                   Text('Latitude/Longitude*', style: AppTextStyles.medium16),
                   CustomOperatorLocationField(
                     onPressed: () {
-                      // you can integrate a map picker later
                       controller.locationController.text =
                       "23.8103, 90.4125"; // example value
                     },
                     hintText: "Latitude and longitude",
+                  ),
+                  CustomTextFieldLogin(
+                    name: "Mandal*",
+                    hintText: "Select Mandal",
+                    controller: controller.serviceRadiusController,
                   ),
 
                   CustomTextFieldLogin(
@@ -73,34 +91,30 @@ class OperatorInfo1View extends GetView<OperatorInfo1Controller> {
                     onChanged: controller.onIndustrySelected,
                   ),
 
-                  Text("Sub category", style: AppTextStyles.medium16),
-
-                  ListView.builder(
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    itemCount: controller.subCategories.length,
-                    itemBuilder: (context, index) {
-                      final sub = controller.subCategories[index];
-                      return GestureDetector(
-                        onTap: () => controller.removeSubCategory(index),
-                        child: subCategoryContainer(sub),
-                      );
-                    },
-                  ),
-
-                  SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        // Example: add a static item for now
-                        controller.addSubCategory("Drone Mapping & Surveying (MAP)");
+                  Text("Sub Services", style: AppTextStyles.medium20),
+                  Column(
+                    children: List.generate(
+                      controller.subServices.length,
+                          (index) {
+                        final sub = controller.subServices[index];
+                        return Row(
+                          children: [
+                            Checkbox(
+                              value: controller.isSelectedMap[sub]?.value ?? false,
+                              onChanged: (val) => controller.checkBoxSelected(sub, val),
+                            ),
+                            Text(sub),
+                          ],
+                        );
                       },
-                      child: const Text('Add a new Services'),
                     ),
                   ),
 
                   Text('Upload Profile', style: AppTextStyles.medium16),
-                  const FileUploadContainer(),
+                   FileUploadContainer(
+                    onTap: controller.pickImage,
+                    image: controller.selectedImage.value,
+                  ),
 
                   CustomElevatedAndOutlineButton(
                     elevateText: "Continue",
@@ -108,35 +122,6 @@ class OperatorInfo1View extends GetView<OperatorInfo1Controller> {
                     elevatedOnPressed: () =>
                         Get.toNamed(Routes.OPERATOR_DRONE_DETAILS),
                     outlineOnPressed: () => Get.back(),
-                  ),
-
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Flexible(
-                        flex: 2,
-                        child: Text(
-                          "Already have an account? ",
-                          style: AppTextStyles.regular16,
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 1,
-                        ),
-                      ),
-                      Flexible(
-                        flex: 1,
-                        child: GestureDetector(
-                          onTap: () => Get.toNamed(Routes.LOGIN),
-                          child: Text(
-                            "Sign In",
-                            style: AppTextStyles.medium16.copyWith(
-                              color: AppColors.primaryColor,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                            maxLines: 1,
-                          ),
-                        ),
-                      ),
-                    ],
                   ),
                 ],
               ),
