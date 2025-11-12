@@ -46,7 +46,7 @@ class AgentHomeView extends GetView<AgentHomeController> {
                   ),
                 ),
                 GestureDetector(
-                  onTap: () => Get.toNamed(Routes.AGENT_CREATE_SERVICE),
+                  onTap: () {},
                   child: SizedBox(
                     width: double.infinity,
                     child: Card(
