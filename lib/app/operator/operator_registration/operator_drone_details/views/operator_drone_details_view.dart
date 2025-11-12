@@ -38,47 +38,47 @@ class OperatorDroneDetailsView extends GetView<OperatorDroneDetailsController> {
                   ),
 
                   CustomTextFieldLogin(
-                    name: "Drone_UIN UK",
+                    labelText: "Drone_UIN UK",
                     controller: controller.drones[i]['uin'],
                     hintText: "DGCI UIN Unique Identification Number",
                   ),
                   CustomTextFieldLogin(
-                    name: "Service_Capabilities",
+                    labelText: "Service_Capabilities",
                     controller: controller.drones[i]['serviceCapabilities'],
                     hintText: "What services the drone can perform",
                   ),
                   CustomTextFieldLogin(
-                    name: "Model",
+                    labelText: "Model",
                     controller: controller.drones[i]['model'],
                     hintText: "Drone model name/number",
                   ),
                   CustomTextFieldLogin(
-                    name: "Make",
+                    labelText: "Make",
                     controller: controller.drones[i]['make'],
                     hintText: "Brand/Make of the drone",
                   ),
                   CustomTextFieldLogin(
-                    name: "Manufacture_Year",
+                    labelText: "Manufacture_Year",
                     controller: controller.drones[i]['manufactureYear'],
                     hintText: "Year of manufacture",
                   ),
                   CustomTextFieldLogin(
-                    name: "Serial_Number",
+                    labelText: "Serial_Number",
                     controller: controller.drones[i]['serialNumber'],
                     hintText: "Drone serial number",
                   ),
                   CustomTextFieldLogin(
-                    name: "Manufacturer",
+                    labelText: "Manufacturer",
                     controller: controller.drones[i]['manufacturer'],
                     hintText: "Manufacturer name",
                   ),
                   CustomTextFieldLogin(
-                    name: "Flight_Hours",
+                    labelText: "Flight_Hours",
                     controller: controller.drones[i]['flightHours'],
                     hintText: "Total flight hours",
                   ),
                   CustomTextFieldLogin(
-                    name: "Last_Maintenance_Date",
+                    labelText: "Last_Maintenance_Date",
                     controller: controller.drones[i]['lastMaintenanceDate'],
                     hintText: "Last maintenance performed date",
                   ),
@@ -103,17 +103,17 @@ class OperatorDroneDetailsView extends GetView<OperatorDroneDetailsController> {
                   ),
 
                   CustomTextFieldLogin(
-                    name: "Battery type",
+                    labelText: "Battery type",
                     controller: controller.drones[i]['batteryType'],
                     hintText: "Enter battery type",
                   ),
                   CustomTextFieldLogin(
-                    name: "Battery_Cycles",
+                    labelText: "Battery_Cycles",
                     controller: controller.drones[i]['batteryCycles'],
                     hintText: "Enter battery cycles",
                   ),
                   CustomTextFieldLogin(
-                    name: "Battery_Capacity (mAh/Wh)",
+                    labelText: "Battery_Capacity (mAh/Wh)",
                     controller: controller.drones[i]['batteryCapacity'],
                     hintText: "Enter battery capacity",
                   ),
@@ -138,7 +138,7 @@ class OperatorDroneDetailsView extends GetView<OperatorDroneDetailsController> {
                     ),
                     onPressed: controller.addNewDrone,
                     icon: const Icon(Icons.add),
-                    label: const Text("Add another Drone"),
+                    label: const Text("Add Another Drone"),
                   ),
                 ),
 

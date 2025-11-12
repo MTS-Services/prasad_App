@@ -29,7 +29,7 @@ class OperetorExperienceAndRecordsView
                 Text('Experience & Records', style: AppTextStyles.bold24),
                 Text('Tell us about your flying experience', style: AppTextStyles.regular16),
                 CustomTextFieldLogin(
-                  name: 'Total Flight Hours',
+                  labelText: 'Total Flight Hours',
                   hintText: 'Enter total flight hours',
                 ),
                 Text('Past projects & events', style: AppTextStyles.medium16),

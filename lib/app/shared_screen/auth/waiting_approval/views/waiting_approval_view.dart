@@ -44,8 +44,8 @@ class WaitingApprovalView extends GetView<WaitingApprovalController> {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () => Get.toNamed(Routes.LOGIN),
-                  child: Text('In Progress'),
+                  onPressed: () => Get.toNamed(Routes.AGENT_HOME),
+                  child: Text('Go To Login'),
                 ),
               ),
             ],

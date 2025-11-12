@@ -38,7 +38,7 @@ class GmailVerifyView extends GetView<GmailVerifyController> {
                   textAlign: TextAlign.center,
                 ),
                 CustomTextFieldLogin(
-                  name: 'Code',
+                  labelText: 'Code',
                   hintText: '123456',
                 ),
 

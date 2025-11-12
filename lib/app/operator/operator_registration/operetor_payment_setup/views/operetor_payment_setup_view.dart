@@ -28,7 +28,7 @@ class OperetorPaymentSetupView extends GetView<OperetorPaymentSetupController> {
                 Text('Need Add payment',style: AppTextStyles.bold24,),
                 AccountPaymentInfoAdd(),
                 CustomElevatedAndOutlineButton(
-                  elevateText: "Submit for verification",
+                  elevateText: "Submit For Verification",
                   outlineText: "Back",
                   elevatedOnPressed: () => Get.offAndToNamed(Routes.OPERATOR_BOTTOM_NAVI_BAR),
                   outlineOnPressed: () => Get.back(),

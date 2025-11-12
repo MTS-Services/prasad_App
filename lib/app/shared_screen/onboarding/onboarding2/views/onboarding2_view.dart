@@ -26,6 +26,7 @@ class Onboarding2View extends GetView<Onboarding2Controller> {
           padding: const EdgeInsets.all(16.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
             spacing: 20.h,
             children: [
               Text(

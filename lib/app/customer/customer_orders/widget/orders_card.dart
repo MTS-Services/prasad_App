@@ -110,7 +110,7 @@ class OrderCard extends StatelessWidget {
             child: ElevatedButton(
               onPressed: onTrackNow,
               child: Text(
-                "Track now",
+                "Track Now",
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w600,

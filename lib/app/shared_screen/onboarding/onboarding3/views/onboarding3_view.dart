@@ -46,7 +46,7 @@ class Onboarding3View extends GetView<Onboarding3Controller> {
                   onPressed: () {
                     Get.toNamed(Routes.LOGIN);
                   },
-                  child: Text('Login'),
+                  child: Text('Log In'),
                 ),
               ),
               SizedBox(

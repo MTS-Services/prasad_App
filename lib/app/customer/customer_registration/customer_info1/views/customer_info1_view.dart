@@ -29,32 +29,32 @@ class CustomerInfo1View extends GetView<CustomerInfo1Controller> {
                     children: [
                       Expanded(
                         child: CustomTextFieldLogin(
-                          name: 'First name',
+                          labelText: 'First name',
                           hintText: 'Enter your name',
                         ),
                       ),
                       Expanded(
                         child: CustomTextFieldLogin(
-                          name: 'Middle name',
+                          labelText: 'Middle name',
                           hintText: 'Enter your middle name',
                         ),
                       ),
                     ],
                   ),
                   CustomTextFieldLogin(
-                    name: 'Last name',
+                    labelText: 'Last name',
                     hintText: 'Enter your last name',
                   ),
                   CustomTextFieldLogin(
-                    name: 'Also Known As',
+                    labelText: 'Also Known As',
                     hintText: 'Enter your nick name',
                   ),
                   CustomTextFieldLogin(
-                    name: 'Phone',
+                    labelText: 'Phone',
                     hintText: '+91-98********',
                   ),
                   CustomTextFieldLogin(
-                    name: 'Email',
+                    labelText: 'Email',
                     hintText: '+Enter your Email',
                   ),
                   CustomDropdownField(

@@ -23,7 +23,7 @@ class SignUpView extends GetView<SignUpController> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
-              spacing: 20.h,
+              spacing: 10.h,
               children: [
                 Text(
                   'Sign Up',
@@ -34,19 +34,19 @@ class SignUpView extends GetView<SignUpController> {
                   style: AppTextStyles.regular20,
                 ),
                 CustomTextFieldLogin(
-                  name: 'Email',
+                  labelText: 'Email',
                   hintText: 'example@gmail.com',
                 ),
                 CustomTextFieldLogin(
-                  name: 'Phone',
+                  labelText: 'Phone',
                   hintText: '01*********',
                 ),
                 CustomTextFieldLogin(
-                  name: 'Password',
+                  labelText: 'Password',
                   hintText: '*****',
                 ),
                 CustomTextFieldLogin(
-                  name: 'Confirm Password',
+                  labelText: 'Confirm Password',
                   hintText: '*******',
                 ),
                 Row(
@@ -63,17 +63,20 @@ class SignUpView extends GetView<SignUpController> {
                       ),
                     ),
                     SizedBox(width: 10.w),
-                    Container(
-                      width: 55,
-                      height: 48,
-                      padding: const EdgeInsets.all(16),
-                      decoration: ShapeDecoration(
-                        color: AppColors.borderColorGrey,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(4),
+                    GestureDetector(
+                      onTap: () => Get.toNamed(Routes.FINGURE_PRINT),
+                      child: Container(
+                        width: 55,
+                        height: 48,
+                        padding: const EdgeInsets.all(16),
+                        decoration: ShapeDecoration(
+                          color: AppColors.borderColorGrey,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(4),
+                          ),
                         ),
+                        child: Image.asset(ImagePath.finger),
                       ),
-                      child: Image.asset(ImagePath.finger),
                     ),
                   ],
                 ),

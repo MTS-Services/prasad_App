@@ -64,6 +64,13 @@ abstract class Routes {
   static const ASSET_TYPE_EQUIPEMENT = _Paths.ASSET_TYPE_EQUIPEMENT;
   static const CUSTOMER_LANGUAGE = _Paths.CUSTOMER_LANGUAGE;
   static const OPERATOR_LANGUAGE = _Paths.OPERATOR_LANGUAGE;
+  static const FINGURE_PRINT = _Paths.FINGURE_PRINT;
+  static const AGENT_HOME = _Paths.AGENT_HOME;
+  static const AGENT_REGISTRATION1 = _Paths.AGENT_REGISTRATION1;
+  static const AGENT_ADD_CUSTOMER1 = _Paths.AGENT_ADD_CUSTOMER1;
+  static const AGENT_ADD_CUSTOMER2 = _Paths.AGENT_ADD_CUSTOMER2;
+  static const AGENT_ADD_CUSTOMER3 = _Paths.AGENT_ADD_CUSTOMER3;
+  static const AGENT_CREATE_SERVICE = _Paths.AGENT_CREATE_SERVICE;
 }
 
 abstract class _Paths {
@@ -127,4 +134,11 @@ abstract class _Paths {
   static const ASSET_TYPE_EQUIPEMENT = '/asset-type-equipement';
   static const CUSTOMER_LANGUAGE = '/customer-language';
   static const OPERATOR_LANGUAGE = '/operator-language';
+  static const FINGURE_PRINT = '/fingure-print';
+  static const AGENT_HOME = '/agent-home';
+  static const AGENT_REGISTRATION1 = '/agent-registration1';
+  static const AGENT_ADD_CUSTOMER1 = '/agent-add-customer1';
+  static const AGENT_ADD_CUSTOMER2 = '/agent-add-customer2';
+  static const AGENT_ADD_CUSTOMER3 = '/agent-add-customer3';
+  static const AGENT_CREATE_SERVICE = '/agent-create-service';
 }

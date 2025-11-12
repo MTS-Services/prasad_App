@@ -7,6 +7,7 @@
     "customer_registration" : "lib/app/customer/customer_registration",
     "operator_registration" : "lib/app/operator/operator_registration",
     "customer" : "lib/app/customer",
-    "operator" : "lib/app/operator"
+    "operator" : "lib/app/operator",
+    "agent" : "lib/app/field_agent"
   }
 }

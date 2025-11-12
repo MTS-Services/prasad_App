@@ -80,7 +80,7 @@ class CustomerProfileView extends GetView<CustomerProfileController> {
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {},
-                      child: Text('Add a another Geo'),
+                      child: Text('Add A Another Geo'),
                     ),
                   ),
                   const SizedBox(height: 7),

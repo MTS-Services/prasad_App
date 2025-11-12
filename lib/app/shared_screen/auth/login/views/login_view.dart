@@ -27,10 +27,7 @@ class LoginView extends GetView<LoginController> {
               mainAxisAlignment: MainAxisAlignment.center,
               spacing: 20.h,
               children: [
-                Text(
-                  'Sign In',
-                  style: AppTextStyles.bold40,
-                ),
+                Text('Sign In', style: AppTextStyles.bold40),
                 Text(
                   "Hi! Welcome back, you've been missed",
                   textAlign: TextAlign.center,
@@ -38,12 +35,12 @@ class LoginView extends GetView<LoginController> {
                 ),
                 CustomTextFieldLogin(
                   controller: controller.emailController,
-                  name: 'Email',
+                  labelText: 'Email',
                   hintText: 'example@gmail.com',
                 ),
                 CustomTextFieldLogin(
                   controller: controller.passwordController,
-                  name: 'Password',
+                  labelText: 'Password',
                   hintText: 'Aex@8465',
                 ),
                 GestureDetector(
@@ -63,12 +60,19 @@ class LoginView extends GetView<LoginController> {
                         width: double.infinity,
                         child: ElevatedButton(
                           onPressed: () {
-                            final email = controller.emailController.text.trim();
-                            final password = controller.passwordController.text.trim();
-                            if (email == "customer@gmail.com" && password == "123456") {
+                            final email = controller.emailController.text
+                                .trim();
+                            final password = controller.passwordController.text
+                                .trim();
+                            if (email == "customer@gmail.com" &&
+                                password == "123456") {
                               Get.offAllNamed(Routes.CUSTOMER_INFO1);
-                            } else if (email == "operator@gmail.com" && password == "123456") {
+                            } else if (email == "operator@gmail.com" &&
+                                password == "123456") {
                               Get.offAllNamed(Routes.OPERATOR_INFO1);
+                            } else if (email == "agent@gmail.com" &&
+                                password == "123456") {
+                              Get.offAllNamed(Routes.AGENT_REGISTRATION1);
                             } else {
                               Get.snackbar(
                                 "Login Failed",
@@ -99,18 +103,21 @@ class LoginView extends GetView<LoginController> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(16.0),
-                  child: Text('Or sign in with',style: AppTextStyles.regular16,),
+                  child: Text(
+                    'Or sign in with',
+                    style: AppTextStyles.regular16,
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      LoginIcon(image: ImagePath.google,),
+                      LoginIcon(image: ImagePath.google),
                       SizedBox(width: 10.w),
-                      LoginIcon(image: ImagePath.appleIcon,),
+                      LoginIcon(image: ImagePath.appleIcon),
                       SizedBox(width: 10.w),
-                      LoginIcon(image: ImagePath.facebook,),
+                      LoginIcon(image: ImagePath.facebook),
                     ],
                   ),
                 ),
@@ -151,4 +158,3 @@ class LoginView extends GetView<LoginController> {
     );
   }
 }
-

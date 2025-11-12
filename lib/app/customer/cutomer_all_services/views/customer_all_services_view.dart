@@ -52,7 +52,7 @@ class CustomerAllServicesView extends GetView<CutomerAllServicesController> {
                         'Precision crop monitoring and field insights powered by aerial data.',
                         price: '150',
                         priceUnit: 'Acre',
-                        buttonText: 'Book a Service',
+                        buttonText: 'Book A Service',
                         onPressed: () {
                           Get.toNamed('/customer-service-details');
                         },

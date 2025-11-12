@@ -36,7 +36,7 @@ class RecoveryPassView extends GetView<RecoveryPassController> {
                   textAlign: TextAlign.center,
                 ),
                 CustomTextFieldLogin(
-                  name: 'Email',
+                  labelText: 'Email',
                   hintText: 'example@gmail.com',
                 ),
                 CustomElevatedAndOutlineButton(

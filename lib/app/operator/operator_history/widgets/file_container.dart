@@ -17,7 +17,7 @@ class FileContainer extends StatelessWidget {
         borderRadius: BorderRadius.circular(5.r),
         border: Border.all(color: Colors.grey.shade400),
       ),
-      child: Text(text, style: AppTextStyles.regular12),
+      child: Text(text, style: AppTextStyles.regular12,overflow: TextOverflow.ellipsis,maxLines: 1,),
     );
   }
 }

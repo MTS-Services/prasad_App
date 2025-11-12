@@ -19,7 +19,7 @@ class DetailsButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(5.r),
         ),
         child: Text(
-          'See details',
+          'See Details',
           style: AppTextStyles.regular16.apply(color: AppColors.whiteColor),
         ),
       ),

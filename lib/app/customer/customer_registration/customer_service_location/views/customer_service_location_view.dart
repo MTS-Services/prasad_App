@@ -55,7 +55,7 @@ class CustomerServiceLocationView
                     }),
                   ),
                   CustomTextFieldLogin(
-                    name: 'Location Name',
+                    labelText: 'Location Name',
                     hintText: 'e.g., North GeoCoordinates',
                   ),
                   Text('Latitude/Longitude', style: AppTextStyles.medium16),
@@ -96,7 +96,7 @@ class CustomerServiceLocationView
                     children: [
                       Expanded(
                         child: CustomTextFieldLogin(
-                          name: 'Size/distance',
+                          labelText: 'Size/distance',
                           hintText: "0",
                         ),
                       ),

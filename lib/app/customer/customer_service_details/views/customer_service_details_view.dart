@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -6,7 +7,6 @@ import 'package:prasad/app/data/image_path.dart';
 import '../../../data/app_colors.dart';
 import '../../cutomer_notification/widget/back_button_card.dart';
 import '../controllers/customer_service_details_controller.dart';
-import '../widget/reusable_image_card.dart';
 
 class CustomerServiceDetailsView
     extends GetView<CustomerServiceDetailsController> {
@@ -14,6 +14,14 @@ class CustomerServiceDetailsView
 
   @override
   Widget build(BuildContext context) {
+    final List images = [
+      ImagePath.fieldAgentType,
+      ImagePath.operatorType,
+      ImagePath.customerType,
+      ImagePath.onboarding1,
+      ImagePath.onboarding2,
+      ImagePath.onboarding3,
+    ];
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -29,11 +37,7 @@ class CustomerServiceDetailsView
                   iconColor: Colors.white,
                 ),
                 SizedBox(height: 15.h),
-                ReusableImageCard(
-                  imagePath: ImagePath.servicePng,
-                  height: 200.h,
-                  borderRadius: 5.r,
-                ),
+                CustomCarouselSlider(images: images),
                 SizedBox(height: 10.h),
                 Text(
                   "Agro Drone Service",
@@ -141,6 +145,48 @@ class CustomerServiceDetailsView
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class CustomCarouselSlider extends StatelessWidget {
+  const CustomCarouselSlider({
+    super.key,
+    required this.images,
+  });
+
+  final List images;
+
+  @override
+  Widget build(BuildContext context) {
+    return CarouselSlider(
+      items: images
+          .map(
+            (item) => Builder(
+              builder: (BuildContext context) {
+                return Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(4),
+                    image: DecorationImage(
+                      image: AssetImage(item),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                );
+              },
+            ),
+          )
+          .toList(),
+      options: CarouselOptions(
+        height: 200.h,
+        autoPlay: true,
+        enlargeCenterPage: true,
+        aspectRatio: 16 / 9,
+        autoPlayCurve: Curves.fastOutSlowIn,
+        enableInfiniteScroll: true,
+        autoPlayAnimationDuration: Duration(seconds: 2),
+        viewportFraction: .8,
       ),
     );
   }

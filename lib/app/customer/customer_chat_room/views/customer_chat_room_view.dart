@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:prasad/app/shared_screen/common_widget/custom_appbar.dart';
 
 import '../../../data/app_colors.dart';
 import '../../cutomer_notification/widget/back_button_card.dart';
@@ -12,18 +13,13 @@ class CustomerChatRoomView extends GetView<CustomerChatRoomController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomAppbar(),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15 , vertical: 15),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              BackButtonCard(
-                onTap: () => Get.back(),
-                color: AppColors.primaryColor,
-                icon: Icons.arrow_back,
-                iconColor: Colors.white,
-              ),
               ChatBubble(
                 message:
                 "Hi! I just placed a drone service order. Can you confirm the time of delivery?",

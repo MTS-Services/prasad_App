@@ -29,7 +29,7 @@ class CustomerInfo2View extends GetView<CustomerInfo2Controller> {
               children: [
                 Text('Customer Info', style: AppTextStyles.bold24),
                 CustomTextFieldLogin(
-                  name: 'KYC Number',
+                  labelText: 'KYC Number',
                   hintText: 'KYC number',
                 ),
                 Text('Latitude/Longitude', style: AppTextStyles.medium16),
@@ -48,13 +48,13 @@ class CustomerInfo2View extends GetView<CustomerInfo2Controller> {
                   children: [
                     Flexible(
                       child: CustomTextFieldLogin(
-                        name: 'City*',
+                        labelText: 'City*',
                         hintText: "Enter City",
                       ),
                     ),
                     Flexible(
                       child: CustomTextFieldLogin(
-                        name: 'State*',
+                        labelText: 'State*',
                         hintText: "Enter State",
                       ),
                     ),
@@ -65,13 +65,13 @@ class CustomerInfo2View extends GetView<CustomerInfo2Controller> {
                   children: [
                     Flexible(
                       child: CustomTextFieldLogin(
-                        name: 'Postal code*',
+                        labelText: 'Postal code*',
                         hintText: "Enter code",
                       ),
                     ),
                     Flexible(
                       child: CustomTextFieldLogin(
-                        name: 'Country*',
+                        labelText: 'Country*',
                         hintText: "Enter Country",
                       ),
                     ),

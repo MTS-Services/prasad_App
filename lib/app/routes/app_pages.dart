@@ -42,6 +42,18 @@ import '../customer/cutomer_all_services/bindings/cutomer_all_services_binding.d
 import '../customer/cutomer_all_services/views/customer_all_services_view.dart';
 import '../customer/cutomer_notification/bindings/cutomer_notification_binding.dart';
 import '../customer/cutomer_notification/views/customer_notification_view.dart';
+import '../field_agent/agent_add_customer1/bindings/agent_add_customer1_binding.dart';
+import '../field_agent/agent_add_customer1/views/agent_add_customer1_view.dart';
+import '../field_agent/agent_add_customer2/bindings/agent_add_customer2_binding.dart';
+import '../field_agent/agent_add_customer2/views/agent_add_customer2_view.dart';
+import '../field_agent/agent_add_customer3/bindings/agent_add_customer3_binding.dart';
+import '../field_agent/agent_add_customer3/views/agent_add_customer3_view.dart';
+import '../field_agent/agent_create_service/bindings/agent_create_service_binding.dart';
+import '../field_agent/agent_create_service/views/agent_create_service_view.dart';
+import '../field_agent/agent_home/bindings/agent_home_binding.dart';
+import '../field_agent/agent_home/views/agent_home_view.dart';
+import '../field_agent/agent_registration1/bindings/agent_registration1_binding.dart';
+import '../field_agent/agent_registration1/views/agent_registration1_view.dart';
 import '../operator/asset_type_drone/bindings/asset_type_drone_binding.dart';
 import '../operator/asset_type_drone/views/asset_type_drone_view.dart';
 import '../operator/asset_type_equipement/bindings/asset_type_equipement_binding.dart';
@@ -102,6 +114,8 @@ import '../shared_screen/auth/user_type/bindings/user_type_binding.dart';
 import '../shared_screen/auth/user_type/views/user_type_view.dart';
 import '../shared_screen/auth/waiting_approval/bindings/waiting_approval_binding.dart';
 import '../shared_screen/auth/waiting_approval/views/waiting_approval_view.dart';
+import '../shared_screen/common_screen/fingure_print/bindings/fingure_print_binding.dart';
+import '../shared_screen/common_screen/fingure_print/views/fingure_print_view.dart';
 import '../shared_screen/common_screen/map/bindings/map_binding.dart';
 import '../shared_screen/common_screen/map/views/map_view.dart';
 import '../shared_screen/onboarding/onboarding1/bindings/onboarding1_binding.dart';
@@ -396,6 +410,41 @@ class AppPages {
       name: _Paths.OPERATOR_LANGUAGE,
       page: () => const OperatorLanguageView(),
       binding: OperatorLanguageBinding(),
+    ),
+    GetPage(
+      name: _Paths.FINGURE_PRINT,
+      page: () => const FingurePrintView(),
+      binding: FingurePrintBinding(),
+    ),
+    GetPage(
+      name: _Paths.AGENT_HOME,
+      page: () => const AgentHomeView(),
+      binding: AgentHomeBinding(),
+    ),
+    GetPage(
+      name: _Paths.AGENT_REGISTRATION1,
+      page: () => const AgentRegistration1View(),
+      binding: AgentRegistration1Binding(),
+    ),
+    GetPage(
+      name: _Paths.AGENT_ADD_CUSTOMER1,
+      page: () => const AgentAddCustomer1View(),
+      binding: AgentAddCustomer1Binding(),
+    ),
+    GetPage(
+      name: _Paths.AGENT_ADD_CUSTOMER2,
+      page: () => const AgentAddCustomer2View(),
+      binding: AgentAddCustomer2Binding(),
+    ),
+    GetPage(
+      name: _Paths.AGENT_ADD_CUSTOMER3,
+      page: () => const AgentAddCustomer3View(),
+      binding: AgentAddCustomer3Binding(),
+    ),
+    GetPage(
+      name: _Paths.AGENT_CREATE_SERVICE,
+      page: () => const AgentCreateServiceView(),
+      binding: AgentCreateServiceBinding(),
     ),
   ];
 }

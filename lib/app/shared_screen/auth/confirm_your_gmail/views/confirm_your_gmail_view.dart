@@ -31,11 +31,11 @@ class ConfirmYourGmailView extends GetView<ConfirmYourGmailController> {
                   textAlign: TextAlign.center,
                 ),
                 Text(
-                  'We have sent a code in an Email message to ex***@gmaol.co TO confirm your account. enter your code.',
+                  'We have sent a code in an Email message to ex***@gmail.com TO confirm your account. enter your code.',
                   style: AppTextStyles.regular20,
                   textAlign: TextAlign.center,
                 ),
-                CustomTextFieldLogin(name: 'Code', hintText: '123456'),
+                CustomTextFieldLogin(labelText: 'Code', hintText: '123456'),
                 GestureDetector(
                   onTap: () {},
                   child: Align(

@@ -33,11 +33,11 @@ class CreatePassView extends GetView<CreatePassController> {
                   ),
                 ),
                 CustomTextFieldLogin(
-                  name: 'Password',
+                  labelText: 'Password',
                   hintText: 'enter your password',
                 ),
                 CustomTextFieldLogin(
-                  name: 'Confirm Password',
+                  labelText: 'Confirm Password',
                   hintText: 'enter your password',
                 ),
                 CustomElevatedAndOutlineButton(

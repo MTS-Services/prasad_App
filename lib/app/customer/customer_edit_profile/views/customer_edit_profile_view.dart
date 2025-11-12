@@ -6,6 +6,7 @@ import 'package:prasad/app/data/app_text_styles.dart';
 import 'package:prasad/app/data/image_path.dart';
 import 'package:prasad/app/shared_screen/common_widget/custom_appbar.dart';
 
+import '../../../shared_screen/common_widget/custom_dropdown_field.dart';
 import '../controllers/customer_edit_profile_controller.dart';
 
 class CustomerEditProfileView extends GetView<CustomerEditProfileController> {
@@ -14,8 +15,13 @@ class CustomerEditProfileView extends GetView<CustomerEditProfileController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppbar(widget: Text('Save',style: TextStyle(color: AppColors.primaryColor,fontSize: 18),),),
-      body:SingleChildScrollView(
+      appBar: CustomAppbar(
+        widget: Text(
+          'Save',
+          style: TextStyle(color: AppColors.primaryColor, fontSize: 18),
+        ),
+      ),
+      body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Container(
@@ -56,11 +62,10 @@ class CustomerEditProfileView extends GetView<CustomerEditProfileController> {
                         ),
                       ),
                     ],
-                  )
-                  ,
+                  ),
                   const SizedBox(height: 16),
                   Text('Name', style: AppTextStyles.regular16),
-                  buildTextFormField(controller.nameController,'name'),
+                  buildTextFormField(controller.nameController, 'name'),
                   const SizedBox(height: 7),
                   Text('Phone number', style: AppTextStyles.regular16),
                   buildTextFormField(controller.phoneController, 'Phone'),
@@ -68,51 +73,104 @@ class CustomerEditProfileView extends GetView<CustomerEditProfileController> {
                   Text('Email', style: AppTextStyles.regular16),
                   buildTextFormField(controller.emailController, 'Email'),
                   const SizedBox(height: 7),
-                  Text('Geo Radius 1', style: AppTextStyles.regular16,),
-                  buildTextFormField(controller.geo1Controller, 'Geo 1',suffixIcon: Icons.location_on_outlined),
+                  Text('Geo Radius 1', style: AppTextStyles.regular16),
+                  buildTextFormField(
+                    controller.geo1Controller,
+                    'Geo 1',
+                    suffixIcon: Icons.location_on_outlined,
+                  ),
                   const SizedBox(height: 7),
                   Text('Geo Radius 2', style: AppTextStyles.regular16),
-                  buildTextFormField(controller.geo2Controller, 'Geo 2',suffixIcon: Icons.location_on_outlined),
+                  buildTextFormField(
+                    controller.geo2Controller,
+                    'Geo 2',
+                    suffixIcon: Icons.location_on_outlined,
+                  ),
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {},
-                      child: Text('Add a another Geo'),
+                      child: Text('Add A Another Geo'),
                     ),
                   ),
                   const SizedBox(height: 7),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      CustomDropdownField(
+                        label: "Industry*",
+                        items: controller.items,
+                        selectedValue: controller.selectedValue.value,
+                        onChanged: controller.onSelectedItem,
+                      ),
+                      const SizedBox(height: 7),
+                      Text("Sub Services", style: AppTextStyles.medium20),
+                      Column(
+                        children: List.generate(controller.subServices.length, (
+                            index,
+                            ) {
+                          final sub = controller.subServices[index];
+                          return Row(
+                            children: [
+                              Checkbox(
+                                value:
+                                controller.isSelectedMap[sub]?.value ?? false,
+                                onChanged: (val) =>
+                                    controller.checkBoxSelected(sub, val),
+                              ),
+                              Text(sub),
+                            ],
+                          );
+                        }),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 7),
                   Text('Password', style: AppTextStyles.regular16),
-                  buildTextFormField(controller.passwordController, 'Password', obscureText: true),
+                  buildTextFormField(
+                    controller.passwordController,
+                    'Password',
+                    obscureText: true,
+                  ),
                   const SizedBox(height: 7),
                   Text('Confirm Password', style: AppTextStyles.regular16),
-                  buildTextFormField(controller.confirmPasswordController, 'Confirm Password', obscureText: true),
+                  buildTextFormField(
+                    controller.confirmPasswordController,
+                    'Confirm Password',
+                    obscureText: true,
+                  ),
                 ],
               ),
             ),
           ),
         ),
-      ) ,
+      ),
     );
   }
 
-  Widget buildTextFormField(TextEditingController controller ,String title, {bool obscureText = false,IconData? suffixIcon,}) {
+  Widget buildTextFormField(
+    TextEditingController controller,
+    String title, {
+    bool obscureText = false,
+    IconData? suffixIcon,
+  }) {
     return TextFormField(
-                 controller: controller,
-                  decoration: InputDecoration(
-                    hintText: title,
-                      suffixIcon: suffixIcon != null ? Icon(suffixIcon) : null,
-                    contentPadding: EdgeInsets.symmetric(horizontal: 12,vertical: 15),
-                    filled: true,
-                    fillColor: AppColors.whiteColor,
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide.none,
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide.none,
-                        borderRadius: BorderRadius.circular(8),
-                      )
-                  ),
-                );
+      controller: controller,
+      decoration: InputDecoration(
+        hintText: title,
+        suffixIcon: suffixIcon != null ? Icon(suffixIcon) : null,
+        contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 15),
+        filled: true,
+        fillColor: AppColors.whiteColor,
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide.none,
+          borderRadius: BorderRadius.circular(8),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide.none,
+          borderRadius: BorderRadius.circular(8),
+        ),
+      ),
+    );
   }
 }

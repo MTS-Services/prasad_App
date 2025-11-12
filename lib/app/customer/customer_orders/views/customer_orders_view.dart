@@ -13,7 +13,7 @@ class CustomerOrdersView extends GetView<CustomerOrdersController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
+        body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15 , vertical: 15),
@@ -30,6 +30,7 @@ class CustomerOrdersView extends GetView<CustomerOrdersController> {
                 ListView.builder(
                   itemCount: 5,
                   shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
                   itemBuilder: (context, index) {
                   return OrderCard(
                     orderName: "Crop Spraying",
@@ -40,7 +41,7 @@ class CustomerOrdersView extends GetView<CustomerOrdersController> {
                       Get.offNamed("/customer-service-traking");
                     },
                   );
-                },)
+                },),
               ],
             ),
           ),

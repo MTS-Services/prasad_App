@@ -36,9 +36,9 @@ class NewPasswordView extends GetView<NewPasswordController> {
                   style: AppTextStyles.regular20,
                   textAlign: TextAlign.center,
                 ),
-                CustomTextFieldLogin(name: 'Password', hintText: '******'),
+                CustomTextFieldLogin(labelText: 'Password', hintText: '******'),
                 CustomTextFieldLogin(
-                  name: 'Confirm Password',
+                  labelText: 'Confirm Password',
                   hintText: '******',
                 ),
                 Obx(

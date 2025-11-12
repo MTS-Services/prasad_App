@@ -34,14 +34,14 @@ class OperatorInfo1View extends GetView<OperatorInfo1Controller> {
                     children: [
                       Expanded(
                         child: CustomTextFieldLogin(
-                          name: 'First name',
+                          labelText: 'First name',
                           hintText: 'Enter your name',
                           controller: controller.firstNameController,
                         ),
                       ),
                       Expanded(
                         child: CustomTextFieldLogin(
-                          name: 'Middle name',
+                          labelText: 'Middle name',
                           hintText: 'Enter your name',
                           controller: controller.firstNameController,
                         ),
@@ -49,17 +49,17 @@ class OperatorInfo1View extends GetView<OperatorInfo1Controller> {
                     ],
                   ),
                   CustomTextFieldLogin(
-                    name: 'Last name',
+                    labelText: 'Last name',
                     hintText: 'Enter your last name',
                     controller: controller.lastNameController,
                   ),
                   CustomTextFieldLogin(
-                    name: 'Phone Number',
+                    labelText: 'Phone Number',
                     hintText: 'Enter your phone number',
                     controller: controller.phoneController,
                   ),
                   CustomTextFieldLogin(
-                    name: 'Email',
+                    labelText: 'Email',
                     hintText: 'Enter your email',
                     controller: controller.emailController,
                   ),
@@ -73,13 +73,13 @@ class OperatorInfo1View extends GetView<OperatorInfo1Controller> {
                     hintText: "Latitude and longitude",
                   ),
                   CustomTextFieldLogin(
-                    name: "Mandal*",
+                    labelText: "Mandal*",
                     hintText: "Select Mandal",
                     controller: controller.serviceRadiusController,
                   ),
 
                   CustomTextFieldLogin(
-                    name: "Service radius*",
+                    labelText: "Service radius*",
                     hintText: "e.g. 40KM",
                     controller: controller.serviceRadiusController,
                   ),
@@ -133,6 +133,7 @@ class OperatorInfo1View extends GetView<OperatorInfo1Controller> {
   }
 }
 
+/*
 Widget subCategoryContainer(String subtext) {
   return IntrinsicWidth(
     child: Container(
@@ -167,4 +168,4 @@ Widget subCategoryContainer(String subtext) {
       ),
     ),
   );
-}
+}*/

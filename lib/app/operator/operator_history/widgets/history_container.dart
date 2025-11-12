@@ -16,6 +16,7 @@ class HistoryContainer extends StatelessWidget {
     this.isOperator = true,
     this.orderOnPressed,
   });
+
   final String imageUrl, serviceName, serviceDetails;
   final Function()? detailsOnTap, orderOnPressed;
   final bool isOperator;
@@ -51,13 +52,15 @@ class HistoryContainer extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
-                spacing: 10.w,
-                children: [
-                  FileContainer(text: '4 images'),
-                  FileContainer(text: '2 Videos'),
-                  FileContainer(text: '1 Pdf'),
-                ],
+              Flexible(
+                child: Row(
+                  spacing: 10.w,
+                  children: [
+                    Flexible(flex: 2, child: FileContainer(text: '4 images',)),
+                    Expanded(flex: 2, child: FileContainer(text: '2 Videos')),
+                    Flexible(flex: 1, child: FileContainer(text: '1 Pdf')),
+                  ],
+                ),
               ),
               isOperator
                   ? DetailsButton(onTap: detailsOnTap)

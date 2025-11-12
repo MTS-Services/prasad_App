@@ -30,24 +30,24 @@ class OperatorCertificationView
               children: [
                 Text('Add Your License/Certification', style: AppTextStyles.bold24),
                 CustomTextFieldLogin(
-                  name: 'License_Number (Unique)',
+                  labelText: 'License_Number (Unique)',
                   hintText: 'Enter your address',
                   controller: controller.licenseNumberController,
                 ),
                 CustomTextFieldLogin(
-                  name: 'License_Issue_Date',
+                  labelText: 'License_Issue_Date',
                   hintText: 'Enter your Date',
                   controller: controller.issueDateController,
 
                 ),
                 CustomTextFieldLogin(
-                  name: 'License_Expiry_Date',
+                  labelText: 'License_Expiry_Date',
                   hintText: 'Enter your Date',
                   controller: controller.expiryDateController,
 
                 ),
                 CustomTextFieldLogin(
-                  name: 'Additional information',
+                  labelText: 'Additional information',
                   hintText: 'Additional information',
                   controller: controller.additionalInfoController,
 

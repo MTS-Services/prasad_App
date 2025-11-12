@@ -30,11 +30,11 @@ class OperetorEquipmentDetailsView
                   Text('Equipment Details', style: AppTextStyles.bold24),
                   Text('Add information about your equipment', style: AppTextStyles.regular16),
                   CustomTextFieldLogin(
-                    name: 'Equipment_ID',
+                    labelText: 'Equipment_ID',
                     hintText: 'EQP-XXXXXXXXX',
                   ),
                   CustomTextFieldLogin(
-                    name: 'Asset_ID',
+                    labelText: 'Asset_ID',
                     hintText: 'Enter your Asset ID',
                   ),
                   CustomDropdownField(
@@ -46,27 +46,27 @@ class OperetorEquipmentDetailsView
 
 
                   CustomTextFieldLogin(
-                    name: 'Model',
+                    labelText: 'Model',
                     hintText: 'Model year and version',
                   ),
                   CustomTextFieldLogin(
-                    name: 'Make',
+                    labelText: 'Make',
                     hintText: 'Make',
                   ),
                   CustomTextFieldLogin(
-                    name: 'Manufacturer',
+                    labelText: 'Manufacturer',
                     hintText: 'Manufacturer',
                   ),
                   CustomTextFieldLogin(
-                    name: 'Year',
+                    labelText: 'Year',
                     hintText: 'Year of Manufacture',
                   ),
                   CustomTextFieldLogin(
-                    name: 'Serial_Number',
+                    labelText: 'Serial_Number',
                     hintText: 'Serial Number',
                   ),
                   CustomTextFieldLogin(
-                    name: 'Last_Maintenance_Date',
+                    labelText: 'Last_Maintenance_Date',
                     hintText: 'Last Maintenance datatime',
                   ),
 
