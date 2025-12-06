@@ -9,8 +9,9 @@ import '../../../../data/image_path.dart';
 class FileUploadContainer extends StatelessWidget {
   final Function()? onTap;
   final File? image;
+  final String uploadType;
 
-  const FileUploadContainer({super.key, this.onTap, this.image});
+  const FileUploadContainer({super.key, this.onTap, this.image, required this.uploadType});
 
   @override
   Widget build(BuildContext context) {
@@ -40,14 +41,14 @@ class FileUploadContainer extends StatelessWidget {
                 ),
                 SizedBox(height: 10.h),
                 Text(
-                  'Upload Profile',
+                  uploadType,
                   style: AppTextStyles.medium16.copyWith(
                     color: AppColors.primaryColor,
                   ),
                 ),
                 SizedBox(height: 5.h),
                 Text(
-                  'JPEG files accepted. Max 100MB',
+                  'JPEG files accepted. Max 5MB',
                   style: AppTextStyles.regular14.copyWith(
                     color: AppColors.hintColor,
                   ),

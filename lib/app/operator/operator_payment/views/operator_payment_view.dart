@@ -15,7 +15,9 @@ import '../widgets/success_alartdialog.dart';
 
 class OperatorPaymentView extends GetView<OperatorPaymentController> {
   const OperatorPaymentView({super.key});
+
   final List<String> days = const ['Last 3 days', 'Last 5 days', 'Last 7 days'];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,9 +73,9 @@ class OperatorPaymentView extends GetView<OperatorPaymentController> {
                 SizedBox(height: 20.h),
                 PaymentContainer(
                   primaryAccountName: 'HSBC Business Account',
-                  primaryAccountNumber: '*****_*****_1234',
+                  primaryAccountNumber: '***** ***** 1234',
                   secondaryAccountName: 'HSBC Business Account',
-                  secondaryAccountNumber: '*****_*****_1234',
+                  secondaryAccountNumber: '***** ***** 1234',
                   primaryStatus: 'primary',
                   secondryStatus: 'Secondry',
                   newPaymentOnPressed: () => showDialog(
@@ -131,4 +133,3 @@ class OperatorPaymentView extends GetView<OperatorPaymentController> {
     );
   }
 }
-

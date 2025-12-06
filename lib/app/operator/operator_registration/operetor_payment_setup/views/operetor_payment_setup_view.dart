@@ -27,10 +27,11 @@ class OperetorPaymentSetupView extends GetView<OperetorPaymentSetupController> {
                 Text('Set up secure payment for your earnings', style: AppTextStyles.regular16),
                 Text('Need Add payment',style: AppTextStyles.bold24,),
                 AccountPaymentInfoAdd(),
+                Text("Add A New Payment Method",style: AppTextStyles.medium16,),
                 CustomElevatedAndOutlineButton(
-                  elevateText: "Submit For Verification",
+                  elevateText: "Submit",
                   outlineText: "Back",
-                  elevatedOnPressed: () => Get.offAndToNamed(Routes.OPERATOR_BOTTOM_NAVI_BAR),
+                  elevatedOnPressed: () => Get.toNamed(Routes.OPERETOR_WAITING_CONFIRMATION),
                   outlineOnPressed: () => Get.back(),
                 ),
                 SizedBox(),

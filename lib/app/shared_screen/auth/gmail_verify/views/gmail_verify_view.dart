@@ -7,7 +7,8 @@ import '../../../../data/app_colors.dart';
 import '../../../../data/app_text_styles.dart';
 import '../../../../data/image_path.dart';
 import '../../../../routes/app_pages.dart';
-import '../../../common_widget/custom_text_field_login.dart';
+import '../../../common_widget/custom_elevated_and_outline_button.dart';
+import '../../../common_widget/custom_text_from_field.dart';
 import '../../login/widget/login_icon.dart';
 import '../controllers/gmail_verify_controller.dart';
 
@@ -16,97 +17,43 @@ class GmailVerifyView extends GetView<GmailVerifyController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold( //Sign up page
+    return Scaffold(
       body: SingleChildScrollView(
-        child: SafeArea(
+        child: SafeArea( //SignUP
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
               spacing: 20.h,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 10.h),
+                SizedBox(height: 50.w),
                 Text(
-                  'Confirm Your Gmail',
+                  "Confirm Your Email",
                   style: AppTextStyles.bold40,
                   textAlign: TextAlign.center,
                 ),
                 Text(
-                  "We have sent a code in an Email message to ex***@gmaol.co TO confirm your account. enter your code.",
-                  style: AppTextStyles.regular18,
+                  'We have sent a code in an Email message to ex***@gmail.com TO confirm your account. enter your code.',
+                  style: AppTextStyles.regular20,
                   textAlign: TextAlign.center,
                 ),
-                CustomTextFieldLogin(
-                  labelText: 'Code',
-                  hintText: '123456',
-                ),
-
-                SizedBox(height: 10.h),
-                Row(
-                  children: [
-                    Flexible(
-                      child: SizedBox(
-                        width: double.infinity,
-                        child: ElevatedButton(
-                          onPressed: () {
-                            Get.toNamed(Routes.LOGIN);
-                          },
-                          child: Text("Next"),
-                        ),
-                      ),
+                CustomTextFromField(labelText: 'Code', hintText: '123456'),
+                GestureDetector(
+                  onTap: () {},
+                  child: Align(
+                    alignment: Alignment.topRight,
+                    child: Text(
+                      'Resent',
+                      style: TextStyle(color: AppColors.primaryColor),
                     ),
-                    SizedBox(width: 10.w),
-                    Container(
-                      width: 55,
-                      height: 48,
-                      padding: const EdgeInsets.all(16),
-                      decoration: ShapeDecoration(
-                        color: AppColors.borderColorGrey,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(4),
-                        ),
-                      ),
-                      child: Image.asset(ImagePath.finger),
-                    ),
-                  ],
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: Divider(
-                          color: AppColors.borderColorGrey,
-                          thickness: 1,
-                          indent: 12,
-                        ),
-                      ),
-                      Text('  Or sign in with', style: AppTextStyles.regular16),
-                      Expanded(
-                        child: Divider(
-                          color: AppColors.borderColorGrey,
-                          thickness: 1,
-                          indent: 12,
-                        ),
-                      ),
-                    ],
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      LoginIcon(image: ImagePath.google),
-                      SizedBox(width: 10.w),
-                      LoginIcon(image: ImagePath.appleIcon),
-                      SizedBox(width: 10.w),
-                      LoginIcon(image: ImagePath.facebook),
-                    ],
-                  ),
+                CustomElevatedAndOutlineButton(
+                  elevateText: 'Verify',
+                  outlineText: 'Back',
+                  elevatedOnPressed: () => Get.toNamed(Routes.LOGIN),
+                  outlineOnPressed: () => Get.back(),
                 ),
-
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

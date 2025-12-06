@@ -2,7 +2,9 @@ import 'package:get/get.dart';
 
 class CustomerServiceLocationController extends GetxController {
   var items = ["Acres", "Square km"," + km"].obs;
-  var serviceItems = ["service 1", "Service 2","Service 3"].obs;
+  var serviceItems = ["agriculture", "Service 2","Service 3"].obs;
+  var cropItems = ["paddy ", "wheat","Corn","Barley","Soybean"].obs;
+  var cropValue = RxnString();
   var selectedValue = RxnString();
   var serviceValue = RxnString();
 void onItemSelected(String? value){
@@ -11,13 +13,15 @@ void onItemSelected(String? value){
   void serviceItemSelected(String? value){
     serviceValue.value = value;
   }
+  void cropItemSelected(String? value){
+    cropValue.value = value;
+  }
   final Map<String, List<String>> subServiceMap = {
-    "service 1": ["Data 1", "Data 2", "Data 3"],
+    "agriculture": ["Data 1", "Data 2", "Data 3"],
     "Service 2": ["Entry 1", "Entry 2", "Entry 3"],
     "Service 3": ["Number 1", "Number 2", "Number 3"],
   };
 
-  // Map to store selection state for each subservice
   final Map<String, RxBool> isSelectedMap = {};
 
   List<String> get subServices => subServiceMap[serviceValue.value] ?? [];

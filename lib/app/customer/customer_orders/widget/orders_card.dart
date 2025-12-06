@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:prasad/app/data/app_text_styles.dart';
+import 'package:prasad/app/shared_screen/common_widget/custom_elevated_and_outline_button.dart';
 
 class OrderCard extends StatelessWidget {
   final String orderName;
@@ -8,6 +11,7 @@ class OrderCard extends StatelessWidget {
   final String date;
   final String time;
   final VoidCallback onTrackNow;
+  final VoidCallback onCancel;
 
   const OrderCard({
     Key? key,
@@ -15,7 +19,7 @@ class OrderCard extends StatelessWidget {
     required this.status,
     required this.date,
     required this.time,
-    required this.onTrackNow,
+    required this.onTrackNow, required this.onCancel,
   }) : super(key: key);
 
   Color getStatusColor(String status) {
@@ -43,7 +47,7 @@ class OrderCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: isDark ? Colors.grey[900] : Colors.white,
         borderRadius: BorderRadius.circular(14.r),
-        border: Border.all(width: 2, color:Colors.grey.shade300),
+        border: Border.all(width: 2, color: Colors.grey.shade300),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.08),
@@ -87,10 +91,7 @@ class OrderCard extends StatelessWidget {
             children: [
               Icon(Icons.calendar_today_outlined, size: 16.sp),
               SizedBox(width: 6.w),
-              Text(
-                date,
-                style: TextStyle(fontSize: 13.sp),
-              ),
+              Text(date, style: TextStyle(fontSize: 13.sp)),
             ],
           ),
           SizedBox(height: 6.h),
@@ -98,26 +99,16 @@ class OrderCard extends StatelessWidget {
             children: [
               Icon(Icons.access_time, size: 16.sp),
               SizedBox(width: 6.w),
-              Text(
-                time,
-                style: TextStyle(fontSize: 13.sp),
-              ),
+              Text(time, style: TextStyle(fontSize: 13.sp)),
             ],
           ),
           SizedBox(height: 14.h),
-          SizedBox(
-            width: double.infinity,
-            child: ElevatedButton(
-              onPressed: onTrackNow,
-              child: Text(
-                "Track Now",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w600,
-                  fontSize: 14.sp,
-                ),
-              ),
-            ),
+
+          CustomElevatedAndOutlineButton(
+            elevateText: "Track Now",
+            outlineText: "Cancel",
+            elevatedOnPressed: onTrackNow,
+            outlineOnPressed: onCancel,
           ),
         ],
       ),

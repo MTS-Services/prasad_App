@@ -8,7 +8,7 @@ import 'package:prasad/app/shared_screen/common_widget/show_password_row.dart';
 import '../../../../data/app_colors.dart';
 import '../../../../data/app_text_styles.dart';
 import '../../../../routes/app_pages.dart';
-import '../../../common_widget/custom_text_field_login.dart';
+import '../../../common_widget/custom_text_from_field.dart';
 import '../controllers/new_password_controller.dart';
 
 class NewPasswordView extends GetView<NewPasswordController> {
@@ -31,13 +31,8 @@ class NewPasswordView extends GetView<NewPasswordController> {
                   style: AppTextStyles.bold40,
                   textAlign: TextAlign.center,
                 ),
-                Text(
-                  '',
-                  style: AppTextStyles.regular20,
-                  textAlign: TextAlign.center,
-                ),
-                CustomTextFieldLogin(labelText: 'Password', hintText: '******'),
-                CustomTextFieldLogin(
+                CustomTextFromField(labelText: 'Password', hintText: '******'),
+                CustomTextFromField(
                   labelText: 'Confirm Password',
                   hintText: '******',
                 ),

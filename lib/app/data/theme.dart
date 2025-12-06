@@ -23,20 +23,23 @@ ThemeData themeData() {
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.primaryColor,
         foregroundColor: AppColors.whiteColor,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
-          padding: const EdgeInsets.symmetric(vertical: 14,horizontal: 4 ),
-          textStyle: AppTextStyles.medium16.copyWith(overflow: TextOverflow.ellipsis,), alignment: Alignment.center,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(4.r),
+        ),
+        padding: EdgeInsets.symmetric(vertical: 14.h, horizontal: 4.w),
+        textStyle: AppTextStyles.medium16.copyWith(
+          overflow: TextOverflow.ellipsis,
+        ),
+        alignment: Alignment.center,
       ),
     ),
     outlinedButtonTheme: OutlinedButtonThemeData(
       style: OutlinedButton.styleFrom(
         backgroundColor: AppColors.whiteColor,
         foregroundColor: AppColors.primaryColor,
-        padding: EdgeInsets.symmetric(vertical: 12.h),
+        padding: EdgeInsets.symmetric(vertical: 14.h, horizontal: 4.w),
         side: const BorderSide(color: AppColors.primaryColor, width: 1.5),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(4),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.r)),
         textStyle: AppTextStyles.medium16,
       ),
     ),

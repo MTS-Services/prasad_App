@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prasad/app/customer/customer_bottom_navi_bar/views/customer_bottom_navi_bar_view.dart';
 import 'package:prasad/app/data/app_text_styles.dart';
-
 import '../../../data/app_colors.dart';
 import '../../customer_bottom_navi_bar/controllers/customer_bottom_navi_bar_controller.dart';
 import '../../cutomer_notification/widget/back_button_card.dart';

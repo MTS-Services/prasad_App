@@ -7,7 +7,7 @@ import 'package:prasad/app/shared_screen/common_widget/custom_elevated_and_outli
 import '../../../../data/app_colors.dart';
 import '../../../../data/app_text_styles.dart';
 import '../../../../routes/app_pages.dart';
-import '../../../common_widget/custom_text_field_login.dart';
+import '../../../common_widget/custom_text_from_field.dart';
 import '../controllers/recovery_pass_controller.dart';
 
 class RecoveryPassView extends GetView<RecoveryPassController> {
@@ -35,7 +35,7 @@ class RecoveryPassView extends GetView<RecoveryPassController> {
                   style: AppTextStyles.regular20,
                   textAlign: TextAlign.center,
                 ),
-                CustomTextFieldLogin(
+                CustomTextFromField(
                   labelText: 'Email',
                   hintText: 'example@gmail.com',
                 ),

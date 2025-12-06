@@ -8,12 +8,14 @@ class CustomerInfo1Controller extends GetxController {
   final mandals = ['Mandal 1', 'Mandal 2', 'Mandal 3'];
   final villages = ['Village 1', 'Village 2', 'Village 3'];
   final registeredBy = ['Admin', 'Agent', 'Self'];
+  final countryCode = ['+91', '+11', '+57'];
 
   // Selected values
   final selectedDistrict = RxnString();
   final selectedMandal = RxnString();
   final selectedVillage = RxnString();
   final selectedRegisteredBy = RxnString();
+  final selectedcountryCode = RxnString();
 
   // Text fields
   final firstName = ''.obs;
@@ -28,6 +30,7 @@ class CustomerInfo1Controller extends GetxController {
   void onMandalSelected(String? value) => selectedMandal.value = value;
   void onVillageSelected(String? value) => selectedVillage.value = value;
   void onRegisteredBySelected(String? value) => selectedRegisteredBy.value = value;
+  void onCountryCodeSelected(String? value) => selectedcountryCode.value = value;
 
   // Text field setters
   void setFirstName(String value) => firstName.value = value;

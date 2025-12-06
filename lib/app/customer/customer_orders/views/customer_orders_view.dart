@@ -10,13 +10,14 @@ import '../widget/orders_card.dart';
 
 class CustomerOrdersView extends GetView<CustomerOrdersController> {
   const CustomerOrdersView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
+      body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15 , vertical: 15),
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -26,27 +27,29 @@ class CustomerOrdersView extends GetView<CustomerOrdersController> {
                 //   icon: Icons.arrow_back,
                 //   iconColor: Colors.white,
                 // ),
-                SizedBox(height: 10.h,),
+                SizedBox(height: 10.h),
                 ListView.builder(
                   itemCount: 5,
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
                   itemBuilder: (context, index) {
-                  return OrderCard(
-                    orderName: "Crop Spraying",
-                    status: "In Progress",
-                    date: "Mon, Sep 10",
-                    time: "12:00 AM - 3:00 PM",
-                    onTrackNow: () {
-                      Get.offNamed("/customer-service-traking");
-                    },
-                  );
-                },),
+                    return OrderCard(
+                      orderName: "Crop Spraying",
+                      status: "In Progress",
+                      date: "Mon, Sep 10",
+                      time: "12:00 AM - 3:00 PM",
+                      onTrackNow: () {
+                        Get.offNamed("/customer-service-traking");
+                      },
+                      onCancel: () {},
+                    );
+                  },
+                ),
               ],
             ),
           ),
         ),
-      )
+      ),
     );
   }
 }

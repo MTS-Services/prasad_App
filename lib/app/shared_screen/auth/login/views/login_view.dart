@@ -8,7 +8,7 @@ import 'package:prasad/app/data/image_path.dart';
 import 'package:prasad/app/routes/app_pages.dart';
 import 'package:prasad/app/shared_screen/auth/user_type/widget/type_card.dart';
 
-import '../../../common_widget/custom_text_field_login.dart';
+import '../../../common_widget/custom_text_from_field.dart';
 import '../controllers/login_controller.dart';
 import '../widget/login_icon.dart';
 
@@ -25,28 +25,71 @@ class LoginView extends GetView<LoginController> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
-              spacing: 20.h,
+              spacing: 16.h,
               children: [
-                Text('Sign In', style: AppTextStyles.bold40),
+                SizedBox(height: 20.h),
                 Text(
-                  "Hi! Welcome back, you've been missed",
+                  "Hi! Welcome back! ",
                   textAlign: TextAlign.center,
                   style: AppTextStyles.regular20,
                 ),
-                CustomTextFieldLogin(
+                Text('Sign In Using', style: AppTextStyles.bold40),
+                CustomTextFromField(
+                  labelText: "Phone",
+                  hintText: "Enter your Phone Number",
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    LoginIcon(image: ImagePath.google),
+                    LoginIcon(image: ImagePath.facebook),
+                  ],
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16.w),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Divider(
+                          color: AppColors.blackColor,
+                          thickness: 1,
+                          indent: 12,
+                        ),
+                      ),
+                      Text(' Or', style: AppTextStyles.regular16),
+                      Expanded(
+                        child: Divider(
+                          color: AppColors.blackColor,
+                          thickness: 1,
+                          indent: 12,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                CustomTextFromField(
                   controller: controller.emailController,
                   labelText: 'Email',
                   hintText: 'example@gmail.com',
                 ),
-                CustomTextFieldLogin(
-                  controller: controller.passwordController,
-                  labelText: 'Password',
-                  hintText: 'Aex@8465',
+                Obx(
+                  () => CustomTextFromField(
+                    controller: controller.passwordController,
+                    labelText: 'Password',
+                    hintText: 'Aex@8465',
+                    obscureText: controller.select.value,
+                    onTap: () {
+                      controller.toggle();
+                    },
+                    suffixIcon: controller.select.value
+                        ? Icon(Icons.visibility_off_outlined)
+                        : Icon(Icons.visibility_outlined),
+                  ),
                 ),
                 GestureDetector(
                   onTap: () => Get.toNamed(Routes.RECOVERY_PASS),
                   child: Align(
-                    alignment: AlignmentGeometry.topRight,
+                    alignment: Alignment.topRight,
                     child: Text(
                       'Forgot Password?',
                       style: TextStyle(color: AppColors.primaryColor),
@@ -82,15 +125,15 @@ class LoginView extends GetView<LoginController> {
                               );
                             }
                           },
-                          child: Text("Log In"),
+                          child: Text("Sing In"),
                         ),
                       ),
                     ),
                     SizedBox(width: 10.w),
                     Container(
-                      width: 55,
-                      height: 48,
-                      padding: const EdgeInsets.all(16),
+                      width: 55.w,
+                      height: 48.h,
+                      padding: const EdgeInsets.all(12),
                       decoration: ShapeDecoration(
                         color: AppColors.borderColorGrey,
                         shape: RoundedRectangleBorder(
@@ -101,27 +144,6 @@ class LoginView extends GetView<LoginController> {
                     ),
                   ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Text(
-                    'Or sign in with',
-                    style: AppTextStyles.regular16,
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      LoginIcon(image: ImagePath.google),
-                      SizedBox(width: 10.w),
-                      LoginIcon(image: ImagePath.appleIcon),
-                      SizedBox(width: 10.w),
-                      LoginIcon(image: ImagePath.facebook),
-                    ],
-                  ),
-                ),
-
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -140,7 +162,7 @@ class LoginView extends GetView<LoginController> {
                           Get.toNamed(Routes.SIGN_UP);
                         },
                         child: Text(
-                          "Sign Up",
+                          "Registration",
                           style: AppTextStyles.medium16.copyWith(
                             color: AppColors.primaryColor,
                             overflow: TextOverflow.ellipsis,

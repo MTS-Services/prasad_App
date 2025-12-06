@@ -42,6 +42,8 @@ import '../customer/cutomer_all_services/bindings/cutomer_all_services_binding.d
 import '../customer/cutomer_all_services/views/customer_all_services_view.dart';
 import '../customer/cutomer_notification/bindings/cutomer_notification_binding.dart';
 import '../customer/cutomer_notification/views/customer_notification_view.dart';
+import '../customer/service_rquest_cancel/bindings/service_rquest_cancel_binding.dart';
+import '../customer/service_rquest_cancel/views/service_rquest_cancel_view.dart';
 import '../field_agent/agent_add_customer1/bindings/agent_add_customer1_binding.dart';
 import '../field_agent/agent_add_customer1/views/agent_add_customer1_view.dart';
 import '../field_agent/agent_add_customer2/bindings/agent_add_customer2_binding.dart';
@@ -96,6 +98,8 @@ import '../operator/operator_service/bindings/operator_service_binding.dart';
 import '../operator/operator_service/views/operator_service_view.dart';
 import '../operator/operator_services_details/bindings/operator_services_details_binding.dart';
 import '../operator/operator_services_details/views/operator_services_details_view.dart';
+import '../shared_screen/auth/auth_language/bindings/auth_language_binding.dart';
+import '../shared_screen/auth/auth_language/views/auth_language_view.dart';
 import '../shared_screen/auth/confirm_your_gmail/bindings/confirm_your_gmail_binding.dart';
 import '../shared_screen/auth/confirm_your_gmail/views/confirm_your_gmail_view.dart';
 import '../shared_screen/auth/create_pass/bindings/create_pass_binding.dart';
@@ -110,6 +114,8 @@ import '../shared_screen/auth/recovery_pass/bindings/recovery_pass_binding.dart'
 import '../shared_screen/auth/recovery_pass/views/recovery_pass_view.dart';
 import '../shared_screen/auth/sign_up/bindings/sign_up_binding.dart';
 import '../shared_screen/auth/sign_up/views/sign_up_view.dart';
+import '../shared_screen/auth/splash/bindings/splash_binding.dart';
+import '../shared_screen/auth/splash/views/splash_view.dart';
 import '../shared_screen/auth/user_type/bindings/user_type_binding.dart';
 import '../shared_screen/auth/user_type/views/user_type_view.dart';
 import '../shared_screen/auth/waiting_approval/bindings/waiting_approval_binding.dart';
@@ -118,18 +124,12 @@ import '../shared_screen/common_screen/fingure_print/bindings/fingure_print_bind
 import '../shared_screen/common_screen/fingure_print/views/fingure_print_view.dart';
 import '../shared_screen/common_screen/map/bindings/map_binding.dart';
 import '../shared_screen/common_screen/map/views/map_view.dart';
-import '../shared_screen/onboarding/onboarding1/bindings/onboarding1_binding.dart';
-import '../shared_screen/onboarding/onboarding1/views/onboarding1_view.dart';
-import '../shared_screen/onboarding/onboarding2/bindings/onboarding2_binding.dart';
-import '../shared_screen/onboarding/onboarding2/views/onboarding2_view.dart';
-import '../shared_screen/onboarding/onboarding3/bindings/onboarding3_binding.dart';
-import '../shared_screen/onboarding/onboarding3/views/onboarding3_view.dart';
 
 part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
-  static const INITIAL = Routes.ONBOARDING2;
+  static const INITIAL = Routes.SPLASH;
   static final routes = [
     GetPage(
       name: _Paths.CUSTOMER_HOME,
@@ -200,21 +200,6 @@ class AppPages {
       name: _Paths.OPERATOR_OPERATOR_BOTTOM_NAVI_BAR,
       page: () => const OperatorBottomNaviBarView(),
       binding: OperatorBottomNaviBarBinding(),
-    ),
-    GetPage(
-      name: _Paths.ONBOARDING1,
-      page: () => const Onboarding1View(),
-      binding: Onboarding1Binding(),
-    ),
-    GetPage(
-      name: _Paths.ONBOARDING2,
-      page: () => const Onboarding2View(),
-      binding: Onboarding2Binding(),
-    ),
-    GetPage(
-      name: _Paths.ONBOARDING3,
-      page: () => const Onboarding3View(),
-      binding: Onboarding3Binding(),
     ),
     GetPage(
       name: _Paths.CUSTOMER_NOTIFICATION,
@@ -445,6 +430,21 @@ class AppPages {
       name: _Paths.AGENT_CREATE_SERVICE,
       page: () => const AgentCreateServiceView(),
       binding: AgentCreateServiceBinding(),
+    ),
+    GetPage(
+      name: _Paths.SPLASH,
+      page: () => const SplashView(),
+      binding: SplashBinding(),
+    ),
+    GetPage(
+      name: _Paths.AUTH_LANGUAGE,
+      page: () => const AuthLanguageView(),
+      binding: AuthLanguageBinding(),
+    ),
+    GetPage(
+      name: _Paths.SERVICE_RQUEST_CANCEL,
+      page: () => const ServiceRquestCancelView(),
+      binding: ServiceRquestCancelBinding(),
     ),
   ];
 }

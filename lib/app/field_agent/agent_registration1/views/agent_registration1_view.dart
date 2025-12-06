@@ -9,7 +9,7 @@ import '../../../operator/operator_registration/operator_info1/widget/custom_ope
 import '../../../routes/app_pages.dart';
 import '../../../shared_screen/common_widget/custom_dropdown_field.dart';
 import '../../../shared_screen/common_widget/custom_elevated_and_outline_button.dart';
-import '../../../shared_screen/common_widget/custom_text_field_login.dart';
+import '../../../shared_screen/common_widget/custom_text_from_field.dart';
 import '../controllers/agent_registration1_controller.dart';
 
 class AgentRegistration1View extends GetView<AgentRegistration1Controller> {
@@ -27,44 +27,42 @@ class AgentRegistration1View extends GetView<AgentRegistration1Controller> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 spacing: 12.h,
                 children: [
-                  Text('Drone Operator Info', style: AppTextStyles.bold24),
+                  Text('Field Agent Info', style: AppTextStyles.bold24),
 
                   Row(
                     spacing: 10.w,
                     children: [
                       Expanded(
-                        child: CustomTextFieldLogin(
+                        child: CustomTextFromField(
                           labelText: 'First name',
                           hintText: 'Enter your name',
                           controller: controller.firstNameController,
                         ),
                       ),
                       Expanded(
-                        child: CustomTextFieldLogin(
+                        child: CustomTextFromField(
                           labelText: 'Middle name',
                           hintText: 'Enter your name',
-                          controller: controller.firstNameController,
+                          controller: controller.middleNameController,
                         ),
                       ),
                     ],
                   ),
-                  CustomTextFieldLogin(
+                  CustomTextFromField(
                     labelText: 'Last name',
                     hintText: 'Enter your last name',
                     controller: controller.lastNameController,
                   ),
-                  CustomTextFieldLogin(
+                  CustomTextFromField(
                     labelText: 'Phone Number',
                     hintText: 'Enter your phone number',
                     controller: controller.phoneController,
                   ),
-                  CustomTextFieldLogin(
+                  CustomTextFromField(
                     labelText: 'Email',
                     hintText: 'Enter your email',
                     controller: controller.emailController,
                   ),
-
-                  Text('Latitude/Longitude*', style: AppTextStyles.medium16),
                   CustomOperatorLocationField(
                     onPressed: () {
                       controller.locationController.text =
@@ -72,13 +70,13 @@ class AgentRegistration1View extends GetView<AgentRegistration1Controller> {
                     },
                     hintText: "Latitude and longitude",
                   ),
-                  CustomTextFieldLogin(
-                    labelText: "Service radius*",
+                  CustomTextFromField(
+                    labelText: "Service radius",
                     hintText: "e.g. 40KM",
                     controller: controller.serviceRadiusController,
                   ),
                   CustomDropdownField(
-                    label: 'Industry*',
+                    label: 'Service',
                     items: controller.industryItems,
                     selectedValue: controller.selectedIndustry.value,
                     onChanged: controller.onIndustrySelected,
@@ -111,10 +109,11 @@ class AgentRegistration1View extends GetView<AgentRegistration1Controller> {
                     ),
                   ),
 
-                  Text('Upload Profile', style: AppTextStyles.medium16),
+                  Text('Upload Profile', style: AppTextStyles.medium20),
                   FileUploadContainer(
                     onTap: controller.pickImage,
                     image: controller.selectedImage.value,
+                    uploadType: 'Upload Profile',
                   ),
                   SizedBox(height: 20.h),
                   SizedBox(

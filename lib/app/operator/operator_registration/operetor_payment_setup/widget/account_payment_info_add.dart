@@ -44,7 +44,7 @@ class AccountPaymentInfoAdd extends StatelessWidget {
                   flex: 1,
                   child: _buildMethodButton(
                     image: ImagePath.cardPng,
-                    label: "Card",
+                    label: "Bank",
                     selected: true,
                   ),
                 ),
@@ -98,7 +98,7 @@ class AccountPaymentInfoAdd extends StatelessWidget {
                       SizedBox(width: 8),
                       Flexible(
                         child: Text(
-                          'Add Credit / Debit Card',
+                          'Add Account',
                           style: TextStyle(fontWeight: FontWeight.bold),
                           overflow: TextOverflow.ellipsis,
                           maxLines: 1,
@@ -106,29 +106,21 @@ class AccountPaymentInfoAdd extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 16),
-
-                  _buildTextField('5143 **** **** 9856'),
-                  const SizedBox(height: 12),
-                  _buildTextField('(307) 555-0133'),
-                  const SizedBox(height: 16),
-
-                  const Text(
-                    'Expire Date',
-                    style: TextStyle(fontWeight: FontWeight.w600),
-                  ),
-                  const SizedBox(height: 8),
-
                   Row(
                     children: [
-                      Expanded(child: _buildTextField('06')),
-                      const SizedBox(width: 12),
-                      Expanded(child: _buildTextField('2028')),
+                       SizedBox(height: 16),
+                      Expanded(child: _buildTextField('First Name')),
+                       SizedBox(width: 8.w,),
+                      Expanded(child: _buildTextField('Last Name')),
                     ],
                   ),
                   const SizedBox(height: 12),
-
-                  _buildTextField('125', suffixIcon: Icons.info_outline),
+                  _buildTextField('Routing Number'),
+                  const SizedBox(height: 16),
+                  _buildTextField('Account number'),
+                  const SizedBox(height: 16),
+                  _buildTextField('Verify Account Number'),
+                  const SizedBox(height: 16),
                 ],
               ),
             ),

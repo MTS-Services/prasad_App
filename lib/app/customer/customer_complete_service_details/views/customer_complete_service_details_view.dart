@@ -78,7 +78,7 @@ class CustomerCompleteServiceDetailsView
                     SizedBox(height: 5.h),
                     buildLabelValueRow(
                       "Reschedule Reason:",
-                      "Lorem Ipsum is \nsimply dummy text \nof the printing and \ntypesetting industry.",
+                      "Lorem Ipsum is \nsimply dummy text \nof the printing and \ntypesetting industry.",
                     ),
                     SizedBox(height: 8.h),
                     Divider(),

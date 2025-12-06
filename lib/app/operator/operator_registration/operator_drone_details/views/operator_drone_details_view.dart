@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:prasad/app/shared_screen/common_widget/custom_date_picker.dart';
 import '../../../../data/app_colors.dart';
 import '../../../../data/app_text_styles.dart';
 import '../../../../routes/app_pages.dart';
 import '../../../../shared_screen/common_widget/custom_dropdown_field.dart';
 import '../../../../shared_screen/common_widget/custom_elevated_and_outline_button.dart';
-import '../../../../shared_screen/common_widget/custom_text_field_login.dart';
+import '../../../../shared_screen/common_widget/custom_text_from_field.dart';
 import '../controllers/operator_drone_details_controller.dart';
 
 class OperatorDroneDetailsView extends GetView<OperatorDroneDetailsController> {
@@ -19,7 +20,7 @@ class OperatorDroneDetailsView extends GetView<OperatorDroneDetailsController> {
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(16),
           child: Obx(
-                () => Column(
+            () => Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               spacing: 12.h,
               children: [
@@ -28,92 +29,97 @@ class OperatorDroneDetailsView extends GetView<OperatorDroneDetailsController> {
                 // Show multiple drones dynamically
                 for (int i = 0; i < controller.drones.length; i++) ...[
                   Text('Drone ${i + 1}', style: AppTextStyles.bold24),
-
                   CustomDropdownField(
-                    label: 'Asset Type*',
+                    label: 'Asset ID',
                     hintText: "Start with Asset ID",
                     items: controller.assetTypes,
                     selectedValue: controller.selectedAssetType.value,
                     onChanged: controller.onAssetTypeChanged,
                   ),
+                  CustomDropdownField(
+                    label: 'Asset Type',
+                    items: controller.assetTypes,
+                    selectedValue: controller.selectedAssetType.value,
+                    onChanged: controller.onAssetTypeChanged,
+                  ),
 
-                  CustomTextFieldLogin(
-                    labelText: "Drone_UIN UK",
+                  CustomTextFromField(
+                    labelText: "Drone UIN UK",
                     controller: controller.drones[i]['uin'],
                     hintText: "DGCI UIN Unique Identification Number",
                   ),
-                  CustomTextFieldLogin(
-                    labelText: "Service_Capabilities",
+                  CustomTextFromField(
+                    labelText: "Service Capabilities",
                     controller: controller.drones[i]['serviceCapabilities'],
                     hintText: "What services the drone can perform",
                   ),
-                  CustomTextFieldLogin(
+                  CustomTextFromField(
                     labelText: "Model",
                     controller: controller.drones[i]['model'],
                     hintText: "Drone model name/number",
                   ),
-                  CustomTextFieldLogin(
+                  CustomTextFromField(
                     labelText: "Make",
                     controller: controller.drones[i]['make'],
                     hintText: "Brand/Make of the drone",
                   ),
-                  CustomTextFieldLogin(
-                    labelText: "Manufacture_Year",
+                  CustomTextFromField(
+                    labelText: "Manufacture Year",
                     controller: controller.drones[i]['manufactureYear'],
                     hintText: "Year of manufacture",
                   ),
-                  CustomTextFieldLogin(
-                    labelText: "Serial_Number",
+                  CustomTextFromField(
+                    labelText: "Serial Number",
                     controller: controller.drones[i]['serialNumber'],
                     hintText: "Drone serial number",
                   ),
-                  CustomTextFieldLogin(
-                    labelText: "Manufacturer",
+                  CustomTextFromField(
+                    labelText: "Manufacturer Name",
                     controller: controller.drones[i]['manufacturer'],
                     hintText: "Manufacturer name",
                   ),
-                  CustomTextFieldLogin(
+                  CustomTextFromField(
                     labelText: "Flight_Hours",
                     controller: controller.drones[i]['flightHours'],
                     hintText: "Total flight hours",
                   ),
-                  CustomTextFieldLogin(
-                    labelText: "Last_Maintenance_Date",
-                    controller: controller.drones[i]['lastMaintenanceDate'],
+                  CustomDatePicker(
+                    labelText: "Last Maintenance_Date",
                     hintText: "Last maintenance performed date",
+                    controller: controller.drones[i]['lastMaintenanceDate'],
+                    isDatePicker: true,
                   ),
-
                   CustomDropdownField(
-                    label: 'Insurance_Status',
+                    label: 'Insurance Status',
                     items: controller.insuranceStatus,
                     selectedValue: controller.selectedInsuranceStatus.value,
                     onChanged: controller.onInsuranceChanged,
                   ),
                   CustomDropdownField(
-                    label: 'Rent_Status',
+                    label: 'Rent Status',
                     items: controller.rentStatus,
                     selectedValue: controller.selectedRentStatus.value,
                     onChanged: controller.onRentChanged,
                   ),
                   CustomDropdownField(
-                    label: 'Operational_Status',
+                    label: 'Operational Status',
                     items: controller.operationalStatus,
                     selectedValue: controller.selectedOperationalStatus.value,
                     onChanged: controller.onOperationalChanged,
                   ),
 
-                  CustomTextFieldLogin(
+                  CustomTextFromField(
                     labelText: "Battery type",
                     controller: controller.drones[i]['batteryType'],
                     hintText: "Enter battery type",
                   ),
-                  CustomTextFieldLogin(
-                    labelText: "Battery_Cycles",
+                  CustomTextFromField(
+                    labelText: "Battery Cycles",
                     controller: controller.drones[i]['batteryCycles'],
                     hintText: "Enter battery cycles",
                   ),
-                  CustomTextFieldLogin(
-                    labelText: "Battery_Capacity (mAh/Wh)",
+                  CustomTextFromField(
+                    labelText: "Battery Capacity",
                     controller: controller.drones[i]['batteryCapacity'],
                     hintText: "Enter battery capacity",
                   ),
@@ -150,7 +156,6 @@ class OperatorDroneDetailsView extends GetView<OperatorDroneDetailsController> {
                       Get.toNamed(Routes.OPERATOR_CERTIFICATION),
                   outlineOnPressed: () => Get.back(),
                 ),
-
               ],
             ),
           ),

@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
 import 'package:prasad/app/data/app_text_styles.dart';
-import 'package:prasad/app/shared_screen/common_widget/custom_text_field_login.dart';
+import 'package:prasad/app/shared_screen/common_widget/custom_text_from_field.dart';
 import 'package:prasad/app/shared_screen/common_widget/custom_elevated_and_outline_button.dart';
 
 import '../../../../data/app_colors.dart';
@@ -32,11 +32,11 @@ class CreatePassView extends GetView<CreatePassController> {
                     textAlign: TextAlign.center,
                   ),
                 ),
-                CustomTextFieldLogin(
+                CustomTextFromField(
                   labelText: 'Password',
                   hintText: 'enter your password',
                 ),
-                CustomTextFieldLogin(
+                CustomTextFromField(
                   labelText: 'Confirm Password',
                   hintText: 'enter your password',
                 ),

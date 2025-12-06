@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:prasad/app/data/app_text_styles.dart';
+import 'package:prasad/app/routes/app_pages.dart';
 
 import '../controllers/operetor_waiting_confirmation_controller.dart';
 
@@ -33,8 +34,8 @@ class OperetorWaitingConfirmationView
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
-                  child: Text("In Process"),
+                  onPressed: () => Get.offAllNamed(Routes.OPERATOR_BOTTOM_NAVI_BAR),
+                  child: Text("Go to Login"),
                 ),
               ),
             ],

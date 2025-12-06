@@ -6,7 +6,7 @@ import 'package:prasad/app/routes/app_pages.dart';
 
 import '../../../../data/app_colors.dart';
 import '../../../../data/app_text_styles.dart';
-import '../../../common_widget/custom_text_field_login.dart';
+import '../../../common_widget/custom_text_from_field.dart';
 import '../../../common_widget/custom_elevated_and_outline_button.dart';
 import '../controllers/confirm_your_gmail_controller.dart';
 //forget pass screen
@@ -21,12 +21,12 @@ class ConfirmYourGmailView extends GetView<ConfirmYourGmailController> {
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
-              spacing: 30.w,
+              spacing: 20.h,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(height: 50.w),
                 Text(
-                  "Confirm Your Gmail",
+                  "Confirm Your Email",
                   style: AppTextStyles.bold40,
                   textAlign: TextAlign.center,
                 ),
@@ -35,11 +35,11 @@ class ConfirmYourGmailView extends GetView<ConfirmYourGmailController> {
                   style: AppTextStyles.regular20,
                   textAlign: TextAlign.center,
                 ),
-                CustomTextFieldLogin(labelText: 'Code', hintText: '123456'),
+                CustomTextFromField(labelText: 'Code', hintText: '123456'),
                 GestureDetector(
                   onTap: () {},
                   child: Align(
-                    alignment: AlignmentGeometry.topRight,
+                    alignment: Alignment.topRight,
                     child: Text(
                       'Resent',
                       style: TextStyle(color: AppColors.primaryColor),
@@ -52,7 +52,6 @@ class ConfirmYourGmailView extends GetView<ConfirmYourGmailController> {
                   elevatedOnPressed: () => Get.toNamed(Routes.NEW_PASSWORD),
                   outlineOnPressed: () => Get.back(),
                 ),
-                SizedBox(height: 10.w),
               ],
             ),
           ),

@@ -7,9 +7,10 @@ import '../../../../customer/customer_registration/customer_info1/widget/file_up
 import '../../../../data/app_colors.dart';
 import '../../../../data/app_text_styles.dart';
 import '../../../../routes/app_pages.dart';
+import '../../../../shared_screen/common_widget/custom_date_picker.dart';
 import '../../../../shared_screen/common_widget/custom_dropdown_field.dart';
 import '../../../../shared_screen/common_widget/custom_elevated_and_outline_button.dart';
-import '../../../../shared_screen/common_widget/custom_text_field_login.dart';
+import '../../../../shared_screen/common_widget/custom_text_from_field.dart';
 import '../controllers/operetor_equipment_details_controller.dart';
 
 class OperetorEquipmentDetailsView
@@ -29,49 +30,51 @@ class OperetorEquipmentDetailsView
                 children: [
                   Text('Equipment Details', style: AppTextStyles.bold24),
                   Text('Add information about your equipment', style: AppTextStyles.regular16),
-                  CustomTextFieldLogin(
-                    labelText: 'Equipment_ID',
+                  CustomTextFromField(
+                    labelText: 'Equipment ID',
                     hintText: 'EQP-XXXXXXXXX',
                   ),
-                  CustomTextFieldLogin(
-                    labelText: 'Asset_ID',
+                  CustomTextFromField(
+                    labelText: 'Asset ID',
                     hintText: 'Enter your Asset ID',
                   ),
                   CustomDropdownField(
-                    label: 'Equipment_Type',
+                    label: 'Equipment Type',
                     items: controller.items,
                     selectedValue: controller.selectedValue.value,
                     onChanged: controller.onItemSelected,
                   ),
 
 
-                  CustomTextFieldLogin(
+                  CustomTextFromField(
                     labelText: 'Model',
                     hintText: 'Model year and version',
                   ),
-                  CustomTextFieldLogin(
+                  CustomTextFromField(
                     labelText: 'Make',
                     hintText: 'Make',
                   ),
-                  CustomTextFieldLogin(
+                  CustomTextFromField(
                     labelText: 'Manufacturer',
                     hintText: 'Manufacturer',
                   ),
-                  CustomTextFieldLogin(
+                  CustomTextFromField(
                     labelText: 'Year',
                     hintText: 'Year of Manufacture',
                   ),
-                  CustomTextFieldLogin(
-                    labelText: 'Serial_Number',
+                  CustomTextFromField(
+                    labelText: 'Serial Number',
                     hintText: 'Serial Number',
                   ),
-                  CustomTextFieldLogin(
-                    labelText: 'Last_Maintenance_Date',
-                    hintText: 'Last Maintenance datatime',
+                  CustomDatePicker(
+                    labelText: "Last Maintenance Date",
+                    hintText: "Last Maintenance datatime",
+                    controller: controller.maintenanceDateController,
+                    isDatePicker: true,
                   ),
 
                   CustomElevatedAndOutlineButton(
-                    elevateText: "Next",
+                    elevateText: "Continue",
                     outlineText: "Back",
                     elevatedOnPressed: () => Get.toNamed(Routes.OPERETOR_EXPERIENCE_AND_RECORDS),
                     outlineOnPressed: () => Get.back(),

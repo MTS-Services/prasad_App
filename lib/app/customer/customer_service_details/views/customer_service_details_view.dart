@@ -18,9 +18,9 @@ class CustomerServiceDetailsView
       ImagePath.fieldAgentType,
       ImagePath.operatorType,
       ImagePath.customerType,
-      ImagePath.onboarding1,
-      ImagePath.onboarding2,
-      ImagePath.onboarding3,
+      ImagePath.fieldAgentType,
+      ImagePath.operatorType,
+      ImagePath.customerType,
     ];
     return Scaffold(
       body: SafeArea(

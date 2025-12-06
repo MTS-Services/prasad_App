@@ -11,6 +11,7 @@ class AgentRegistration1Controller extends GetxController {
 
   // TextControllers
   final firstNameController = TextEditingController();
+  final middleNameController = TextEditingController();
   final lastNameController = TextEditingController();
   final phoneController = TextEditingController();
   final emailController = TextEditingController();
@@ -32,6 +33,7 @@ class AgentRegistration1Controller extends GetxController {
   @override
   void onClose() {
     firstNameController.dispose();
+    middleNameController.dispose();
     lastNameController.dispose();
     phoneController.dispose();
     emailController.dispose();

@@ -30,27 +30,29 @@ class CustomDropdownField extends StatelessWidget {
           value: selectedValue,
           hint: Text(
             hintText ?? "Select $label",
-            style: AppTextStyles.regular16.copyWith(
-              color: Colors.grey.shade500,
-              fontSize: 14.sp,
-            ),
+            style: AppTextStyles.regular16.copyWith(fontSize: 14.sp),
           ),
           decoration: InputDecoration(
             labelText: label,
-            floatingLabelStyle: AppTextStyles.medium20
+            contentPadding: EdgeInsets.symmetric(
+              horizontal: 4.w,
+            ),
+            floatingLabelStyle: AppTextStyles.medium20.copyWith(
+              color: AppColors.primaryColor,
+            ),
           ),
           items: items
               .map(
                 (item) => DropdownMenuItem<String>(
-              value: item,
-              child: Text(
-                item,
-                style: AppTextStyles.regular16,
-                overflow: TextOverflow.ellipsis,
-                maxLines: 1,
-              ),
-            ),
-          )
+                  value: item,
+                  child: Text(
+                    item,
+                    style: AppTextStyles.regular16,
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
+                  ),
+                ),
+              )
               .toList(),
           onChanged: onChanged,
           /*buttonStyleData: ButtonStyleData(

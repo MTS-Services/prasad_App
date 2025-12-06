@@ -11,9 +11,6 @@ abstract class Routes {
   static const SIGN_UP = _Paths.SIGN_UP;
   static const LOGIN = _Paths.LOGIN;
   static const USER_TYPE = _Paths.USER_TYPE;
-  static const ONBOARDING1 = _Paths.ONBOARDING1;
-  static const ONBOARDING2 = _Paths.ONBOARDING2;
-  static const ONBOARDING3 = _Paths.ONBOARDING3;
   static const CUSTOMER_BOTTOM_NAVI_BAR = _Paths.CUSTOMER_BOTTOM_NAVI_BAR;
   static const CUSTOMER_HISTORY = _Paths.CUSTOMER_HISTORY;
   static const CUSTOMER_SUPPORT = _Paths.CUSTOMER_SUPPORT;
@@ -71,6 +68,9 @@ abstract class Routes {
   static const AGENT_ADD_CUSTOMER2 = _Paths.AGENT_ADD_CUSTOMER2;
   static const AGENT_ADD_CUSTOMER3 = _Paths.AGENT_ADD_CUSTOMER3;
   static const AGENT_CREATE_SERVICE = _Paths.AGENT_CREATE_SERVICE;
+  static const AUTH_LANGUAGE = _Paths.AUTH_LANGUAGE;
+  static const SPLASH = _Paths.SPLASH;
+  static const SERVICE_RQUEST_CANCEL = _Paths.SERVICE_RQUEST_CANCEL;
 }
 
 abstract class _Paths {
@@ -83,9 +83,6 @@ abstract class _Paths {
   static const SIGN_UP = '/sign-up';
   static const LOGIN = '/login';
   static const USER_TYPE = '/user-type';
-  static const ONBOARDING1 = '/onboarding1';
-  static const ONBOARDING2 = '/onboarding2';
-  static const ONBOARDING3 = '/onboarding3';
   static const CUSTOMER_BOTTOM_NAVI_BAR = '/customer-bottom-navi-bar';
   static const CUSTOMER_HISTORY = '/customer-history';
   static const CUSTOMER_SUPPORT = '/customer-support';
@@ -141,4 +138,7 @@ abstract class _Paths {
   static const AGENT_ADD_CUSTOMER2 = '/agent-add-customer2';
   static const AGENT_ADD_CUSTOMER3 = '/agent-add-customer3';
   static const AGENT_CREATE_SERVICE = '/agent-create-service';
+  static const SPLASH = '/splash';
+  static const AUTH_LANGUAGE = '/auth-language';
+  static const SERVICE_RQUEST_CANCEL = '/service-rquest-cancel';
 }

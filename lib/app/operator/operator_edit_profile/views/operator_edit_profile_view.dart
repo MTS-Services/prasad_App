@@ -10,11 +10,17 @@ import '../controllers/operator_edit_profile_controller.dart';
 
 class OperatorEditProfileView extends GetView<OperatorEditProfileController> {
   const OperatorEditProfileView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppbar(widget: Text('Save',style: TextStyle(color: AppColors.primaryColor,fontSize: 18),),),
-      body:SingleChildScrollView(
+      appBar: CustomAppbar(
+        widget: Text(
+          'Save',
+          style: TextStyle(color: AppColors.primaryColor, fontSize: 18),
+        ),
+      ),
+      body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Container(
@@ -55,23 +61,30 @@ class OperatorEditProfileView extends GetView<OperatorEditProfileController> {
                         ),
                       ),
                     ],
-                  )
-                  ,
+                  ),
                   const SizedBox(height: 16),
                   Text('Name', style: AppTextStyles.regular16),
-                  buildTextFormField(controller.nameController,'name'),
+                  buildTextFormField(controller.nameController, 'name'),
                   const SizedBox(height: 7),
                   Text('Phone number', style: AppTextStyles.regular16),
                   buildTextFormField(controller.phoneController, 'Phone'),
                   const SizedBox(height: 7),
                   Text('Email', style: AppTextStyles.regular16),
-                 buildTextFormField(controller.emailController, 'Email'),
+                  buildTextFormField(controller.emailController, 'Email'),
                   const SizedBox(height: 7),
-                  Text('Geo Radius 1', style: AppTextStyles.regular16,),
-                  buildTextFormField(controller.geo1Controller, 'Geo 1',suffixIcon: Icons.location_on_outlined),
+                  Text('Geo Radius 1', style: AppTextStyles.regular16),
+                  buildTextFormField(
+                    controller.geo1Controller,
+                    'Geo 1',
+                    suffixIcon: Icons.location_on_outlined,
+                  ),
                   const SizedBox(height: 7),
                   Text('Geo Radius 2', style: AppTextStyles.regular16),
-                  buildTextFormField(controller.geo2Controller, 'Geo 2',suffixIcon: Icons.location_on_outlined),
+                  buildTextFormField(
+                    controller.geo2Controller,
+                    'Geo 2',
+                    suffixIcon: Icons.location_on_outlined,
+                  ),
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
@@ -81,7 +94,7 @@ class OperatorEditProfileView extends GetView<OperatorEditProfileController> {
                   ),
                   const SizedBox(height: 7),
                   Text('Industry', style: AppTextStyles.regular16),
-                  buildTextFormField(controller.mappingController,'Industry'),
+                  buildTextFormField(controller.mappingController, 'Industry'),
                   const SizedBox(height: 15),
                   Text('Sub category', style: AppTextStyles.medium20),
                   subCategoryContainer('Drone Mapping & surveying(MAP)'),
@@ -93,112 +106,60 @@ class OperatorEditProfileView extends GetView<OperatorEditProfileController> {
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {},
-                      child: Text('Add a new service  +'),
+                      child: Text('Add A New Service  +'),
                     ),
                   ),
                   const SizedBox(height: 7),
                   Text('Service Redius', style: AppTextStyles.regular16),
-                  buildTextFormField(controller.serviceController,'service'),
+                  buildTextFormField(controller.serviceController, 'service'),
                   const SizedBox(height: 7),
                   Text('Old Password', style: AppTextStyles.regular16),
-                  buildTextFormField(controller.oldPasswordController,''),
+                  buildTextFormField(controller.oldPasswordController, ''),
                   const SizedBox(height: 7),
                   Text('Password', style: AppTextStyles.regular16),
-                  buildTextFormField(controller.passwordController, 'Password', obscureText: true),
+                  buildTextFormField(
+                    controller.passwordController,
+                    'Password',
+                    obscureText: true,
+                  ),
                   const SizedBox(height: 7),
                   Text('Confirm Password', style: AppTextStyles.regular16),
-                  buildTextFormField(controller.confirmPasswordController, 'Confirm Password', obscureText: true),
-                  const SizedBox(height: 7),
-                  listTileContainer(
-                    onTap: (){
-                    },
-                    imagePath: ImagePath.languageIcon,
-                    title: 'Asset Type',
-                  ),
-                  const SizedBox(height: 7),
-                  listTileContainer(
-                    onTap: (){
-                    },
-                    imagePath: ImagePath.languageIcon,
-                    title: 'Language',
-                  ),
-                  const SizedBox(height: 7),
-                  listTileContainer(
-                    onTap: (){
-                      showDialog(context: context,
-                          barrierDismissible: true,
-                          builder: (BuildContext context){
-                            return AlertDialog(
-
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(6),
-                              ),
-                              contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
-                              content: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  const Text(
-                                    "Confirm using Your Fingerprint",
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 18,
-                                    ),
-                                  ),
-                                  const SizedBox(height: 16),
-                                  const Icon(
-                                    Icons.fingerprint,
-                                    size: 48,
-                                    color: Colors.blueAccent, // or AppColors.primaryColor
-                                  ),
-                                  const SizedBox(height: 10),
-                                  const Text(
-                                    "Touch the fingerprint sensor",
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      color: Colors.black54,
-                                      fontSize: 15,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            );
-                          });
-                    },
-                    imagePath: ImagePath.languageIcon,
-                    title: 'Biometric',
-                  ),
-                  const SizedBox(height: 7),
-                  listTileContainer(
-                    onTap: (){},
-                    imagePath: ImagePath.logOut,
-                    title: 'Log Out',
+                  buildTextFormField(
+                    controller.confirmPasswordController,
+                    'Confirm Password',
+                    obscureText: true,
                   ),
                 ],
               ),
             ),
           ),
         ),
-      ) ,
+      ),
     );
   }
-  Widget buildTextFormField(TextEditingController controller ,String title, {bool obscureText = false,IconData? suffixIcon,}) {
+
+  Widget buildTextFormField(
+    TextEditingController controller,
+    String title, {
+    bool obscureText = false,
+    IconData? suffixIcon,
+  }) {
     return TextFormField(
       controller: controller,
       decoration: InputDecoration(
-          hintText: title,
-          suffixIcon: suffixIcon != null ? Icon(suffixIcon) : null,
-          contentPadding: EdgeInsets.symmetric(horizontal: 12,vertical: 15),
-          filled: true,
-          fillColor: AppColors.whiteColor,
-          enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide.none,
-            borderRadius: BorderRadius.circular(8),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide.none,
-            borderRadius: BorderRadius.circular(8),
-          )
+        hintText: title,
+        suffixIcon: suffixIcon != null ? Icon(suffixIcon) : null,
+        contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 15),
+        filled: true,
+        fillColor: AppColors.whiteColor,
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide.none,
+          borderRadius: BorderRadius.circular(8),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide.none,
+          borderRadius: BorderRadius.circular(8),
+        ),
       ),
     );
   }
@@ -239,8 +200,11 @@ class OperatorEditProfileView extends GetView<OperatorEditProfileController> {
     );
   }
 
-  Widget listTileContainer(
-      {required VoidCallback onTap, required String imagePath, required String title}) {
+  Widget listTileContainer({
+    required VoidCallback onTap,
+    required String imagePath,
+    required String title,
+  }) {
     return InkWell(
       onTap: onTap,
       child: Container(

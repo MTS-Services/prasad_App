@@ -25,8 +25,11 @@ class UserTypeView extends GetView<UserTypeController> {
                   spacing: 30.h,
                   children: [
                     SizedBox(height: 20.h),
-                    Text('Hello there', style: AppTextStyles.bold28),
-          
+                    Text(
+                      'Welcome to Hindustan Drone Services',
+                      style: AppTextStyles.bold28,
+                      textAlign: TextAlign.center,
+                    ),
                     Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -38,7 +41,7 @@ class UserTypeView extends GetView<UserTypeController> {
                                 controller.selectedType.value == "Customer",
                             onTap: () {
                               // controller.selectType("Customer");
-                              Get.toNamed(Routes.SIGN_UP);
+                              Get.toNamed(Routes.LOGIN);
                             },
                           ),
                         ),
@@ -51,13 +54,13 @@ class UserTypeView extends GetView<UserTypeController> {
                                 controller.selectedType.value == "Field Agent",
                             onTap: () {
                               // controller.selectType("Field Agent");
-                              Get.toNamed(Routes.SIGN_UP);
+                              Get.toNamed(Routes.LOGIN);
                             },
                           ),
                         ),
                       ],
                     ),
-          
+
                     TypeCard(
                       title: "Drone Operator",
                       image: ImagePath.operatorType,
@@ -65,17 +68,9 @@ class UserTypeView extends GetView<UserTypeController> {
                           controller.selectedType.value == "Drone Operator",
                       onTap: () {
                         // controller.selectType("Drone Operator");
-                        Get.toNamed(Routes.SIGN_UP);
+                        Get.toNamed(Routes.LOGIN);
                       },
                     ),
-                    SizedBox(
-                      width: double.infinity,
-                      child: ElevatedButton(
-                        onPressed: () => Get.toNamed(Routes.SIGN_UP),
-                        child: Text("Register"),
-                      ),
-                    ),
-          
                   ],
                 ),
               ),

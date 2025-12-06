@@ -9,7 +9,7 @@ import '../../../../data/app_colors.dart';
 import '../../../../data/app_text_styles.dart';
 import '../../../../routes/app_pages.dart';
 import '../../../../shared_screen/common_widget/custom_dropdown_field.dart';
-import '../../../../shared_screen/common_widget/custom_text_field_login.dart';
+import '../../../../shared_screen/common_widget/custom_text_from_field.dart';
 import '../controllers/operator_info1_controller.dart';
 
 class OperatorInfo1View extends GetView<OperatorInfo1Controller> {
@@ -23,7 +23,7 @@ class OperatorInfo1View extends GetView<OperatorInfo1Controller> {
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Obx(
-                  () => Column(
+              () => Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 spacing: 12.h,
                 children: [
@@ -33,59 +33,57 @@ class OperatorInfo1View extends GetView<OperatorInfo1Controller> {
                     spacing: 10.w,
                     children: [
                       Expanded(
-                        child: CustomTextFieldLogin(
+                        child: CustomTextFromField(
                           labelText: 'First name',
                           hintText: 'Enter your name',
                           controller: controller.firstNameController,
                         ),
                       ),
                       Expanded(
-                        child: CustomTextFieldLogin(
+                        child: CustomTextFromField(
                           labelText: 'Middle name',
                           hintText: 'Enter your name',
-                          controller: controller.firstNameController,
+                          controller: controller.middleNameController,
                         ),
                       ),
                     ],
                   ),
-                  CustomTextFieldLogin(
+                  CustomTextFromField(
                     labelText: 'Last name',
                     hintText: 'Enter your last name',
                     controller: controller.lastNameController,
                   ),
-                  CustomTextFieldLogin(
+                  CustomTextFromField(
                     labelText: 'Phone Number',
                     hintText: 'Enter your phone number',
                     controller: controller.phoneController,
                   ),
-                  CustomTextFieldLogin(
+                  CustomTextFromField(
                     labelText: 'Email',
                     hintText: 'Enter your email',
                     controller: controller.emailController,
                   ),
-
-                  Text('Latitude/Longitude*', style: AppTextStyles.medium16),
                   CustomOperatorLocationField(
                     onPressed: () {
                       controller.locationController.text =
-                      "23.8103, 90.4125"; // example value
+                          "23.8103, 90.4125"; // example value
                     },
                     hintText: "Latitude and longitude",
                   ),
-                  CustomTextFieldLogin(
-                    labelText: "Mandal*",
-                    hintText: "Select Mandal",
-                    controller: controller.serviceRadiusController,
+                  CustomTextFromField(
+                    labelText: 'Service Redius',
+                    hintText: 'e.g. 40KM',
+                    controller: controller.emailController,
                   ),
-
-                  CustomTextFieldLogin(
-                    labelText: "Service radius*",
-                    hintText: "e.g. 40KM",
-                    controller: controller.serviceRadiusController,
+                  CustomDropdownField(
+                    label: 'Mandal',
+                    items: controller.industryItems,
+                    selectedValue: controller.selectedIndustry.value,
+                    onChanged: controller.onIndustrySelected,
                   ),
 
                   CustomDropdownField(
-                    label: 'Industry*',
+                    label: 'Service',
                     items: controller.industryItems,
                     selectedValue: controller.selectedIndustry.value,
                     onChanged: controller.onIndustrySelected,
@@ -93,27 +91,29 @@ class OperatorInfo1View extends GetView<OperatorInfo1Controller> {
 
                   Text("Sub Services", style: AppTextStyles.medium20),
                   Column(
-                    children: List.generate(
-                      controller.subServices.length,
-                          (index) {
-                        final sub = controller.subServices[index];
-                        return Row(
-                          children: [
-                            Checkbox(
-                              value: controller.isSelectedMap[sub]?.value ?? false,
-                              onChanged: (val) => controller.checkBoxSelected(sub, val),
-                            ),
-                            Text(sub),
-                          ],
-                        );
-                      },
-                    ),
+                    children: List.generate(controller.subServices.length, (
+                      index,
+                    ) {
+                      final sub = controller.subServices[index];
+                      return Row(
+                        children: [
+                          Checkbox(
+                            value:
+                                controller.isSelectedMap[sub]?.value ?? false,
+                            onChanged: (val) =>
+                                controller.checkBoxSelected(sub, val),
+                          ),
+                          Text(sub),
+                        ],
+                      );
+                    }),
                   ),
 
                   Text('Upload Profile', style: AppTextStyles.medium16),
-                   FileUploadContainer(
+                  FileUploadContainer(
                     onTap: controller.pickImage,
                     image: controller.selectedImage.value,
+                    uploadType: 'Upload Profile',
                   ),
 
                   CustomElevatedAndOutlineButton(

@@ -7,12 +7,13 @@ import '../../../../data/app_colors.dart';
 import '../../../../data/app_text_styles.dart';
 import '../../../../data/image_path.dart';
 import '../../../../routes/app_pages.dart';
-import '../../../common_widget/custom_text_field_login.dart';
+import '../../../common_widget/custom_text_from_field.dart';
 import '../../login/widget/login_icon.dart';
 import '../controllers/sign_up_controller.dart';
 
 class SignUpView extends GetView<SignUpController> {
   const SignUpView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,78 +24,44 @@ class SignUpView extends GetView<SignUpController> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
-              spacing: 10.h,
+              spacing: 12.h,
               children: [
+                Text('Registration', style: AppTextStyles.bold40),
                 Text(
-                  'Sign Up',
-                  style: AppTextStyles.bold40,
+                  "Welcome to Hindustan Drone Services",
+                  style: AppTextStyles.medium20.copyWith(
+                    color: AppColors.primaryColor,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
-                Text(
-                  "Hi! Welcome",
-                  style: AppTextStyles.regular20,
-                ),
-                CustomTextFieldLogin(
-                  labelText: 'Email',
-                  hintText: 'example@gmail.com',
-                ),
-                CustomTextFieldLogin(
-                  labelText: 'Phone',
-                  hintText: '01*********',
-                ),
-                CustomTextFieldLogin(
-                  labelText: 'Password',
-                  hintText: '*****',
-                ),
-                CustomTextFieldLogin(
-                  labelText: 'Confirm Password',
-                  hintText: '*******',
+                SizedBox(height: 20.h),
+                CustomTextFromField(
+                  labelText: "Phone",
+                  hintText: "Enter your Phone Number",
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Flexible(
-                      child: SizedBox(
-                        width: double.infinity,
-                        child: ElevatedButton(
-                          onPressed: () {
-                            Get.toNamed(Routes.GMAIL_VERIFY);
-                          },
-                          child: Text("Next"),
-                        ),
-                      ),
-                    ),
+                    LoginIcon(image: ImagePath.google),
                     SizedBox(width: 10.w),
-                    GestureDetector(
-                      onTap: () => Get.toNamed(Routes.FINGURE_PRINT),
-                      child: Container(
-                        width: 55,
-                        height: 48,
-                        padding: const EdgeInsets.all(16),
-                        decoration: ShapeDecoration(
-                          color: AppColors.borderColorGrey,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(4),
-                          ),
-                        ),
-                        child: Image.asset(ImagePath.finger),
-                      ),
-                    ),
+                    LoginIcon(image: ImagePath.facebook),
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: EdgeInsets.symmetric(horizontal: 16.w),
                   child: Row(
                     children: [
                       Expanded(
                         child: Divider(
-                          color: AppColors.borderColorGrey,
+                          color: AppColors.blackColor,
                           thickness: 1,
                           indent: 12,
                         ),
                       ),
-                      Text('  Or sign in with',style: AppTextStyles.regular16,),
+                      Text(' Or', style: AppTextStyles.regular16),
                       Expanded(
                         child: Divider(
-                          color: AppColors.borderColorGrey,
+                          color: AppColors.blackColor,
                           thickness: 1,
                           indent: 12,
                         ),
@@ -102,21 +69,27 @@ class SignUpView extends GetView<SignUpController> {
                     ],
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      LoginIcon(image: ImagePath.google,),
-                      SizedBox(width: 10.w),
-                      LoginIcon(image: ImagePath.appleIcon,),
-                      SizedBox(width: 10.w),
-                      LoginIcon(image: ImagePath.facebook,),
-                    ],
+                CustomTextFromField(
+                  labelText: 'Email',
+                  hintText: 'example@gmail.com',
+                ),
+                CustomTextFromField(labelText: 'Password', hintText: '*****'),
+                CustomTextFromField(
+                  labelText: 'Confirm Password',
+                  hintText: '*******',
+                ),
+                SizedBox(height: 8.h),
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Get.toNamed(Routes.GMAIL_VERIFY);
+                    },
+                    child: Text("Next"),
                   ),
                 ),
-
-                Row (
+                SizedBox(height: 8.h),
+                Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Flexible(
@@ -132,14 +105,15 @@ class SignUpView extends GetView<SignUpController> {
                       flex: 1,
                       child: GestureDetector(
                         onTap: () {
-                          Get.toNamed(Routes.USER_TYPE);
+                          Get.toNamed(Routes.LOGIN);
                         },
                         child: Text(
                           "Sign In",
                           style: AppTextStyles.medium16.copyWith(
                             color: AppColors.primaryColor,
                             overflow: TextOverflow.ellipsis,
-                          ),maxLines: 1,
+                          ),
+                          maxLines: 1,
                         ),
                       ),
                     ),

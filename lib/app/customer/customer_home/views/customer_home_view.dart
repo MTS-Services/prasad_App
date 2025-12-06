@@ -66,7 +66,7 @@ class CustomerHomeView extends GetView<CustomerHomeController> {
                         priceUnit: 'Acre',
                         buttonText: 'Book A Service',
                         onPressed: () {
-                          Get.toNamed('/customer-service-details');
+                          Get.toNamed(Routes.CUSTOMER_SERVICE_DETAILS);
                         },
                       ),
                     );

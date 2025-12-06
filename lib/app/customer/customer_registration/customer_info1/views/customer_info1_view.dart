@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:prasad/app/data/app_text_styles.dart';
 import 'package:prasad/app/routes/app_pages.dart';
 import 'package:prasad/app/shared_screen/common_widget/custom_dropdown_field.dart';
-import 'package:prasad/app/shared_screen/common_widget/custom_text_field_login.dart';
+import 'package:prasad/app/shared_screen/common_widget/custom_text_from_field.dart';
 import '../controllers/customer_info1_controller.dart';
 import '../widget/file_upload_container.dart';
 
@@ -28,32 +28,59 @@ class CustomerInfo1View extends GetView<CustomerInfo1Controller> {
                     spacing: 10.w,
                     children: [
                       Expanded(
-                        child: CustomTextFieldLogin(
+                        child: CustomTextFromField(
                           labelText: 'First name',
                           hintText: 'Enter your name',
                         ),
                       ),
                       Expanded(
-                        child: CustomTextFieldLogin(
+                        child: CustomTextFromField(
                           labelText: 'Middle name',
                           hintText: 'Enter your middle name',
                         ),
                       ),
                     ],
                   ),
-                  CustomTextFieldLogin(
+                  CustomTextFromField(
                     labelText: 'Last name',
                     hintText: 'Enter your last name',
                   ),
-                  CustomTextFieldLogin(
+                  CustomTextFromField(
                     labelText: 'Also Known As',
                     hintText: 'Enter your nick name',
                   ),
-                  CustomTextFieldLogin(
-                    labelText: 'Phone',
-                    hintText: '+91-98********',
+                  Row(
+                    children: [
+                      Expanded(
+                        flex: 2,
+                        child: CustomDropdownField(
+                          label: "code",
+                          hintText: "code",
+                          items: controller.countryCode,
+                          selectedValue: controller.selectedcountryCode.value,
+                          onChanged: controller.onCountryCodeSelected,
+                        ),
+                      ),
+                      SizedBox(width: 8.w),
+                      Expanded(
+                        flex: 5,
+                        child: CustomTextFromField(
+                          labelText: 'Phone',
+                          hintText: '+91-98********',
+                        ),
+                      ),
+
+                    ],
                   ),
-                  CustomTextFieldLogin(
+                  CustomTextFromField(
+                    labelText: 'Email',
+                    hintText: '+Enter your Email',
+                  ),
+                  CustomTextFromField(
+                    labelText: 'Email',
+                    hintText: '+Enter your Email',
+                  ),
+                  CustomTextFromField(
                     labelText: 'Email',
                     hintText: '+Enter your Email',
                   ),
@@ -64,7 +91,7 @@ class CustomerInfo1View extends GetView<CustomerInfo1Controller> {
                     onChanged: controller.onDistrictSelected,
                   ),
                   CustomDropdownField(
-                    label: '* Mandal',
+                    label: 'Mandal',
                     items: controller.mandals,
                     selectedValue: controller.selectedMandal.value,
                     onChanged: controller.onMandalSelected,
@@ -75,18 +102,19 @@ class CustomerInfo1View extends GetView<CustomerInfo1Controller> {
                     selectedValue: controller.selectedVillage.value,
                     onChanged: controller.onVillageSelected,
                   ),
-                  CustomDropdownField(
-                    label: 'Registered by',
-                    items: controller.registeredBy,
-                    selectedValue: controller.selectedRegisteredBy.value,
-                    onChanged: controller.onRegisteredBySelected,
+                  CustomTextFromField(
+                    labelText: 'Registered by',
+                    hintText: '+Enter your Email',
                   ),
 
                   Text('Upload Profile', style: AppTextStyles.medium16),
-                  Obx(() => FileUploadContainer(
-                    onTap: controller.pickImage,
-                    image: controller.selectedImage.value,
-                  )),
+                  Obx(
+                    () => FileUploadContainer(
+                      onTap: controller.pickImage,
+                      image: controller.selectedImage.value,
+                      uploadType: 'Upload Profile',
+                    ),
+                  ),
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
@@ -105,4 +133,3 @@ class CustomerInfo1View extends GetView<CustomerInfo1Controller> {
     );
   }
 }
-

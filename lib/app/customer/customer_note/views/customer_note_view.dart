@@ -99,7 +99,7 @@ class CustomerNoteView extends GetView<CustomerNoteController> {
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
                     hintText:
-                        "Lorem Ipsum is simply dummy text of the printing and typesetting \nindustry.",
+                        "Lorem Ipsum is simply dummy text of the printing and typesetting \nindustry.",
                     hintStyle: TextStyle(color: Colors.grey.shade500),
                   ),
                 ),

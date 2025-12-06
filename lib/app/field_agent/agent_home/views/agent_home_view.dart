@@ -46,10 +46,11 @@ class AgentHomeView extends GetView<AgentHomeController> {
                   ),
                 ),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () => Get.toNamed(Routes.AGENT_CREATE_SERVICE),
                   child: SizedBox(
                     width: double.infinity,
                     child: Card(
+                      color: AppColors.lightGeryColor,
                       child: Padding(
                         padding: const EdgeInsets.all(16.0),
                         child: Column(
@@ -74,6 +75,7 @@ class AgentHomeView extends GetView<AgentHomeController> {
                 SizedBox(
                   width: double.infinity,
                   child: Card(
+                    color: AppColors.lightGeryColor,
                     child: Padding(
                       padding: const EdgeInsets.all(16.0),
                       child: Column(
@@ -118,6 +120,8 @@ class _CustomProgressCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      margin: EdgeInsets.symmetric(vertical: 10.h),
+      color: AppColors.lightGeryColor,
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Row(

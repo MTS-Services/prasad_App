@@ -9,12 +9,13 @@ import '../../../../data/app_text_styles.dart';
 import '../../../../routes/app_pages.dart';
 import '../../../../shared_screen/common_widget/custom_dropdown_field.dart';
 import '../../../../shared_screen/common_widget/custom_elevated_and_outline_button.dart';
-import '../../../../shared_screen/common_widget/custom_text_field_login.dart';
+import '../../../../shared_screen/common_widget/custom_text_from_field.dart';
 import '../controllers/operetor_experience_and_records_controller.dart';
 
 class OperetorExperienceAndRecordsView
     extends GetView<OperetorExperienceAndRecordsController> {
   const OperetorExperienceAndRecordsView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,27 +28,37 @@ class OperetorExperienceAndRecordsView
               spacing: 12.h,
               children: [
                 Text('Experience & Records', style: AppTextStyles.bold24),
-                Text('Tell us about your flying experience', style: AppTextStyles.regular16),
-                CustomTextFieldLogin(
+                Text(
+                  'Tell us about your flying experience',
+                  style: AppTextStyles.regular16,
+                ),
+                CustomTextFromField(
                   labelText: 'Total Flight Hours',
                   hintText: 'Enter total flight hours',
                 ),
-                Text('Past projects & events', style: AppTextStyles.medium16),
                 TextFormField(
                   maxLines: 3,
                   decoration: InputDecoration(
-                      hintText: 'Describe your past drone projects events, or commercial work........'
+                    labelText: 'Past projects & events',
+                    labelStyle: AppTextStyles.medium16,
+                    floatingLabelStyle: AppTextStyles.medium20.copyWith(
+                      color: AppColors.primaryColor,
+                    ),
+                    hintText:
+                        'Describe your past drone projects events, or commercial work........',
                   ),
                 ),
 
                 FileUploadContainer(
                   onTap: controller.pickImage,
                   image: controller.selectedImage.value,
+                  uploadType: 'Upload Drone Flight Records',
                 ),
                 CustomElevatedAndOutlineButton(
-                  elevateText: "Next",
+                  elevateText: "Continue",
                   outlineText: "Back",
-                  elevatedOnPressed: () => Get.toNamed(Routes.OPERETOR_PAYMENT_SETUP),
+                  elevatedOnPressed: () =>
+                      Get.toNamed(Routes.OPERETOR_PAYMENT_SETUP),
                   outlineOnPressed: () => Get.back(),
                 ),
                 SizedBox(),

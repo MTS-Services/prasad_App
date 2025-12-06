@@ -29,7 +29,7 @@ class AssetTypeEquipementView extends GetView<AssetTypeEquipementController> {
                 children: [
                   Text('Asset Type',style: AppTextStyles.regular16,),
                   buildContainer('Equipment'),
-                  Text('Equipment_ID',style: AppTextStyles.regular16,),
+                  Text('Equipment ID',style: AppTextStyles.regular16,),
                   buildContainer('EQP-DRN-001'),
                   Text('Asset ID',style: AppTextStyles.regular16,),
                   buildContainer('AST-IND-2025-DRN01'),
@@ -39,9 +39,9 @@ class AssetTypeEquipementView extends GetView<AssetTypeEquipementController> {
                   buildContainer('Phantom 4 Pro'),
                   Text('Make',style: AppTextStyles.regular16,),
                   buildContainer('DJI'),
-                  Text('Manufacture_Year',style: AppTextStyles.regular16,),
+                  Text('Manufacture Year',style: AppTextStyles.regular16,),
                   buildContainer('2022'),
-                  Text('Serial_Number',style: AppTextStyles.regular16,),
+                  Text('Serial Number',style: AppTextStyles.regular16,),
                   buildContainer('P4P-22IND-93847'),
                   const SizedBox(height: 8,),
                   SizedBox(

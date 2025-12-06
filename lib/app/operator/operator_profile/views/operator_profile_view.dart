@@ -11,6 +11,7 @@ import '../controllers/operator_profile_controller.dart';
 
 class OperatorProfileView extends GetView<OperatorProfileController> {
   const OperatorProfileView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,7 +85,7 @@ class OperatorProfileView extends GetView<OperatorProfileController> {
                   buildContainer('*******'),
                   const SizedBox(height: 7),
                   listTileContainer(
-                    onTap: (){
+                    onTap: () {
                       Get.toNamed(Routes.ASSET_TYPE_DRONE);
                     },
                     imagePath: ImagePath.languageIcon,
@@ -92,71 +93,74 @@ class OperatorProfileView extends GetView<OperatorProfileController> {
                   ),
                   const SizedBox(height: 7),
                   listTileContainer(
-                    onTap: (){},
+                    onTap: () => Get.toNamed(Routes.OPERATOR_LANGUAGE),
                     imagePath: ImagePath.languageIcon,
                     title: 'Language',
                   ),
                   const SizedBox(height: 7),
 
                   listTileContainer(
-                    onTap: (){
-                    },
+                    onTap: () {},
                     imagePath: ImagePath.languageIcon,
                     title: 'Show My Ratings',
                   ),
                   const SizedBox(height: 7),
                   listTileContainer(
-                    onTap: (){
-                      showDialog(context: context,
-                          barrierDismissible: true,
-                          builder: (BuildContext context){
-                            return AlertDialog(
-
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(6),
-                              ),
-                              contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
-                              content: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  const Text(
-                                    "Confirm using Your Fingerprint",
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 18,
-                                    ),
+                    onTap: () {
+                      showDialog(
+                        context: context,
+                        barrierDismissible: true,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(6),
+                            ),
+                            contentPadding: const EdgeInsets.symmetric(
+                              horizontal: 20,
+                              vertical: 24,
+                            ),
+                            content: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                const Text(
+                                  "Confirm using Your Fingerprint",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 18,
                                   ),
-                                  const SizedBox(height: 16),
-                                  const Icon(
-                                    Icons.fingerprint,
-                                    size: 48,
-                                    color: Colors.blueAccent, // or AppColors.primaryColor
+                                ),
+                                const SizedBox(height: 16),
+                                const Icon(
+                                  Icons.fingerprint,
+                                  size: 48,
+                                  color: Colors
+                                      .blueAccent, // or AppColors.primaryColor
+                                ),
+                                const SizedBox(height: 10),
+                                const Text(
+                                  "Touch the fingerprint sensor",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: Colors.black54,
+                                    fontSize: 15,
                                   ),
-                                  const SizedBox(height: 10),
-                                  const Text(
-                                    "Touch the fingerprint sensor",
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      color: Colors.black54,
-                                      fontSize: 15,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            );
-                          });
+                                ),
+                              ],
+                            ),
+                          );
+                        },
+                      );
                     },
                     imagePath: ImagePath.languageIcon,
                     title: 'Biometric',
                   ),
                   const SizedBox(height: 7),
                   listTileContainer(
-                    onTap: ()=> Get.offAllNamed(Routes.LOGIN),
+                    onTap: () => Get.offAllNamed(Routes.LOGIN),
                     imagePath: ImagePath.logOut,
                     title: 'Log Out',
                   ),
-
                 ],
               ),
             ),
@@ -165,8 +169,12 @@ class OperatorProfileView extends GetView<OperatorProfileController> {
       ),
     );
   }
-  Widget listTileContainer(
-      {required VoidCallback onTap, required String imagePath, required String title}) {
+
+  Widget listTileContainer({
+    required VoidCallback onTap,
+    required String imagePath,
+    required String title,
+  }) {
     return InkWell(
       onTap: onTap,
       child: Container(
@@ -240,5 +248,4 @@ class OperatorProfileView extends GetView<OperatorProfileController> {
       ),
     );
   }
-
 }

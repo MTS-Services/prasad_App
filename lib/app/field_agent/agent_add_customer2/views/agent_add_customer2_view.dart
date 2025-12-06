@@ -9,7 +9,8 @@ import '../../../routes/app_pages.dart';
 import '../../../shared_screen/common_widget/custom_dropdown_field.dart';
 import '../../../shared_screen/common_widget/custom_elevated_and_outline_button.dart';
 import '../../../shared_screen/common_widget/custom_location_field.dart';
-import '../../../shared_screen/common_widget/custom_text_field_login.dart';
+import '../../../shared_screen/common_widget/custom_text_from_field.dart';
+import '../../../shared_screen/common_widget/multi_dropdown_button.dart';
 import '../controllers/agent_add_customer2_controller.dart';
 
 class AgentAddCustomer2View extends GetView<AgentAddCustomer2Controller> {
@@ -52,48 +53,45 @@ class AgentAddCustomer2View extends GetView<AgentAddCustomer2Controller> {
                       );
                     }),
                   ),
-                  CustomTextFieldLogin(
+                  CustomTextFromField(
                     labelText: 'Location Name',
                     hintText: 'e.g., North GeoCoordinates',
                   ),
-                  Text('Latitude/Longitude', style: AppTextStyles.medium16),
-                  Row(
-                    spacing: 10.w,
+                  controller.serviceValue.value == 'agriculture'
+                      ? CustomLocationField(
+                    hintText: 'Latitude/Longitude',
+                    onPressed: () => Get.toNamed(Routes.MAP),
+                  )
+                      : Row(
                     children: [
                       Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Start Location',
-                              style: AppTextStyles.medium16,
-                            ),
-                            CustomLocationField(
-                              hintText: 'Latitude/Longitude',
-                              onPressed: () => Get.toNamed(Routes.MAP),
-                            ),
-                          ],
+                        child: CustomLocationField(
+                          hintText: 'Start Location',
+                          onPressed: () => Get.toNamed(Routes.MAP),
                         ),
                       ),
+                      SizedBox(width: 10),
                       Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text('End Location', style: AppTextStyles.medium16),
-                            CustomLocationField(
-                              hintText: 'Latitude/Longitude',
-                              onPressed: () => Get.toNamed(Routes.MAP),
-                            ),
-                          ],
+                        child: CustomLocationField(
+                          hintText: 'End Location',
+                          onPressed: () => Get.toNamed(Routes.MAP),
                         ),
                       ),
                     ],
                   ),
+                  controller.serviceValue.value == 'agriculture' ? MultiDropdownButton(
+                    label: "Crop",
+                    items: controller.cropItems,
+                    selectedValue: controller.cropValue.value,
+                    onChanged: controller.cropItemSelected,
+                    isSelected: false,
+                    checkBoxOnChanged: (value) {},
+                  ) : SizedBox(),
                   Row(
                     spacing: 10.w,
                     children: [
                       Expanded(
-                        child: CustomTextFieldLogin(
+                        child: CustomTextFromField(
                           labelText: 'Size/distance',
                           hintText: "0",
                         ),
