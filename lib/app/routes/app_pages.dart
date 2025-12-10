@@ -30,6 +30,10 @@ import '../customer/customer_registration/customer_service_location/bindings/cus
 import '../customer/customer_registration/customer_service_location/views/customer_service_location_view.dart';
 import '../customer/customer_schedule/bindings/customer_schedule_binding.dart';
 import '../customer/customer_schedule/views/customer_schedule_view.dart';
+import '../customer/customer_service_cancel_approval/bindings/customer_service_cancel_approval_binding.dart';
+import '../customer/customer_service_cancel_approval/views/customer_service_cancel_approval_view.dart';
+import '../customer/customer_service_cancel_request/bindings/customer_service_cancel_request_binding.dart';
+import '../customer/customer_service_cancel_request/views/customer_service_cancel_request_view.dart';
 import '../customer/customer_service_details/bindings/customer_service_details_binding.dart';
 import '../customer/customer_service_details/views/customer_service_details_view.dart';
 import '../customer/customer_service_details_map/bindings/customer_service_details_map_binding.dart';
@@ -38,12 +42,16 @@ import '../customer/customer_service_traking/bindings/customer_service_traking_b
 import '../customer/customer_service_traking/views/customer_service_traking_view.dart';
 import '../customer/customer_support/bindings/customer_support_binding.dart';
 import '../customer/customer_support/views/customer_support_view.dart';
+import '../customer/customer_support_ticket/bindings/customer_support_ticket_binding.dart';
+import '../customer/customer_support_ticket/views/customer_support_ticket_view.dart';
+import '../customer/customer_support_ticket_info/bindings/customer_support_ticket_info_binding.dart';
+import '../customer/customer_support_ticket_info/views/customer_support_ticket_info_view.dart';
+import '../customer/customer_support_ticket_token/bindings/customer_support_ticket_token_binding.dart';
+import '../customer/customer_support_ticket_token/views/customer_support_ticket_token_view.dart';
 import '../customer/cutomer_all_services/bindings/cutomer_all_services_binding.dart';
 import '../customer/cutomer_all_services/views/customer_all_services_view.dart';
 import '../customer/cutomer_notification/bindings/cutomer_notification_binding.dart';
 import '../customer/cutomer_notification/views/customer_notification_view.dart';
-import '../customer/service_rquest_cancel/bindings/service_rquest_cancel_binding.dart';
-import '../customer/service_rquest_cancel/views/service_rquest_cancel_view.dart';
 import '../field_agent/agent_add_customer1/bindings/agent_add_customer1_binding.dart';
 import '../field_agent/agent_add_customer1/views/agent_add_customer1_view.dart';
 import '../field_agent/agent_add_customer2/bindings/agent_add_customer2_binding.dart';
@@ -52,8 +60,12 @@ import '../field_agent/agent_add_customer3/bindings/agent_add_customer3_binding.
 import '../field_agent/agent_add_customer3/views/agent_add_customer3_view.dart';
 import '../field_agent/agent_create_service/bindings/agent_create_service_binding.dart';
 import '../field_agent/agent_create_service/views/agent_create_service_view.dart';
+import '../field_agent/agent_edit_profile/bindings/agent_edit_profile_binding.dart';
+import '../field_agent/agent_edit_profile/views/agent_edit_profile_view.dart';
 import '../field_agent/agent_home/bindings/agent_home_binding.dart';
 import '../field_agent/agent_home/views/agent_home_view.dart';
+import '../field_agent/agent_profile/bindings/agent_profile_binding.dart';
+import '../field_agent/agent_profile/views/agent_profile_view.dart';
 import '../field_agent/agent_registration1/bindings/agent_registration1_binding.dart';
 import '../field_agent/agent_registration1/views/agent_registration1_view.dart';
 import '../operator/asset_type_drone/bindings/asset_type_drone_binding.dart';
@@ -96,6 +108,10 @@ import '../operator/operator_registration/operetor_waiting_confirmation/bindings
 import '../operator/operator_registration/operetor_waiting_confirmation/views/operetor_waiting_confirmation_view.dart';
 import '../operator/operator_service/bindings/operator_service_binding.dart';
 import '../operator/operator_service/views/operator_service_view.dart';
+import '../operator/operator_service_decline_confirm/bindings/operator_service_decline_confirm_binding.dart';
+import '../operator/operator_service_decline_confirm/views/operator_service_decline_confirm_view.dart';
+import '../operator/operator_service_decline_request/bindings/operator_service_decline_request_binding.dart';
+import '../operator/operator_service_decline_request/views/operator_service_decline_request_view.dart';
 import '../operator/operator_services_details/bindings/operator_services_details_binding.dart';
 import '../operator/operator_services_details/views/operator_services_details_view.dart';
 import '../shared_screen/auth/auth_language/bindings/auth_language_binding.dart';
@@ -442,9 +458,49 @@ class AppPages {
       binding: AuthLanguageBinding(),
     ),
     GetPage(
-      name: _Paths.SERVICE_RQUEST_CANCEL,
-      page: () => const ServiceRquestCancelView(),
-      binding: ServiceRquestCancelBinding(),
+      name: _Paths.CUSTOMER_SERVICE_CANCEL_REQUEST,
+      page: () => const CustomerServiceCancelRequestView(),
+      binding: CustomerServiceCancelRequestBinding(),
+    ),
+    GetPage(
+      name: _Paths.CUSTOMER_SERVICE_CANCEL_APPROVAL,
+      page: () => const CustomerServiceCancelApprovalView(),
+      binding: CustomerServiceCancelApprovalBinding(),
+    ),
+    GetPage(
+      name: _Paths.CUSTOMER_SUPPORT_TICKET,
+      page: () => const CustomerSupportTicketView(),
+      binding: CustomerSupportTicketBinding(),
+    ),
+    GetPage(
+      name: _Paths.CUSTOMER_SUPPORT_TICKET_INFO,
+      page: () => const CustomerSupportTicketInfoView(),
+      binding: CustomerSupportTicketInfoBinding(),
+    ),
+    GetPage(
+      name: _Paths.CUSTOMER_SUPPORT_TICKET_TOKEN,
+      page: () => const CustomerSupportTicketTokenView(),
+      binding: CustomerSupportTicketTokenBinding(),
+    ),
+    GetPage(
+      name: _Paths.OPERATOR_SERVICE_DECLINE_REQUEST,
+      page: () => const OperatorServiceDeclineRequestView(),
+      binding: OperatorServiceDeclineRequestBinding(),
+    ),
+    GetPage(
+      name: _Paths.OPERATOR_SERVICE_DECLINE_CONFIRM,
+      page: () => const OperatorServiceDeclineConfirmView(),
+      binding: OperatorServiceDeclineConfirmBinding(),
+    ),
+    GetPage(
+      name: _Paths.AGENT_PROFILE,
+      page: () => const AgentProfileView(),
+      binding: AgentProfileBinding(),
+    ),
+    GetPage(
+      name: _Paths.AGENT_EDIT_PROFILE,
+      page: () => const AgentEditProfileView(),
+      binding: AgentEditProfileBinding(),
     ),
   ];
 }

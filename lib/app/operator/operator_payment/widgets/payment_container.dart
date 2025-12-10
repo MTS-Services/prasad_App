@@ -45,13 +45,14 @@ class PaymentContainer extends StatelessWidget {
                   onPressed: newPaymentOnPressed,
                   icon: Icon(Icons.add),
                   label: Text(
-                    'New Payment Method',
+                    'Add New Account',
                     style: AppTextStyles.medium16,
                   ),
                 ),
               ),
             ],
           ),
+          SizedBox(height: 16.h,),
           AccountContainer(
             accountName: primaryAccountName,
             accountNumber: primaryAccountNumber,

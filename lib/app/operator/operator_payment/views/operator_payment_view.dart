@@ -21,8 +21,8 @@ class OperatorPaymentView extends GetView<OperatorPaymentController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: SafeArea(
+      body: SafeArea(
+        child: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.all(15.r),
             child: Column(
@@ -83,48 +83,11 @@ class OperatorPaymentView extends GetView<OperatorPaymentController> {
                     builder: (context) => PaymentMethodDialog(
                       onPlaceOrder: () {
                         Navigator.of(context).pop();
-                        showDialog(
-                          context: context,
-                          builder: (context) {
-                            return EmailAlertDialog(
-                              onPressed: () {
-                                Navigator.of(context).pop();
-                                showDialog(
-                                  context: context,
-                                  builder: (context) => OtpAlertDialog(
-                                    controller: controller,
-                                    resendOnTap: () {},
-                                    onPressed: () {
-                                      Navigator.of(context).pop();
-                                      showDialog(
-                                        context: context,
-                                        builder: (context) =>
-                                            SuccessAlertDialog(
-                                              onPressed: () {},
-                                            ),
-                                      );
-                                    },
-                                  ),
-                                );
-                              },
-                            );
-                          },
-                        );
                       },
                     ),
                   ),
                 ),
                 SizedBox(height: 10.h),
-                SizedBox(
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    child: Text(
-                      'Requiest Payment',
-                      style: AppTextStyles.medium16,
-                    ),
-                  ),
-                ),
               ],
             ),
           ),

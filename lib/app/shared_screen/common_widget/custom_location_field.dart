@@ -26,7 +26,7 @@ class CustomLocationField extends StatelessWidget {
               flex: 4,
               child: Text(
                 hintText,
-                style: AppTextStyles.regular12.copyWith(
+                style: AppTextStyles.medium16.copyWith(
                   color: AppColors.hintColor,
                 ),
                 overflow: TextOverflow.ellipsis,

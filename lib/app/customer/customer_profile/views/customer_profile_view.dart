@@ -70,10 +70,10 @@ class CustomerProfileView extends GetView<CustomerProfileController> {
                   Text('Village', style: AppTextStyles.regular16),
                   buildContainer('BTM Layout'),
                   const SizedBox(height: 7),
-                  Text('Geo Radius 1', style: AppTextStyles.regular16),
+                  Text('Address Line 1', style: AppTextStyles.regular16),
                   buildContainer('19.0989N'),
                   const SizedBox(height: 7),
-                  Text('Geo Radius 2', style: AppTextStyles.regular16),
+                  Text('Address Line 2', style: AppTextStyles.regular16),
                   buildContainer('19.0989N'),
                   const SizedBox(height: 7),
                   SizedBox(

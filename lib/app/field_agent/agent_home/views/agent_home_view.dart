@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:prasad/app/data/app_colors.dart';
 import 'package:prasad/app/data/app_text_styles.dart';
+import 'package:prasad/app/data/image_path.dart';
 import 'package:prasad/app/routes/app_pages.dart';
 
 import '../controllers/agent_home_controller.dart';
@@ -19,11 +20,23 @@ class AgentHomeView extends GetView<AgentHomeController> {
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               spacing: 20.h,
               children: [
-                Text("Dashboard Overview", style: AppTextStyles.bold32),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("Dashboard Overview", style: AppTextStyles.bold28),
+                    GestureDetector(
+                      onTap: () => Get.toNamed(Routes.AGENT_PROFILE),
+                      child: CircleAvatar(
+                        radius: 20,
+                        backgroundImage: AssetImage(ImagePath.person),
+                      ),
+                    ),
+                  ],
+                ),
                 ElevatedButton(
                   onPressed: () => Get.toNamed(Routes.AGENT_ADD_CUSTOMER1),
                   child: Row(

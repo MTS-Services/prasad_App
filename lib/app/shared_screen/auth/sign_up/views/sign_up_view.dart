@@ -35,7 +35,7 @@ class SignUpView extends GetView<SignUpController> {
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: 20.h),
-                CustomTextFromField(
+                CustomTextFormField(
                   labelText: "Phone",
                   hintText: "Enter your Phone Number",
                 ),
@@ -69,12 +69,12 @@ class SignUpView extends GetView<SignUpController> {
                     ],
                   ),
                 ),
-                CustomTextFromField(
+                CustomTextFormField(
                   labelText: 'Email',
                   hintText: 'example@gmail.com',
                 ),
-                CustomTextFromField(labelText: 'Password', hintText: '*****'),
-                CustomTextFromField(
+                CustomTextFormField(labelText: 'Password', hintText: '*****'),
+                CustomTextFormField(
                   labelText: 'Confirm Password',
                   hintText: '*******',
                 ),

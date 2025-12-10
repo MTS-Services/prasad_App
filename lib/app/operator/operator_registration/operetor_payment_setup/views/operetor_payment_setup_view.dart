@@ -25,7 +25,7 @@ class OperetorPaymentSetupView extends GetView<OperetorPaymentSetupController> {
               children: [
                 Text('Payment Setup', style: AppTextStyles.bold24),
                 Text('Set up secure payment for your earnings', style: AppTextStyles.regular16),
-                Text('Need Add payment',style: AppTextStyles.bold24,),
+                Text('Account Type',style: AppTextStyles.bold24,),
                 AccountPaymentInfoAdd(),
                 Text("Add A New Payment Method",style: AppTextStyles.medium16,),
                 CustomElevatedAndOutlineButton(

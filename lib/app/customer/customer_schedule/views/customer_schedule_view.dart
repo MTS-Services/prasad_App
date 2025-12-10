@@ -55,7 +55,7 @@ class CustomerScheduleView extends GetView<CustomerScheduleController> {
                 PaymentMethodWidget(
                   onPlaceOrder: () {
                     bottomController.changeIndex(1);
-                    Get.to(() => const CustomerBottomNaviBarView());
+                    Get.offAll(() => const CustomerBottomNaviBarView());
                   },
                 ),
               ],

@@ -31,8 +31,8 @@ class NewPasswordView extends GetView<NewPasswordController> {
                   style: AppTextStyles.bold40,
                   textAlign: TextAlign.center,
                 ),
-                CustomTextFromField(labelText: 'Password', hintText: '******'),
-                CustomTextFromField(
+                CustomTextFormField(labelText: 'Password', hintText: '******'),
+                CustomTextFormField(
                   labelText: 'Confirm Password',
                   hintText: '******',
                 ),

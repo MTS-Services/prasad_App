@@ -30,11 +30,11 @@ class OperetorEquipmentDetailsView
                 children: [
                   Text('Equipment Details', style: AppTextStyles.bold24),
                   Text('Add information about your equipment', style: AppTextStyles.regular16),
-                  CustomTextFromField(
+                  CustomTextFormField(
                     labelText: 'Equipment ID',
                     hintText: 'EQP-XXXXXXXXX',
                   ),
-                  CustomTextFromField(
+                  CustomTextFormField(
                     labelText: 'Asset ID',
                     hintText: 'Enter your Asset ID',
                   ),
@@ -46,23 +46,23 @@ class OperetorEquipmentDetailsView
                   ),
 
 
-                  CustomTextFromField(
+                  CustomTextFormField(
                     labelText: 'Model',
                     hintText: 'Model year and version',
                   ),
-                  CustomTextFromField(
+                  CustomTextFormField(
                     labelText: 'Make',
                     hintText: 'Make',
                   ),
-                  CustomTextFromField(
+                  CustomTextFormField(
                     labelText: 'Manufacturer',
                     hintText: 'Manufacturer',
                   ),
-                  CustomTextFromField(
+                  CustomTextFormField(
                     labelText: 'Year',
                     hintText: 'Year of Manufacture',
                   ),
-                  CustomTextFromField(
+                  CustomTextFormField(
                     labelText: 'Serial Number',
                     hintText: 'Serial Number',
                   ),

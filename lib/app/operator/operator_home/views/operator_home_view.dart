@@ -1,4 +1,4 @@
- import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
@@ -12,6 +12,7 @@ import '../widgets/order_card.dart';
 
 class OperatorHomeView extends GetView<OperatorHomeController> {
   const OperatorHomeView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,6 +45,7 @@ class OperatorHomeView extends GetView<OperatorHomeController> {
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
                   itemBuilder: (context, index) => OrderCard(
+                    elevatedText: "Accept Service",
                     serviceName: 'Agro Drone Service',
                     serviceDetails:
                         'Precision crop monitoring and field insights powered by aerial data',

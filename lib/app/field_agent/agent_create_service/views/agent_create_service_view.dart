@@ -28,7 +28,7 @@ class AgentCreateServiceView extends GetView<AgentCreateServiceController> {
             crossAxisAlignment: CrossAxisAlignment.start,
             spacing: 16.h,
             children: [
-              CustomTextFromField(
+              CustomTextFormField(
                 labelText: "Service Title",
                 hintText: "Agro Drone Service",
               ),
@@ -66,7 +66,7 @@ class AgentCreateServiceView extends GetView<AgentCreateServiceController> {
                 maxLines: 3,
                 decoration: InputDecoration(hintText: "Describe your service"),
               ),
-              CustomTextFromField(
+              CustomTextFormField(
                 labelText: "Service Location",
                 hintText: "Enter service location",
               ),

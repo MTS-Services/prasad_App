@@ -36,38 +36,57 @@ class AgentAddCustomer1View extends GetView<AgentAddCustomer1Controller> {
                     spacing: 10.w,
                     children: [
                       Expanded(
-                        child: CustomTextFromField(
+                        child: CustomTextFormField(
                           labelText: 'First name',
                           hintText: 'Enter your name',
                         ),
                       ),
                       Expanded(
-                        child: CustomTextFromField(
-                          labelText: 'Middle name',
-                          hintText: 'Enter your middle name',
+                        child: CustomTextFormField(
+                          labelText: 'Middle initial',
+                          hintText: 'Enter your middle initial',
                         ),
                       ),
                     ],
                   ),
-                  CustomTextFromField(
+                  CustomTextFormField(
                     labelText: 'Last name',
                     hintText: 'Enter your last name',
                   ),
-                  CustomTextFromField(
+                  CustomTextFormField(
                     labelText: 'Also Known As',
                     hintText: 'Enter your nick name',
                   ),
-                  CustomTextFromField(
+                  CustomTextFormField(
                     labelText: 'Customer ID',
                     hintText: 'Enter Customer Id',
                   ),
-                  CustomTextFromField(
-                    labelText: 'Phone',
-                    hintText: '+91-98********',
+                  Row(
+                    children: [
+                      Expanded(
+                        flex: 2,
+                        child: CustomDropdownField(
+                          label: "code",
+                          hintText: "code",
+                          items: controller.countryCode,
+                          selectedValue: controller.selectedCountryCode.value,
+                          onChanged: controller.onCountryCodeSelected,
+                        ),
+                      ),
+                      SizedBox(width: 8.w),
+                      Expanded(
+                        flex: 5,
+                        child: CustomTextFormField(
+                          labelText: 'Phone',
+                          hintText: '98********',
+                        ),
+                      ),
+
+                    ],
                   ),
-                  CustomTextFromField(
+                  CustomTextFormField(
                     labelText: 'Email',
-                    hintText: '+Enter your Email',
+                    hintText: 'Enter your Email',
                   ),
                   CustomDropdownField(
                     label: 'District',
@@ -81,11 +100,9 @@ class AgentAddCustomer1View extends GetView<AgentAddCustomer1Controller> {
                     selectedValue: controller.selectedVillage.value,
                     onChanged: controller.onVillageSelected,
                   ),
-                  CustomDropdownField(
-                    label: 'Registered by',//auto fill hobe
-                    items: controller.registeredBy,
-                    selectedValue: controller.selectedRegisteredBy.value,
-                    onChanged: controller.onRegisteredBySelected,
+                  CustomTextFormField(
+                    labelText: 'Registered by',
+                    hintText: 'Registered by',
                   ),
 
                   Text('Upload Profile', style: AppTextStyles.medium16),
@@ -99,7 +116,7 @@ class AgentAddCustomer1View extends GetView<AgentAddCustomer1Controller> {
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: () => Get.toNamed(Routes.AGENT_ADD_CUSTOMER2),
+                      onPressed: () => Get.toNamed(Routes.AGENT_ADD_CUSTOMER3),
                       child: Text('Next'),
                     ),
                   ),

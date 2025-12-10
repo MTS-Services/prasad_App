@@ -15,6 +15,7 @@ import '../controllers/agent_add_customer2_controller.dart';
 
 class AgentAddCustomer2View extends GetView<AgentAddCustomer2Controller> {
   const AgentAddCustomer2View({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +24,7 @@ class AgentAddCustomer2View extends GetView<AgentAddCustomer2Controller> {
           padding: const EdgeInsets.all(16.0),
           child: SingleChildScrollView(
             child: Obx(
-                  () => Column(
+              () => Column(
                 spacing: 12.h,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -37,14 +38,14 @@ class AgentAddCustomer2View extends GetView<AgentAddCustomer2Controller> {
                   Text("Sub Services", style: AppTextStyles.medium20),
                   Column(
                     children: List.generate(controller.subServices.length, (
-                        index,
-                        ) {
+                      index,
+                    ) {
                       final sub = controller.subServices[index];
                       return Row(
                         children: [
                           Checkbox(
                             value:
-                            controller.isSelectedMap[sub]?.value ?? false,
+                                controller.isSelectedMap[sub]?.value ?? false,
                             onChanged: (val) =>
                                 controller.checkBoxSelected(sub, val),
                           ),
@@ -53,45 +54,69 @@ class AgentAddCustomer2View extends GetView<AgentAddCustomer2Controller> {
                       );
                     }),
                   ),
-                  CustomTextFromField(
+                  CustomTextFormField(
                     labelText: 'Location Name',
                     hintText: 'e.g., North GeoCoordinates',
                   ),
                   controller.serviceValue.value == 'agriculture'
                       ? CustomLocationField(
-                    hintText: 'Latitude/Longitude',
-                    onPressed: () => Get.toNamed(Routes.MAP),
-                  )
+                          hintText: 'Latitude/Longitude',
+                          onPressed: () => Get.toNamed(Routes.MAP),
+                        )
                       : Row(
-                    children: [
-                      Expanded(
-                        child: CustomLocationField(
-                          hintText: 'Start Location',
-                          onPressed: () => Get.toNamed(Routes.MAP),
+                          children: [
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Start Location',
+                                    style: AppTextStyles.medium16,
+                                  ),
+                                  CustomLocationField(
+                                    hintText: 'Latitude/Longitude',
+                                    onPressed: () => Get.toNamed(Routes.MAP),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(width: 10),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'End Location',
+                                    style: AppTextStyles.medium16,
+                                  ),
+                                  CustomLocationField(
+                                    hintText: 'Latitude/Longitude',
+                                    onPressed: () => Get.toNamed(Routes.MAP),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
                         ),
-                      ),
-                      SizedBox(width: 10),
-                      Expanded(
-                        child: CustomLocationField(
-                          hintText: 'End Location',
-                          onPressed: () => Get.toNamed(Routes.MAP),
-                        ),
-                      ),
-                    ],
-                  ),
-                  controller.serviceValue.value == 'agriculture' ? MultiDropdownButton(
-                    label: "Crop",
-                    items: controller.cropItems,
-                    selectedValue: controller.cropValue.value,
-                    onChanged: controller.cropItemSelected,
-                    isSelected: false,
-                    checkBoxOnChanged: (value) {},
-                  ) : SizedBox(),
+                  controller.serviceValue.value == 'agriculture'
+                      ? Obx(() {
+                          final selected = controller.selectedCropItems;
+                          return MultiDropdownButton(
+                            label: "Crops",
+                            items: controller.cropItems.toList(),
+                            selectedItems: selected.toList(),
+                            onChanged: (list) {
+                              controller.selectedCropItems.assignAll(list);
+                            },
+                          );
+                        })
+                      : SizedBox(),
+
                   Row(
                     spacing: 10.w,
                     children: [
                       Expanded(
-                        child: CustomTextFromField(
+                        child: CustomTextFormField(
                           labelText: 'Size/distance',
                           hintText: "0",
                         ),
@@ -123,7 +148,7 @@ class AgentAddCustomer2View extends GetView<AgentAddCustomer2Controller> {
                   CustomElevatedAndOutlineButton(
                     elevateText: 'Save',
                     outlineText: "Back",
-                    elevatedOnPressed: () => Get.toNamed(Routes.AGENT_ADD_CUSTOMER3),
+                    elevatedOnPressed: () => Get.toNamed(Routes.AGENT_HOME),
                     outlineOnPressed: () => Get.back(),
                   ),
                 ],

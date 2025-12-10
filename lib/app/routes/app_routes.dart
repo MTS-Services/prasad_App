@@ -70,7 +70,21 @@ abstract class Routes {
   static const AGENT_CREATE_SERVICE = _Paths.AGENT_CREATE_SERVICE;
   static const AUTH_LANGUAGE = _Paths.AUTH_LANGUAGE;
   static const SPLASH = _Paths.SPLASH;
-  static const SERVICE_RQUEST_CANCEL = _Paths.SERVICE_RQUEST_CANCEL;
+  static const CUSTOMER_SERVICE_CANCEL_REQUEST =
+      _Paths.CUSTOMER_SERVICE_CANCEL_REQUEST;
+  static const CUSTOMER_SERVICE_CANCEL_APPROVAL =
+      _Paths.CUSTOMER_SERVICE_CANCEL_APPROVAL;
+  static const CUSTOMER_SUPPORT_TICKET = _Paths.CUSTOMER_SUPPORT_TICKET;
+  static const CUSTOMER_SUPPORT_TICKET_INFO =
+      _Paths.CUSTOMER_SUPPORT_TICKET_INFO;
+  static const CUSTOMER_SUPPORT_TICKET_TOKEN =
+      _Paths.CUSTOMER_SUPPORT_TICKET_TOKEN;
+  static const OPERATOR_SERVICE_DECLINE_REQUEST =
+      _Paths.OPERATOR_SERVICE_DECLINE_REQUEST;
+  static const OPERATOR_SERVICE_DECLINE_CONFIRM =
+      _Paths.OPERATOR_SERVICE_DECLINE_CONFIRM;
+  static const AGENT_PROFILE = _Paths.AGENT_PROFILE;
+  static const AGENT_EDIT_PROFILE = _Paths.AGENT_EDIT_PROFILE;
 }
 
 abstract class _Paths {
@@ -140,5 +154,17 @@ abstract class _Paths {
   static const AGENT_CREATE_SERVICE = '/agent-create-service';
   static const SPLASH = '/splash';
   static const AUTH_LANGUAGE = '/auth-language';
-  static const SERVICE_RQUEST_CANCEL = '/service-rquest-cancel';
+  static const CUSTOMER_SERVICE_CANCEL_REQUEST =
+      '/customer-service-cancel-request';
+  static const CUSTOMER_SERVICE_CANCEL_APPROVAL =
+      '/customer-service-cancel-approval';
+  static const CUSTOMER_SUPPORT_TICKET = '/customer-support-ticket';
+  static const CUSTOMER_SUPPORT_TICKET_INFO = '/customer-support-ticket-info';
+  static const CUSTOMER_SUPPORT_TICKET_TOKEN = '/customer-support-ticket-token';
+  static const OPERATOR_SERVICE_DECLINE_REQUEST =
+      '/operator-service-decline-request';
+  static const OPERATOR_SERVICE_DECLINE_CONFIRM =
+      '/operator-service-decline-confirm';
+  static const AGENT_PROFILE = '/agent-profile';
+  static const AGENT_EDIT_PROFILE = '/agent-edit-profile';
 }

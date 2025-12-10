@@ -30,62 +30,31 @@ class CustomDropdownField extends StatelessWidget {
           value: selectedValue,
           hint: Text(
             hintText ?? "Select $label",
-            style: AppTextStyles.regular16.copyWith(fontSize: 14.sp),
+            style: AppTextStyles.medium16,
           ),
           decoration: InputDecoration(
             labelText: label,
+            floatingLabelBehavior: selectedValue != null
+                ? FloatingLabelBehavior.always
+                : FloatingLabelBehavior.never,
             contentPadding: EdgeInsets.symmetric(
-              horizontal: 4.w,
+              vertical: 8.h,
             ),
             floatingLabelStyle: AppTextStyles.medium20.copyWith(
               color: AppColors.primaryColor,
             ),
           ),
-          items: items
-              .map(
-                (item) => DropdownMenuItem<String>(
-                  value: item,
-                  child: Text(
-                    item,
-                    style: AppTextStyles.regular16,
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 1,
-                  ),
-                ),
-              )
-              .toList(),
+          items: items.map((item) {
+            return DropdownMenuItem<String>(
+              value: item,
+              child: Text(
+                item,
+                style: AppTextStyles.regular16,
+                overflow: TextOverflow.ellipsis,
+              ),
+            );
+          }).toList(),
           onChanged: onChanged,
-          /*buttonStyleData: ButtonStyleData(
-            width: double.infinity,
-            padding: EdgeInsets.symmetric(horizontal: 12.w),
-            decoration: BoxDecoration(
-              color: AppColors.whiteColor,
-              borderRadius: BorderRadius.circular(8.r),
-              border: Border.all(color: AppColors.borderColorBlue, width: 1.w),
-            ),
-          ),*/
-          iconStyleData: IconStyleData(
-            icon: Icon(
-              Icons.keyboard_arrow_down_rounded,
-              size: 22.sp,
-              color: AppColors.blackColor,
-            ),
-          ),
-
-          dropdownStyleData: DropdownStyleData(
-            maxHeight: 200.h,
-            decoration: BoxDecoration(
-              color: AppColors.whiteColor,
-              borderRadius: BorderRadius.circular(8.r),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black12,
-                  blurRadius: 4.r,
-                  offset: const Offset(0, 2),
-                ),
-              ],
-            ),
-          ),
         ),
       ),
     );

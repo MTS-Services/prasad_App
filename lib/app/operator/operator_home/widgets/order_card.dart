@@ -18,7 +18,7 @@ class OrderCard extends StatelessWidget {
     required this.price,
     this.acceptOnPress,
     this.declineOnpress,
-    required this.isAccepted,
+    required this.isAccepted, required this.elevatedText,
   });
   final String headerText,
       imageUrl,
@@ -27,6 +27,7 @@ class OrderCard extends StatelessWidget {
       serviceName,
       serviceDetails,
       distance,
+      elevatedText,
       price;
   final Function()? acceptOnPress, declineOnpress;
   final bool isAccepted;
@@ -82,7 +83,7 @@ class OrderCard extends StatelessWidget {
               Expanded(
                 child: ElevatedButton(
                   onPressed: acceptOnPress,
-                  child: Text('Start Service', style: AppTextStyles.medium16),
+                  child: Text(elevatedText, style: AppTextStyles.medium16),
                 ),
               ),
               if (isAccepted) ...[

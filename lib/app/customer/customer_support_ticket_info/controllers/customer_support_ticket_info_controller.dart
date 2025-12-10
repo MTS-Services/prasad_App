@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
-class ServiceRquestCancelController extends GetxController {
-  //TODO: Implement ServiceRquestCancelController
+class CustomerSupportTicketInfoController extends GetxController {
+  //TODO: Implement CustomerSupportTicketInfoController
 
   final count = 0.obs;
   @override

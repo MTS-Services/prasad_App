@@ -35,7 +35,7 @@ class AccountContainer extends StatelessWidget {
             width: 15.h,
             decoration: BoxDecoration(
               color: controller.isSelected(index)
-                  ? Colors.redAccent
+                  ? Colors.green
                   : Colors.grey.shade300,
               shape: BoxShape.circle,
             ),

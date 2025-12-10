@@ -35,7 +35,7 @@ class RecoveryPassView extends GetView<RecoveryPassController> {
                   style: AppTextStyles.regular20,
                   textAlign: TextAlign.center,
                 ),
-                CustomTextFromField(
+                CustomTextFormField(
                   labelText: 'Email',
                   hintText: 'example@gmail.com',
                 ),

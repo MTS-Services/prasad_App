@@ -23,7 +23,7 @@ class CustomerBottomNaviBarView
             onTap: (value) => controller.changeIndex(value),
             items: [
               barItem(ImagePath.homeIcon, 'Home', 0),
-              barItem(ImagePath.serviceIcon, 'Service', 1),
+              barItem(ImagePath.serviceIcon, 'Services', 1),
               barItem(ImagePath.historyIcon, 'History', 2),
               barItem(ImagePath.supportIcon, 'Support', 3),
               barItem(ImagePath.profileIcon, 'Profile', 4),

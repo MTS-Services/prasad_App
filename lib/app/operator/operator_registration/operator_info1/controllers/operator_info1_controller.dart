@@ -6,6 +6,27 @@ import 'package:image_picker/image_picker.dart';
 
 class OperatorInfo1Controller extends GetxController {
   // Dropdown data
+  // Dropdown items
+  final districts = ['Dhaka', 'Chattogram', 'Sylhet', 'Khulna'];
+  final country = ['Dhaka', 'Chattogram', 'Sylhet', 'Khulna'];
+  final state = ['Dhaka', 'Chattogram', 'Sylhet', 'Khulna'];
+  final mandals = ['Mandal 1', 'Mandal 2', 'Mandal 3'];
+  final countryCode = ['+91', '+11', '+57'];
+
+  // Selected values
+  final selectedDistrict = RxnString();
+  final selectedCountry = RxnString();
+  final selectedState = RxnString();
+  final selectedMandal = RxnString();
+  final selectedcountryCode = RxnString();
+
+  void onDistrictSelected(String? value) => selectedDistrict.value = value;
+  void onCountrySelected(String? value) => selectedCountry.value = value;
+  void onStateSelected(String? value) => selectedState.value = value;
+  void onMandalSelected(String? value) => selectedMandal.value = value;
+  void onCountryCodeSelected(String? value) =>
+      selectedcountryCode.value = value;
+
   final industryItems = ['Agriculture', 'Survey', 'Inspection', 'Delivery'];
   final selectedIndustry = RxnString();
 
@@ -41,12 +62,15 @@ class OperatorInfo1Controller extends GetxController {
     locationController.dispose();
     super.onClose();
   }
+
   final Rx<File?> selectedImage = Rx<File?>(null);
   final ImagePicker _picker = ImagePicker();
 
   // Pick image from gallery
   Future<void> pickImage() async {
-    final XFile? pickedFile = await _picker.pickImage(source: ImageSource.gallery);
+    final XFile? pickedFile = await _picker.pickImage(
+      source: ImageSource.gallery,
+    );
     if (pickedFile != null) {
       selectedImage.value = File(pickedFile.path);
     }
@@ -59,7 +83,9 @@ class OperatorInfo1Controller extends GetxController {
       selectedImage.value = File(photo.path);
     }
   }
+
   final items = ["Mapping", "Surveying", "Number"];
+
   final selectedValue = RxnString();
 
   final Map<String, List<String>> subServiceMap = {
@@ -68,23 +94,25 @@ class OperatorInfo1Controller extends GetxController {
     "Number": ["Number 1", "Number 2", "Number 3"],
   };
 
-  // Map to store selection state for each subservice
+  // Map to store checkbox states
   final Map<String, RxBool> isSelectedMap = {};
 
-  List<String> get subServices => subServiceMap[selectedValue.value] ?? [];
+  List<String> get subServices =>
+      subServiceMap[selectedValue.value] ?? [];
 
   void onSelectedItem(String? value) {
-    if (value != null) {
-      selectedValue.value = value;
+    if (value == null) return;
 
-      // Initialize RxBool for each subService when selectedValue changes
-      isSelectedMap.clear();
-      for (var sub in subServices) {
-        isSelectedMap[sub] = false.obs;
-      }
+    selectedValue.value = value;
+
+    // Reset selections
+    isSelectedMap.clear();
+    for (var sub in subServices) {
+      isSelectedMap[sub] = false.obs;
     }
   }
-  void checkBoxSelected(String key, bool? value) {
-    isSelectedMap[key]?.value = value ?? false;
+
+  void checkBoxSelected(String key, bool value) {
+    isSelectedMap[key]?.value = value;
   }
 }

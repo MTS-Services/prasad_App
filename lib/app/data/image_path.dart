@@ -41,4 +41,6 @@ class ImagePath {
   static const String waitingImage ='$baseUrl/waiting_image.jpg';
   static const String file ='$baseUrl/file.png';
   static const String farmer ='$baseUrl/Farmer.png';
+  static const String tokenImageUpload ='$baseUrl/token_image_upload.png';
+  static const String screenshot ='$baseUrl/screenshot.png';
 }

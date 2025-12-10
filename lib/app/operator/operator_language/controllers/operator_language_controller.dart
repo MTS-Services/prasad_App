@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 
 class OperatorLanguageController extends GetxController {
   final languages = [
+    "English",
     "Hindi",
     "Gujarati",
     "Punjabi",
@@ -12,7 +13,7 @@ class OperatorLanguageController extends GetxController {
     "Urdu"
   ];
 
-  var selectedLanguage = "".obs;
+  var selectedLanguage = "English".obs;
 
   void selectLanguage(String lang) {
     selectedLanguage.value = lang;

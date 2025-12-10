@@ -21,11 +21,12 @@ class OperatorEditProfileController extends GetxController {
     emailController.text = "example@gmail.com";
     geo1Controller.text = "28.4119N";
     geo2Controller.text = "28.4119N";
+    oldPasswordController.text='****';
     passwordController.text = "*********";
     confirmPasswordController.text = "*********";
     mappingController.text="Mapping & surveying";
     serviceController.text="50 km";
-    oldPasswordController.text='****';
+
   }
 
   @override

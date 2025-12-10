@@ -3,7 +3,8 @@ import 'package:get/get.dart';
 class AgentAddCustomer2Controller extends GetxController {
   var items = ["Acres", "Square km"," + km"].obs;
   var serviceItems = ["agriculture", "Service 2","Service 3"].obs;
-  var cropItems = ["paddy ", "wheat","Corn","Barley","Soybean"].obs;
+  final cropItems = <String>["Paddy", "Wheat", "Corn", "Barley", "Soybean"].obs;
+  final selectedCropItems = <String>[].obs;
   var cropValue = RxnString();
   var selectedValue = RxnString();
   var serviceValue = RxnString();

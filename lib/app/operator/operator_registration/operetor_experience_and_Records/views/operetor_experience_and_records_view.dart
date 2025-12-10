@@ -32,7 +32,7 @@ class OperetorExperienceAndRecordsView
                   'Tell us about your flying experience',
                   style: AppTextStyles.regular16,
                 ),
-                CustomTextFromField(
+                CustomTextFormField(
                   labelText: 'Total Flight Hours',
                   hintText: 'Enter total flight hours',
                 ),

@@ -1,21 +1,28 @@
 import 'package:get/get.dart';
 
 class CustomerServiceLocationController extends GetxController {
-  var items = ["Acres", "Square km"," + km"].obs;
-  var serviceItems = ["agriculture", "Service 2","Service 3"].obs;
-  var cropItems = ["paddy ", "wheat","Corn","Barley","Soybean"].obs;
+  var items = ["Acres", "Square km", " + km"].obs;
+  var serviceItems = ["agriculture", "Service 2", "Service 3"].obs;
+  final cropItems = <String>["Paddy", "Wheat", "Corn", "Barley", "Soybean"].obs;
+
+  final selectedCropItems = <String>[].obs;
+
+
   var cropValue = RxnString();
   var selectedValue = RxnString();
   var serviceValue = RxnString();
-void onItemSelected(String? value){
-  selectedValue.value = value;
-}
-  void serviceItemSelected(String? value){
+  void onItemSelected(String? value) {
+    selectedValue.value = value;
+  }
+
+  void serviceItemSelected(String? value) {
     serviceValue.value = value;
   }
-  void cropItemSelected(String? value){
+
+  void cropItemSelected(String? value) {
     cropValue.value = value;
   }
+
   final Map<String, List<String>> subServiceMap = {
     "agriculture": ["Data 1", "Data 2", "Data 3"],
     "Service 2": ["Entry 1", "Entry 2", "Entry 3"],
@@ -41,5 +48,4 @@ void onItemSelected(String? value){
   void checkBoxSelected(String key, bool? value) {
     isSelectedMap[key]?.value = value ?? false;
   }
-
 }

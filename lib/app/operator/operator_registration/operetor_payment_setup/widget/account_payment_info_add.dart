@@ -27,51 +27,14 @@ class AccountPaymentInfoAdd extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
         ),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              'Payment method',
-              style: AppTextStyles.bold22,
-            ),
-            const SizedBox(height: 16),
-
             // Payment Method Buttons
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              spacing: 2.w,
-              children: [
-                Flexible(
-                  flex: 1,
-                  child: _buildMethodButton(
-                    image: ImagePath.cardPng,
-                    label: "Bank",
-                    selected: true,
-                  ),
-                ),
-                Flexible(
-                  flex: 1,
-                  child: _buildMethodButton(
-                    image: ImagePath.googlePay,
-                    selected: false,
-                  ),
-                ),
-                Flexible(
-                  flex: 1,
-                  child: _buildMethodButton(
-                    image: ImagePath.payPng,
-                    selected: false,
-                  ),
-                ),
-                Flexible(
-                  flex: 1,
-                  child: _buildMethodButton(
-                    image: ImagePath.stripePng,
-                    selected: false,
-                  ),
-                ),
-              ],
+            _buildMethodButton(
+              image: ImagePath.cardPng,
+              label: "Bank",
+              selected: true,
             ),
-
             const SizedBox(height: 20),
 
             // Card Details Section
@@ -137,7 +100,7 @@ class AccountPaymentInfoAdd extends StatelessWidget {
     required bool selected,
   }) {
     return Container(
-      padding: EdgeInsets.all(2.sp),
+      padding: EdgeInsets.symmetric(vertical: 4.h,horizontal: 12.w),
       decoration: BoxDecoration(
         color: selected ? AppColors.primaryColor : Colors.grey.shade300,
         borderRadius: BorderRadius.circular(5),

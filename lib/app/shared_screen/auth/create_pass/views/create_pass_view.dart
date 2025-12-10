@@ -32,11 +32,11 @@ class CreatePassView extends GetView<CreatePassController> {
                     textAlign: TextAlign.center,
                   ),
                 ),
-                CustomTextFromField(
+                CustomTextFormField(
                   labelText: 'Password',
                   hintText: 'enter your password',
                 ),
-                CustomTextFromField(
+                CustomTextFormField(
                   labelText: 'Confirm Password',
                   hintText: 'enter your password',
                 ),

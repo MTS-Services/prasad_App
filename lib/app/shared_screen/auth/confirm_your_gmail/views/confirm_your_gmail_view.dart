@@ -35,7 +35,7 @@ class ConfirmYourGmailView extends GetView<ConfirmYourGmailController> {
                   style: AppTextStyles.regular20,
                   textAlign: TextAlign.center,
                 ),
-                CustomTextFromField(labelText: 'Code', hintText: '123456'),
+                CustomTextFormField(labelText: 'Code', hintText: '123456'),
                 GestureDetector(
                   onTap: () {},
                   child: Align(

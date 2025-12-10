@@ -28,86 +28,120 @@ class OperatorInfo1View extends GetView<OperatorInfo1Controller> {
                 spacing: 12.h,
                 children: [
                   Text('Drone Operator Info', style: AppTextStyles.bold24),
-
                   Row(
                     spacing: 10.w,
                     children: [
                       Expanded(
-                        child: CustomTextFromField(
+                        child: CustomTextFormField(
                           labelText: 'First name',
                           hintText: 'Enter your name',
-                          controller: controller.firstNameController,
                         ),
                       ),
                       Expanded(
-                        child: CustomTextFromField(
-                          labelText: 'Middle name',
-                          hintText: 'Enter your name',
-                          controller: controller.middleNameController,
+                        child: CustomTextFormField(
+                          labelText: 'Middle initial',
+                          hintText: 'Enter your middle initial',
                         ),
                       ),
                     ],
                   ),
-                  CustomTextFromField(
+                  CustomTextFormField(
                     labelText: 'Last name',
                     hintText: 'Enter your last name',
-                    controller: controller.lastNameController,
                   ),
-                  CustomTextFromField(
-                    labelText: 'Phone Number',
-                    hintText: 'Enter your phone number',
-                    controller: controller.phoneController,
+                  CustomTextFormField(
+                    labelText: 'Also Known As',
+                    hintText: 'Enter your nick name',
                   ),
-                  CustomTextFromField(
+                  CustomTextFormField(
                     labelText: 'Email',
-                    hintText: 'Enter your email',
-                    controller: controller.emailController,
+                    hintText: 'Enter your Email',
                   ),
-                  CustomOperatorLocationField(
-                    onPressed: () {
-                      controller.locationController.text =
-                          "23.8103, 90.4125"; // example value
-                    },
-                    hintText: "Latitude and longitude",
+                  Row(
+                    children: [
+                      Expanded(
+                        flex: 2,
+                        child: CustomDropdownField(
+                          label: "code",
+                          hintText: "code",
+                          items: controller.countryCode,
+                          selectedValue: controller.selectedcountryCode.value,
+                          onChanged: controller.onCountryCodeSelected,
+                        ),
+                      ),
+                      SizedBox(width: 8.w),
+                      Expanded(
+                        flex: 5,
+                        child: CustomTextFormField(
+                          labelText: 'Phone',
+                          hintText: '98********',
+                        ),
+                      ),
+
+                    ],
                   ),
-                  CustomTextFromField(
-                    labelText: 'Service Redius',
-                    hintText: 'e.g. 40KM',
-                    controller: controller.emailController,
+                  CustomTextFormField(
+                    labelText: 'address line 1',
+                    hintText: 'Enter your Address',
+                  ),
+                  CustomTextFormField(
+                    labelText: 'address line 2',
+                    hintText: 'Enter your Address',
+                  ),
+                  CustomDropdownField(
+                    label: 'Country',
+                    items: controller.country,
+                    selectedValue: controller.selectedCountry.value,
+                    onChanged: controller.onCountrySelected,
+                  ),
+                  CustomDropdownField(
+                    label: 'State',
+                    items: controller.state,
+                    selectedValue: controller.selectedState.value,
+                    onChanged: controller.onStateSelected,
+                  ),
+                  CustomDropdownField(
+                    label: 'District',
+                    items: controller.districts,
+                    selectedValue: controller.selectedDistrict.value,
+                    onChanged: controller.onDistrictSelected,
                   ),
                   CustomDropdownField(
                     label: 'Mandal',
-                    items: controller.industryItems,
-                    selectedValue: controller.selectedIndustry.value,
-                    onChanged: controller.onIndustrySelected,
+                    items: controller.mandals,
+                    selectedValue: controller.selectedMandal.value,
+                    onChanged: controller.onMandalSelected,
                   ),
-
+                  CustomTextFormField(
+                    labelText: 'Village',
+                    hintText: 'Enter your Village',
+                  ),
                   CustomDropdownField(
                     label: 'Service',
-                    items: controller.industryItems,
-                    selectedValue: controller.selectedIndustry.value,
-                    onChanged: controller.onIndustrySelected,
+                    items: controller.items,
+                    selectedValue: controller.selectedValue.value,
+                    onChanged: controller.onSelectedItem,
                   ),
-
                   Text("Sub Services", style: AppTextStyles.medium20),
-                  Column(
-                    children: List.generate(controller.subServices.length, (
-                      index,
-                    ) {
-                      final sub = controller.subServices[index];
-                      return Row(
-                        children: [
-                          Checkbox(
-                            value:
-                                controller.isSelectedMap[sub]?.value ?? false,
-                            onChanged: (val) =>
-                                controller.checkBoxSelected(sub, val),
-                          ),
-                          Text(sub),
-                        ],
-                      );
-                    }),
-                  ),
+
+                  Obx(() {
+                    return Column(
+                      children: controller.subServices.map((sub) {
+                        return Obx(() {
+                          return Row(
+                            children: [
+                              Checkbox(
+                                value: controller.isSelectedMap[sub]?.value ?? false,
+                                onChanged: (val) =>
+                                    controller.checkBoxSelected(sub, val ?? false),
+                              ),
+                              Text(sub),
+                            ],
+                          );
+                        });
+                      }).toList(),
+                    );
+                  }),
 
                   Text('Upload Profile', style: AppTextStyles.medium16),
                   FileUploadContainer(
@@ -132,40 +166,3 @@ class OperatorInfo1View extends GetView<OperatorInfo1Controller> {
     );
   }
 }
-
-/*
-Widget subCategoryContainer(String subtext) {
-  return IntrinsicWidth(
-    child: Container(
-      decoration: BoxDecoration(
-        color: AppColors.whiteColor,
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: AppColors.whiteColor),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 7),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              subtext,
-              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
-            ),
-            const SizedBox(width: 5),
-            const Text('|'),
-            const SizedBox(width: 5),
-            Container(
-              height: 16,
-              width: 16,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16),
-                border: Border.all(color: AppColors.blackColor),
-              ),
-              child: const Icon(Icons.close, size: 12),
-            ),
-          ],
-        ),
-      ),
-    ),
-  );
-}*/

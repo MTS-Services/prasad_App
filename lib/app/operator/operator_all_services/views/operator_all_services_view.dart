@@ -26,6 +26,7 @@ class OperatorAllServicesView extends GetView<OperatorAllServicesController> {
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
                   itemBuilder: (context, index) => OrderCard(
+                    elevatedText: "Accept Service",
                     serviceName: 'Agro Drone Service',
                     serviceDetails:
                         'Precision crop monitoring and field insights powered by aerial data',

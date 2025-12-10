@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:prasad/app/data/app_text_styles.dart';
+import 'package:prasad/app/routes/app_pages.dart';
 import 'package:prasad/app/shared_screen/common_widget/custom_appbar.dart';
 import '../../../operator/operator_feedback_service/widgets/image_container.dart';
 import '../../../operator/operator_feedback_service/widgets/network_video_player.dart';
@@ -68,6 +69,8 @@ class CustomerRatingView extends GetView<CustomerRatingController> {
                 reviewController: controller.reviewController,
                 onSubmit: () {
                   print("Review: ${controller.reviewController.text}");
+                  Get.offAllNamed(Routes.CUSTOMER_BOTTOM_NAVI_BAR);
+
                 },
               ),
             ],

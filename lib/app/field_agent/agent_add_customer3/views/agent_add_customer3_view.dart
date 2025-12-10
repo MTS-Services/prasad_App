@@ -25,7 +25,7 @@ class AgentAddCustomer3View extends GetView<AgentAddCustomer3Controller> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text('Customer Info', style: AppTextStyles.bold24),
-                  CustomTextFromField(
+                  CustomTextFormField(
                     labelText: 'KYC Number',
                     hintText: 'KYC number',
                   ),
@@ -42,7 +42,7 @@ class AgentAddCustomer3View extends GetView<AgentAddCustomer3Controller> {
                     spacing: 10.w,
                     children: [
                       Flexible(
-                        child: CustomTextFromField(
+                        child: CustomTextFormField(
                           labelText: 'City',
                           hintText: "Enter City",
                         ),
@@ -62,13 +62,13 @@ class AgentAddCustomer3View extends GetView<AgentAddCustomer3Controller> {
                     spacing: 10.w,
                     children: [
                       Flexible(
-                        child: CustomTextFromField(
+                        child: CustomTextFormField(
                           labelText: 'Postal code',
                           hintText: "Enter code",
                         ),
                       ),
                       Flexible(
-                        child: CustomTextFromField(
+                        child: CustomTextFormField(
                           labelText: 'Country',
                           hintText: "Enter Country",
                         ),
@@ -103,7 +103,7 @@ class AgentAddCustomer3View extends GetView<AgentAddCustomer3Controller> {
                     elevateText: "Confirm Registration",
                     outlineText: 'Back',
                     elevatedOnPressed: () =>
-                        Get.offAndToNamed(Routes.AGENT_HOME),
+                        Get.offAndToNamed(Routes.AGENT_ADD_CUSTOMER2),
                     outlineOnPressed: () {},
                   ),
                 ],

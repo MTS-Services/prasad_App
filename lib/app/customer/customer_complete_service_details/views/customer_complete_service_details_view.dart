@@ -131,7 +131,7 @@ class CustomerCompleteServiceDetailsView
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(onPressed: () {
-                    Get.offNamed("/customer-rating");
+                    Get.toNamed("/customer-rating");
                   }, child: Text("Next"),),
                 ),
               ],

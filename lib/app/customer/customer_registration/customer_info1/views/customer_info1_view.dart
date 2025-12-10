@@ -5,6 +5,7 @@ import 'package:prasad/app/data/app_text_styles.dart';
 import 'package:prasad/app/routes/app_pages.dart';
 import 'package:prasad/app/shared_screen/common_widget/custom_dropdown_field.dart';
 import 'package:prasad/app/shared_screen/common_widget/custom_text_from_field.dart';
+import '../../../../shared_screen/common_widget/custom_location_field.dart';
 import '../controllers/customer_info1_controller.dart';
 import '../widget/file_upload_container.dart';
 
@@ -28,26 +29,30 @@ class CustomerInfo1View extends GetView<CustomerInfo1Controller> {
                     spacing: 10.w,
                     children: [
                       Expanded(
-                        child: CustomTextFromField(
+                        child: CustomTextFormField(
                           labelText: 'First name',
                           hintText: 'Enter your name',
                         ),
                       ),
                       Expanded(
-                        child: CustomTextFromField(
-                          labelText: 'Middle name',
-                          hintText: 'Enter your middle name',
+                        child: CustomTextFormField(
+                          labelText: 'Middle initial',
+                          hintText: 'Enter your middle initial',
                         ),
                       ),
                     ],
                   ),
-                  CustomTextFromField(
+                  CustomTextFormField(
                     labelText: 'Last name',
                     hintText: 'Enter your last name',
                   ),
-                  CustomTextFromField(
+                  CustomTextFormField(
                     labelText: 'Also Known As',
                     hintText: 'Enter your nick name',
+                  ),
+                  CustomTextFormField(
+                    labelText: 'Email',
+                    hintText: 'Enter your Email',
                   ),
                   Row(
                     children: [
@@ -57,32 +62,44 @@ class CustomerInfo1View extends GetView<CustomerInfo1Controller> {
                           label: "code",
                           hintText: "code",
                           items: controller.countryCode,
-                          selectedValue: controller.selectedcountryCode.value,
+                          selectedValue: controller.selectedCountryCode.value,
                           onChanged: controller.onCountryCodeSelected,
                         ),
                       ),
                       SizedBox(width: 8.w),
                       Expanded(
                         flex: 5,
-                        child: CustomTextFromField(
+                        child: CustomTextFormField(
                           labelText: 'Phone',
-                          hintText: '+91-98********',
+                          hintText: '98********',
                         ),
                       ),
 
                     ],
                   ),
-                  CustomTextFromField(
-                    labelText: 'Email',
-                    hintText: '+Enter your Email',
+                  CustomTextFormField(
+                    labelText: 'address line 1',
+                    hintText: 'Enter your Address',
                   ),
-                  CustomTextFromField(
-                    labelText: 'Email',
-                    hintText: '+Enter your Email',
+                  CustomTextFormField(
+                    labelText: 'address line 2',
+                    hintText: 'Enter your Address',
                   ),
-                  CustomTextFromField(
-                    labelText: 'Email',
-                    hintText: '+Enter your Email',
+                  CustomLocationField(
+                    hintText: 'Geo Location',
+                    onPressed: () => Get.toNamed(Routes.MAP),
+                  ),
+                  CustomDropdownField(
+                    label: 'Country',
+                    items: controller.country,
+                    selectedValue: controller.selectedCountry.value,
+                    onChanged: controller.onCountrySelected,
+                  ),
+                  CustomDropdownField(
+                    label: 'State',
+                    items: controller.state,
+                    selectedValue: controller.selectedState.value,
+                    onChanged: controller.onStateSelected,
                   ),
                   CustomDropdownField(
                     label: 'District',
@@ -96,15 +113,13 @@ class CustomerInfo1View extends GetView<CustomerInfo1Controller> {
                     selectedValue: controller.selectedMandal.value,
                     onChanged: controller.onMandalSelected,
                   ),
-                  CustomDropdownField(
-                    label: 'Village',
-                    items: controller.villages,
-                    selectedValue: controller.selectedVillage.value,
-                    onChanged: controller.onVillageSelected,
+                  CustomTextFormField(
+                    labelText: 'Village',
+                    hintText: 'Enter your Village',
                   ),
-                  CustomTextFromField(
+                  CustomTextFormField(
                     labelText: 'Registered by',
-                    hintText: '+Enter your Email',
+                    hintText: 'Enter your Email',
                   ),
 
                   Text('Upload Profile', style: AppTextStyles.medium16),
@@ -119,7 +134,7 @@ class CustomerInfo1View extends GetView<CustomerInfo1Controller> {
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () =>
-                          Get.toNamed(Routes.CUSTOMER_SERVICE_LOCATION),
+                          Get.toNamed(Routes.CUSTOMER_INFO2),
                       child: Text('Next'),
                     ),
                   ),

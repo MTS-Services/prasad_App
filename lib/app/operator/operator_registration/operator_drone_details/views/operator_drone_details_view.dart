@@ -43,42 +43,42 @@ class OperatorDroneDetailsView extends GetView<OperatorDroneDetailsController> {
                     onChanged: controller.onAssetTypeChanged,
                   ),
 
-                  CustomTextFromField(
+                  CustomTextFormField(
                     labelText: "Drone UIN UK",
                     controller: controller.drones[i]['uin'],
                     hintText: "DGCI UIN Unique Identification Number",
                   ),
-                  CustomTextFromField(
+                  CustomTextFormField(
                     labelText: "Service Capabilities",
                     controller: controller.drones[i]['serviceCapabilities'],
                     hintText: "What services the drone can perform",
                   ),
-                  CustomTextFromField(
+                  CustomTextFormField(
                     labelText: "Model",
                     controller: controller.drones[i]['model'],
                     hintText: "Drone model name/number",
                   ),
-                  CustomTextFromField(
+                  CustomTextFormField(
                     labelText: "Make",
                     controller: controller.drones[i]['make'],
                     hintText: "Brand/Make of the drone",
                   ),
-                  CustomTextFromField(
+                  CustomTextFormField(
                     labelText: "Manufacture Year",
                     controller: controller.drones[i]['manufactureYear'],
                     hintText: "Year of manufacture",
                   ),
-                  CustomTextFromField(
+                  CustomTextFormField(
                     labelText: "Serial Number",
                     controller: controller.drones[i]['serialNumber'],
                     hintText: "Drone serial number",
                   ),
-                  CustomTextFromField(
+                  CustomTextFormField(
                     labelText: "Manufacturer Name",
                     controller: controller.drones[i]['manufacturer'],
                     hintText: "Manufacturer name",
                   ),
-                  CustomTextFromField(
+                  CustomTextFormField(
                     labelText: "Flight_Hours",
                     controller: controller.drones[i]['flightHours'],
                     hintText: "Total flight hours",
@@ -108,17 +108,17 @@ class OperatorDroneDetailsView extends GetView<OperatorDroneDetailsController> {
                     onChanged: controller.onOperationalChanged,
                   ),
 
-                  CustomTextFromField(
+                  CustomTextFormField(
                     labelText: "Battery type",
                     controller: controller.drones[i]['batteryType'],
                     hintText: "Enter battery type",
                   ),
-                  CustomTextFromField(
+                  CustomTextFormField(
                     labelText: "Battery Cycles",
                     controller: controller.drones[i]['batteryCycles'],
                     hintText: "Enter battery cycles",
                   ),
-                  CustomTextFromField(
+                  CustomTextFormField(
                     labelText: "Battery Capacity",
                     controller: controller.drones[i]['batteryCapacity'],
                     hintText: "Enter battery capacity",

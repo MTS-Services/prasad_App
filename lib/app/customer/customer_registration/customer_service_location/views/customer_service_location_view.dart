@@ -55,7 +55,7 @@ class CustomerServiceLocationView
                       );
                     }),
                   ),
-                  CustomTextFromField(
+                  CustomTextFormField(
                     labelText: 'Location Name',
                     hintText: 'e.g., North GeoCoordinates',
                   ),
@@ -100,21 +100,25 @@ class CustomerServiceLocationView
                           ],
                         ),
                   controller.serviceValue.value == 'agriculture'
-                      ? MultiDropdownButton(
-                          label: "Crop",
-                          items: controller.cropItems,
-                          selectedValue: controller.cropValue.value,
-                          onChanged: controller.cropItemSelected,
-                          isSelected: false,
-                          checkBoxOnChanged: (value) {},
-                        )
+                      ? Obx(() {
+                          final selected = controller.selectedCropItems;
+                          return MultiDropdownButton(
+                            label: "Crops",
+                            items: controller.cropItems.toList(),
+                            selectedItems: selected.toList(),
+                            onChanged: (list) {
+                              controller.selectedCropItems.assignAll(list);
+                            },
+                          );
+                        })
                       : SizedBox(),
+
                   Row(
                     spacing: 10.w,
                     children: [
                       Expanded(
-                        child: CustomTextFromField(
-                          labelText: 'Size/distance',
+                        child: CustomTextFormField(
+                          labelText: 'Number of Acres',
                           hintText: "0",
                         ),
                       ),

@@ -34,7 +34,7 @@ class OperatorCertificationView
                   'Add Your License/Certification',
                   style: AppTextStyles.bold24,
                 ),
-                CustomTextFromField(
+                CustomTextFormField(
                   labelText: 'License Number',
                   hintText: 'Enter your address',
                   controller: controller.licenseNumberController,
@@ -51,7 +51,7 @@ class OperatorCertificationView
                   controller: controller.expiryDateController,
                   isDatePicker: true,
                 ),
-                CustomTextFromField(
+                CustomTextFormField(
                   labelText: 'Additional information',
                   hintText: 'Additional information',
                   controller: controller.additionalInfoController,

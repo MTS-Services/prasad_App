@@ -6,8 +6,9 @@ import 'package:prasad/app/data/app_text_styles.dart';
 class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
   final String? title;
   final Widget? widget;
+  final VoidCallback? onPressed;
 
-  const CustomAppbar({super.key, this.title, this.widget});
+  const CustomAppbar({super.key, this.title, this.widget, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,7 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
             borderRadius: BorderRadius.circular(8),
           ),
           child: IconButton(
-            onPressed: () => Get.back(),
+            onPressed: onPressed ?? () => Get.back(),
             icon: Icon(Icons.arrow_back, color: AppColors.whiteColor),
           ),
         ),
@@ -40,12 +41,11 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
             padding: const EdgeInsets.only(right: 16),
             child: widget,
           ),
-        )
+        ),
       ],
     );
   }
+
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
-
-

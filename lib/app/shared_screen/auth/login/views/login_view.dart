@@ -34,10 +34,6 @@ class LoginView extends GetView<LoginController> {
                   style: AppTextStyles.regular20,
                 ),
                 Text('Sign In Using', style: AppTextStyles.bold40),
-                CustomTextFromField(
-                  labelText: "Phone",
-                  hintText: "Enter your Phone Number",
-                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -67,13 +63,13 @@ class LoginView extends GetView<LoginController> {
                     ],
                   ),
                 ),
-                CustomTextFromField(
+                CustomTextFormField(
                   controller: controller.emailController,
                   labelText: 'Email',
                   hintText: 'example@gmail.com',
                 ),
                 Obx(
-                  () => CustomTextFromField(
+                  () => CustomTextFormField(
                     controller: controller.passwordController,
                     labelText: 'Password',
                     hintText: 'Aex@8465',

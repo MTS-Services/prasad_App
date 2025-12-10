@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
+import 'package:prasad/app/routes/app_pages.dart';
 
 import '../../../data/app_colors.dart';
 import '../../cutomer_notification/widget/back_button_card.dart';
@@ -39,9 +40,11 @@ class CustomerOrdersView extends GetView<CustomerOrdersController> {
                       date: "Mon, Sep 10",
                       time: "12:00 AM - 3:00 PM",
                       onTrackNow: () {
-                        Get.offNamed("/customer-service-traking");
+                        Get.toNamed("/customer-service-traking");
                       },
-                      onCancel: () {},
+                      onCancel: () {
+                        Get.toNamed("/customer-service-cancel-request");
+                      },
                     );
                   },
                 ),

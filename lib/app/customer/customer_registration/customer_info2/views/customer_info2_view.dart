@@ -28,7 +28,7 @@ class CustomerInfo2View extends GetView<CustomerInfo2Controller> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text('Customer Info', style: AppTextStyles.bold24),
-                CustomTextFromField(
+                CustomTextFormField(
                   labelText: 'KYC Number',
                   hintText: 'KYC number',
                 ),
@@ -44,7 +44,7 @@ class CustomerInfo2View extends GetView<CustomerInfo2Controller> {
                   spacing: 10.w,
                   children: [
                     Flexible(
-                      child: CustomTextFromField(
+                      child: CustomTextFormField(
                         labelText: 'City',
                         hintText: "Enter City",
                       ),
@@ -63,13 +63,13 @@ class CustomerInfo2View extends GetView<CustomerInfo2Controller> {
                   spacing: 10.w,
                   children: [
                     Flexible(
-                      child: CustomTextFromField(
+                      child: CustomTextFormField(
                         labelText: 'Postal code',
                         hintText: "Enter code",
                       ),
                     ),
                     Flexible(
-                      child: CustomTextFromField(
+                      child: CustomTextFormField(
                         labelText: 'Country',
                         hintText: "Enter Country",
                       ),
@@ -104,7 +104,7 @@ class CustomerInfo2View extends GetView<CustomerInfo2Controller> {
                   elevateText: "Confirm Registration",
                   outlineText: 'Back',
                   elevatedOnPressed: () =>
-                      Get.offAllNamed(Routes.CUSTOMER_BOTTOM_NAVI_BAR),
+                      Get.offAllNamed(Routes.CUSTOMER_SERVICE_LOCATION),
                   outlineOnPressed:() => Get.back(),
                 ),
               ],

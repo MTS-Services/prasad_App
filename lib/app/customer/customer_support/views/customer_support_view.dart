@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:prasad/app/data/app_text_styles.dart';
 import 'package:prasad/app/data/image_path.dart';
+import 'package:prasad/app/routes/app_pages.dart';
 
 import '../../../data/app_colors.dart';
 import '../../cutomer_notification/widget/back_button_card.dart';
@@ -58,7 +59,9 @@ class CustomerSupportView extends GetView<CustomerSupportController> {
               buildListTile(
                 title: "Call Support",
                 imagePath: ImagePath.liveCall,
-                onTap: () {},
+                onTap: () {
+                  Get.toNamed(Routes.CUSTOMER_SUPPORT_TICKET);
+                },
               ),
             ],
           ),
