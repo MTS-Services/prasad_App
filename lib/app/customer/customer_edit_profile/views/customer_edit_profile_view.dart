@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:prasad/app/data/app_colors.dart';
 import 'package:prasad/app/data/app_text_styles.dart';
 import 'package:prasad/app/data/image_path.dart';
+import 'package:prasad/app/routes/app_pages.dart';
 import 'package:prasad/app/shared_screen/common_widget/custom_appbar.dart';
 
 import '../../../shared_screen/common_widget/custom_dropdown_field.dart';
@@ -16,9 +17,14 @@ class CustomerEditProfileView extends GetView<CustomerEditProfileController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppbar(
-        widget: Text(
-          'Save',
-          style: TextStyle(color: AppColors.primaryColor, fontSize: 18),
+        widget: GestureDetector(
+          onTap: (){
+            Get.offAllNamed(Routes.CUSTOMER_BOTTOM_NAVI_BAR);
+          },
+          child: Text(
+            'Save',
+            style: TextStyle(color: AppColors.primaryColor, fontSize: 18),
+          ),
         ),
       ),
       body: SingleChildScrollView(

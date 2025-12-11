@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:prasad/app/data/app_colors.dart';
 import 'package:prasad/app/data/app_text_styles.dart';
@@ -13,18 +14,28 @@ class CustomerProfileView extends GetView<CustomerProfileController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppbar(
-        widget: InkWell(
-          onTap: () {
-            Get.toNamed(Routes.CUSTOMER_EDIT_PROFILE);
-          },
-          child: Row(
-            children: [
-              Icon(Icons.edit, color: Colors.red),
-              Text('Edit', style: TextStyle(color: Colors.red, fontSize: 18)),
-            ],
-          ),
+      appBar: AppBar(
+        title: Text(
+          "Profile",
+          style: AppTextStyles.medium18.copyWith(color: Colors.black),
         ),
+        centerTitle: true,
+        actions: [
+          GestureDetector(
+            onTap: () {
+              Get.toNamed(Routes.CUSTOMER_EDIT_PROFILE);
+            },
+            child: Padding(
+              padding:  EdgeInsets.only(right: 16.h),
+              child: Row(
+                children: [
+                  Icon(Icons.edit, color: Colors.red),
+                  Text('Edit', style: TextStyle(color: Colors.red, fontSize: 18)),
+                ],
+              ),
+            ),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Padding(

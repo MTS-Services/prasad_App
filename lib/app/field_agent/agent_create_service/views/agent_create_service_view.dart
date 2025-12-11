@@ -29,6 +29,10 @@ class AgentCreateServiceView extends GetView<AgentCreateServiceController> {
             spacing: 16.h,
             children: [
               CustomTextFormField(
+                labelText: "Customer Email",
+                hintText: "Enter Customer Email",
+              ),
+              CustomTextFormField(
                 labelText: "Service Title",
                 hintText: "Agro Drone Service",
               ),

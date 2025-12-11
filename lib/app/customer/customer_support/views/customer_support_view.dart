@@ -14,19 +14,13 @@ class CustomerSupportView extends GetView<CustomerSupportController> {
   const CustomerSupportView({super.key});
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Padding(
+    return SafeArea(
+      child: Scaffold(
+        body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              BackButtonCard(
-                onTap: () => Get.back(),
-                color: AppColors.primaryColor,
-                icon: Icons.arrow_back,
-                iconColor: Colors.white,
-              ),
               SizedBox(height: 10.h),
               Align(
                 alignment: Alignment.center,
@@ -46,7 +40,7 @@ class CustomerSupportView extends GetView<CustomerSupportController> {
                 title: "Live chat",
                 imagePath: ImagePath.liveChat,
                 onTap: () {
-                  Get.offNamed('/customer-chat-room');
+                  Get.toNamed('/customer-chat-room');
                 },
               ),
               SizedBox(height: 15.h,),

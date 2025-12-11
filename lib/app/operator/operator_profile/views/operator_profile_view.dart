@@ -106,6 +106,12 @@ class OperatorProfileView extends GetView<OperatorProfileController> {
                   ),
                   const SizedBox(height: 7),
                   listTileContainer(
+                    onTap: () =>  Get.offAllNamed(Routes.AGENT_HOME),
+                    imagePath: ImagePath.switchCircle,
+                    title: 'Switch To Field Agent',
+                  ),
+                  const SizedBox(height: 7),
+                  listTileContainer(
                     onTap: () {
                       showDialog(
                         context: context,

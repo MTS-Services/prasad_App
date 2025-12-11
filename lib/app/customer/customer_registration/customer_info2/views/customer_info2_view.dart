@@ -101,10 +101,10 @@ class CustomerInfo2View extends GetView<CustomerInfo2Controller> {
                   ),
                 ),
                 CustomElevatedAndOutlineButton(
-                  elevateText: "Confirm Registration",
+                  elevateText: "Next",
                   outlineText: 'Back',
                   elevatedOnPressed: () =>
-                      Get.offAllNamed(Routes.CUSTOMER_SERVICE_LOCATION),
+                      Get.toNamed(Routes.CUSTOMER_SERVICE_LOCATION),
                   outlineOnPressed:() => Get.back(),
                 ),
               ],

@@ -70,8 +70,8 @@ class AgentProfileView extends GetView<AgentProfileController> {
                   ),
                   const SizedBox(height: 7),
                   listTileContainer(
-                    onTap: () {},
-                    imagePath: ImagePath.languageIcon,
+                    onTap: () => Get.offAllNamed(Routes.OPERATOR_BOTTOM_NAVI_BAR),
+                    imagePath: ImagePath.switchCircle,
                     title: 'Switch To Drone Operator',
                   ),
                   const SizedBox(height: 7),

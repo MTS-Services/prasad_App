@@ -57,10 +57,6 @@ class AgentAddCustomer1View extends GetView<AgentAddCustomer1Controller> {
                     labelText: 'Also Known As',
                     hintText: 'Enter your nick name',
                   ),
-                  CustomTextFormField(
-                    labelText: 'Customer ID',
-                    hintText: 'Enter Customer Id',
-                  ),
                   Row(
                     children: [
                       Expanded(

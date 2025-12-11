@@ -43,4 +43,5 @@ class ImagePath {
   static const String farmer ='$baseUrl/Farmer.png';
   static const String tokenImageUpload ='$baseUrl/token_image_upload.png';
   static const String screenshot ='$baseUrl/screenshot.png';
+  static const String switchCircle ='$baseUrl/switch_circle.png';
 }

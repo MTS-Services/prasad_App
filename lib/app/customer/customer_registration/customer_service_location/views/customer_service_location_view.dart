@@ -147,9 +147,9 @@ class CustomerServiceLocationView
                     ),
                   ),
                   CustomElevatedAndOutlineButton(
-                    elevateText: 'Save',
+                    elevateText: 'Confirm Registration',
                     outlineText: "Back",
-                    elevatedOnPressed: () => Get.toNamed(Routes.CUSTOMER_INFO2),
+                    elevatedOnPressed: () => Get.offAllNamed(Routes.CUSTOMER_BOTTOM_NAVI_BAR),
                     outlineOnPressed: () => Get.back(),
                   ),
                 ],

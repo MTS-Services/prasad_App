@@ -100,10 +100,10 @@ class AgentAddCustomer3View extends GetView<AgentAddCustomer3Controller> {
                     ),
                   ),
                   CustomElevatedAndOutlineButton(
-                    elevateText: "Confirm Registration",
+                    elevateText: "Next",
                     outlineText: 'Back',
                     elevatedOnPressed: () =>
-                        Get.offAndToNamed(Routes.AGENT_ADD_CUSTOMER2),
+                        Get.toNamed(Routes.AGENT_ADD_CUSTOMER2),
                     outlineOnPressed: () {},
                   ),
                 ],
