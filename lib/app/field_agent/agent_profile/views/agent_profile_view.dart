@@ -174,10 +174,13 @@ class AgentProfileView extends GetView<AgentProfileController> {
         borderRadius: BorderRadius.circular(8),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-        child: Text(
-          text,
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Align(
+          alignment: AlignmentGeometry.centerLeft,
+          child: Text(
+            text,
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
+          ),
         ),
       ),
     );

@@ -63,8 +63,20 @@ class CustomerSupportTicketTokenView
   Row _buildRowText(String title, String subTitle) {
     return Row(
       children: [
-        Text(title, style: AppTextStyles.medium20),
-        Text(subTitle, style: AppTextStyles.regular14),
+        Text(
+          title,
+          style: AppTextStyles.medium20,
+          overflow: TextOverflow.ellipsis,
+          maxLines: 1,
+        ),
+        Expanded(
+          child: Text(
+            subTitle,
+            style: AppTextStyles.regular14,
+            overflow: TextOverflow.ellipsis,
+            maxLines: 1,
+          ),
+        ),
       ],
     );
   }

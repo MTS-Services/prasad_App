@@ -16,67 +16,69 @@ class AuthLanguageView extends GetView<AuthLanguageController> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-          child: Column(
-            children: [
-              SizedBox(height: 16.h),
-              Text("Choose Your language", style: AppTextStyles.bold28),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 22),
-                child: Obx(
-                  () => Column(
-                    children: controller.languages.map((lang) {
-                      bool isSelected =
-                          controller.selectedLanguage.value == lang;
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+            child: Column(
+              children: [
+                SizedBox(height: 16.h),
+                Text("Choose Your language", style: AppTextStyles.bold28),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 22),
+                  child: Obx(
+                    () => Column(
+                      children: controller.languages.map((lang) {
+                        bool isSelected =
+                            controller.selectedLanguage.value == lang;
 
-                      return Container(
-                        margin: const EdgeInsets.only(bottom: 10),
-                        decoration: BoxDecoration(
-                          color: AppColors.whiteColor,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: InkWell(
-                          borderRadius: BorderRadius.circular(10),
-                          onTap: () => controller.selectLanguage(lang),
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 12,
-                              vertical: 8,
-                            ),
-                            child: Row(
-                              children: [
-                                Radio<String>(
-                                  value: lang,
-                                  groupValue: controller.selectedLanguage.value,
-                                  onChanged: (value) =>
-                                      controller.selectLanguage(value!),
-                                  activeColor: Colors.green,
-                                ),
-                                Text(
-                                  lang,
-                                  style: const TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w500,
+                        return Container(
+                          margin: const EdgeInsets.only(bottom: 10),
+                          decoration: BoxDecoration(
+                            color: AppColors.whiteColor,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: InkWell(
+                            borderRadius: BorderRadius.circular(10),
+                            onTap: () => controller.selectLanguage(lang),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 12,
+                                vertical: 8,
+                              ),
+                              child: Row(
+                                children: [
+                                  Radio<String>(
+                                    value: lang,
+                                    groupValue: controller.selectedLanguage.value,
+                                    onChanged: (value) =>
+                                        controller.selectLanguage(value!),
+                                    activeColor: Colors.green,
                                   ),
-                                ),
-                              ],
+                                  Text(
+                                    lang,
+                                    style: const TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                      );
-                    }).toList(),
+                        );
+                      }).toList(),
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () => Get.toNamed(Routes.USER_TYPE),
-                  child: Text('Next'),
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () => Get.toNamed(Routes.USER_TYPE),
+                    child: Text('Next'),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

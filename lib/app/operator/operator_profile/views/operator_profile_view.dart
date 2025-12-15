@@ -106,7 +106,7 @@ class OperatorProfileView extends GetView<OperatorProfileController> {
                   ),
                   const SizedBox(height: 7),
                   listTileContainer(
-                    onTap: () =>  Get.offAllNamed(Routes.AGENT_HOME),
+                    onTap: () => Get.offAllNamed(Routes.AGENT_HOME),
                     imagePath: ImagePath.switchCircle,
                     title: 'Switch To Field Agent',
                   ),
@@ -214,9 +214,13 @@ class OperatorProfileView extends GetView<OperatorProfileController> {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text(
-                subtext,
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+              Expanded(
+                child: Text(
+                  subtext,
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 1,
+                ),
               ),
               const SizedBox(width: 5),
               const Text('|'),
@@ -246,10 +250,13 @@ class OperatorProfileView extends GetView<OperatorProfileController> {
         borderRadius: BorderRadius.circular(8),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-        child: Text(
-          text,
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Align(
+          alignment: AlignmentGeometry.centerLeft,
+          child: Text(
+            text,
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
+          ),
         ),
       ),
     );

@@ -45,7 +45,7 @@ class OperatorPaymentView extends GetView<OperatorPaymentController> {
                     crossAxisCount: 2,
                     mainAxisSpacing: 10.h,
                     crossAxisSpacing: 10.w,
-                    childAspectRatio: 1.3,
+                    childAspectRatio: 1.2,
                   ),
                   children: [
                     PaymentInfoContainer(

@@ -95,7 +95,7 @@ class OrderCard extends StatelessWidget {
                       backgroundColor: AppColors.whiteColor,
                       foregroundColor: AppColors.blackColor,
                       elevation: 0,
-                      shape: BeveledRectangleBorder(
+                      shape: RoundedRectangleBorder(
                         borderRadius: BorderRadiusGeometry.circular(4.r),
                         side: BorderSide(width: 0.5),
                       ),

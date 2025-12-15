@@ -16,7 +16,7 @@ class CustomerBottomNaviBarView
       body: Obx(()=> controller.screens[controller.selectedIndex]),
       bottomNavigationBar: Obx(
         () => SizedBox(
-          height: 80.h,
+          height: 84.h,
           child: BottomNavigationBar(
             type: BottomNavigationBarType.fixed,
             currentIndex: controller.selectedIndex,

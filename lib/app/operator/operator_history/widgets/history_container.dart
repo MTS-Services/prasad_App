@@ -62,6 +62,7 @@ class HistoryContainer extends StatelessWidget {
                   ],
                 ),
               ),
+              SizedBox(width: 10.w),
               isOperator
                   ? DetailsButton(onTap: detailsOnTap)
                   : Text('8 Sep 2025', style: AppTextStyles.regular12),

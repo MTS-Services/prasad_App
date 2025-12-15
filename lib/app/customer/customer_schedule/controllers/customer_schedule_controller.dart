@@ -34,8 +34,12 @@ class CustomerScheduleController extends GetxController {
   }
 
   final locations = ['New York', 'London', 'Paris', 'Tokyo', 'Delhi'];
+  var locationsValue = RxnString();
 
   var selectedLocations = <String>[].obs;
+  void locationsItemSelected(String? value) {
+    locationsValue.value = value;
+  }
 
   void toggleSelection(String location) {
     if (selectedLocations.contains(location)) {

@@ -49,7 +49,6 @@ class _MultiDropdownButtonState extends State<MultiDropdownButton> {
   Widget build(BuildContext context) {
     return DropdownButtonHideUnderline(
       child: DropdownButtonFormField2<String>(
-        // ✅ multi-select এ value সবসময় null থাকবে
         value: null,
         isExpanded: true,
 
@@ -63,7 +62,6 @@ class _MultiDropdownButtonState extends State<MultiDropdownButton> {
 
         decoration: InputDecoration(
           labelText: widget.label,
-          // ✅ selected থাকলে label floating হবে
           floatingLabelBehavior: _selectedItems.isNotEmpty
               ? FloatingLabelBehavior.always
               : FloatingLabelBehavior.never,

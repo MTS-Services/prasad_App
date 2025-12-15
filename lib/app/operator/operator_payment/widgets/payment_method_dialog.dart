@@ -23,86 +23,88 @@ class PaymentMethodDialog extends StatelessWidget {
       insetPadding: const EdgeInsets.symmetric(
         vertical: 25,
       ),
-      content: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text('Account Type',style: AppTextStyles.bold24,),
-          SizedBox(height: 8.h,),
-          Container(
-            width: isMobile ? double.infinity : 400,
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: Colors.grey.shade100,
-              borderRadius: BorderRadius.circular(16),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                // Payment Method Buttons
-                _buildMethodButton(
-                  image: ImagePath.cardPng,
-                  label: "Bank",
-                  selected: true,
-                ),
-                const SizedBox(height: 20),
-
-                // Card Details Section
-                Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.all(16),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(12),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.05),
-                        blurRadius: 4,
-                        offset: const Offset(0, 2),
-                      ),
-                    ],
+      content: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text('Account Type',style: AppTextStyles.bold24,),
+            SizedBox(height: 8.h,),
+            Container(
+              width: isMobile ? double.infinity : 400,
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.grey.shade100,
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  // Payment Method Buttons
+                  _buildMethodButton(
+                    image: ImagePath.cardPng,
+                    label: "Bank",
+                    selected: true,
                   ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: const [
-                          Icon(Icons.credit_card, color: Colors.orange),
-                          SizedBox(width: 8),
-                          Flexible(
-                            child: Text(
-                              'Add Account',
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                              overflow: TextOverflow.ellipsis,
-                              maxLines: 1,
+                  const SizedBox(height: 20),
+        
+                  // Card Details Section
+                  Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(12),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.05),
+                          blurRadius: 4,
+                          offset: const Offset(0, 2),
+                        ),
+                      ],
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: const [
+                            Icon(Icons.credit_card, color: Colors.orange),
+                            SizedBox(width: 8),
+                            Flexible(
+                              child: Text(
+                                'Add Account',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                                overflow: TextOverflow.ellipsis,
+                                maxLines: 1,
+                              ),
                             ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 16.h,),
-                      Row(
-                        children: [
-                          SizedBox(height: 16),
-                          Expanded(child: _buildTextField('First Name')),
-                          SizedBox(width: 8.w,),
-                          Expanded(child: _buildTextField('Last Name')),
-                        ],
-                      ),
-                      const SizedBox(height: 12),
-                      _buildTextField('Routing Number'),
-                      const SizedBox(height: 16),
-                      _buildTextField('Account number'),
-                      const SizedBox(height: 16),
-                      _buildTextField('Verify Account Number'),
-                      const SizedBox(height: 16),
-                    ],
+                          ],
+                        ),
+                        SizedBox(height: 16.h,),
+                        Row(
+                          children: [
+                            SizedBox(height: 16),
+                            Expanded(child: _buildTextField('First Name')),
+                            SizedBox(width: 8.w,),
+                            Expanded(child: _buildTextField('Last Name')),
+                          ],
+                        ),
+                        const SizedBox(height: 12),
+                        _buildTextField('Routing Number'),
+                        const SizedBox(height: 16),
+                        _buildTextField('Account number'),
+                        const SizedBox(height: 16),
+                        _buildTextField('Verify Account Number'),
+                        const SizedBox(height: 16),
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

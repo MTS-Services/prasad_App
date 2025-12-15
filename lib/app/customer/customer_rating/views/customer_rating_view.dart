@@ -4,8 +4,10 @@ import 'package:get/get.dart';
 import 'package:prasad/app/data/app_text_styles.dart';
 import 'package:prasad/app/routes/app_pages.dart';
 import 'package:prasad/app/shared_screen/common_widget/custom_appbar.dart';
+import '../../../data/app_colors.dart';
 import '../../../operator/operator_feedback_service/widgets/image_container.dart';
 import '../../../operator/operator_feedback_service/widgets/network_video_player.dart';
+import '../../cutomer_notification/widget/back_button_card.dart';
 import '../controllers/customer_rating_controller.dart';
 import '../widget/review_form.dart';
 
@@ -15,14 +17,18 @@ class CustomerRatingView extends GetView<CustomerRatingController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade200,
-      appBar: CustomAppbar(),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              BackButtonCard(
+                onTap: () => Get.back(),
+                color: AppColors.primaryColor,
+                icon: Icons.arrow_back,
+                iconColor: Colors.white,
+              ),
               Text("Images", style: AppTextStyles.bold22),
               GridView(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

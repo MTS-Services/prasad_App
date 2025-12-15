@@ -66,35 +66,41 @@ class ServiceCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text.rich(
-                  TextSpan(
-                    text: '₹$price',
-                    style: const TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w800,
-                    ),
-                    children: [
-                      TextSpan(
-                        text: ' / $priceUnit',
-                        style: const TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w500,
-                          color: Color(0xFF0B2447),
-                        ),
+                Expanded(
+                  flex: 2,
+                  child: Text.rich(
+                    TextSpan(
+                      text: '₹$price',
+                      style: const TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w800,
                       ),
-                    ],
+                      children: [
+                        TextSpan(
+                          text: ' / $priceUnit',
+                          style: const TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500,
+                            color: Color(0xFF0B2447),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-                ElevatedButton(
-                  onPressed: onPressed,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 15),
-                    child: Text(
-                      buttonText,
-                      style: const TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.white,
+                Expanded(
+                  flex: 3,
+                  child: ElevatedButton(
+                    onPressed: onPressed,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 15),
+                      child: Text(
+                        buttonText,
+                        style: const TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                   ),

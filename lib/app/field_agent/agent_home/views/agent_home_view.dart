@@ -27,7 +27,14 @@ class AgentHomeView extends GetView<AgentHomeController> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Dashboard Overview", style: AppTextStyles.bold28),
+                    Expanded(
+                      child: Text(
+                        "Dashboard Overview",
+                        style: AppTextStyles.bold24,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
+                      ),
+                    ),
                     GestureDetector(
                       onTap: () => Get.toNamed(Routes.AGENT_PROFILE),
                       child: CircleAvatar(
@@ -140,21 +147,23 @@ class _CustomProgressCard extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(title!, style: AppTextStyles.regular12),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 10.h),
-                  child: Text(total, style: AppTextStyles.bold24),
-                ),
-                Text(
-                  "$progress from last month",
-                  style: AppTextStyles.regular12.copyWith(
-                    color: AppColors.primaryColor,
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(title!, style: AppTextStyles.regular12),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 10.h),
+                    child: Text(total, style: AppTextStyles.bold24),
                   ),
-                ),
-              ],
+                  Text(
+                    "$progress from last month",
+                    style: AppTextStyles.regular12.copyWith(
+                      color: AppColors.primaryColor,
+                    ),
+                  ),
+                ],
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(6.0),

@@ -21,7 +21,7 @@ class DayDropdown extends StatelessWidget {
       borderSide: BorderSide(color: Colors.grey.shade400, width: 1),
     );
     return SizedBox(
-      width: 160.w,
+      width: 200.w,
       child: DropdownButtonFormField(
         elevation: 1,
         borderRadius: const BorderRadius.only(

@@ -4,11 +4,11 @@ import 'package:get/get.dart';
 import 'package:prasad/app/customer/customer_bottom_navi_bar/views/customer_bottom_navi_bar_view.dart';
 import 'package:prasad/app/data/app_text_styles.dart';
 import '../../../data/app_colors.dart';
+import '../../../shared_screen/common_widget/multi_dropdown_button.dart';
 import '../../customer_bottom_navi_bar/controllers/customer_bottom_navi_bar_controller.dart';
 import '../../cutomer_notification/widget/back_button_card.dart';
 import '../controllers/customer_schedule_controller.dart';
 import '../widget/date_picker_field.dart';
-import '../widget/multi_select_dialog.dart';
 import '../widget/payment_method_widget.dart';
 import '../widget/time_picker_field.dart';
 
@@ -49,7 +49,17 @@ class CustomerScheduleView extends GetView<CustomerScheduleController> {
                 SizedBox(height: 15),
                 Text("Service Locations", style: AppTextStyles.bold20),
                 SizedBox(height: 5),
-                MultiSelectDropdown(hintText: 'Select multiple locations'),
+                Obx(() {
+                  final selected = controller.selectedLocations;
+                  return MultiDropdownButton(
+                    label: "Crops",
+                    items: controller.locations.toList(),
+                    selectedItems: selected.toList(),
+                    onChanged: (list) {
+                      controller.selectedLocations.assignAll(list);
+                    },
+                  );
+                }),
                 SizedBox(height: 15),
                 Text("Add account info", style: AppTextStyles.bold20),
                 PaymentMethodWidget(
