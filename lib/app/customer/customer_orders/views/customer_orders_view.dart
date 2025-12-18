@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
+import 'package:prasad/app/data/app_text_styles.dart';
+import 'package:prasad/app/data/image_path.dart';
 import 'package:prasad/app/routes/app_pages.dart';
 
 import '../../../data/app_colors.dart';
+import '../../customer_home/widget/service_card.dart';
 import '../../cutomer_notification/widget/back_button_card.dart';
 import '../controllers/customer_orders_controller.dart';
 import '../widget/orders_card.dart';
@@ -18,7 +21,7 @@ class CustomerOrdersView extends GetView<CustomerOrdersController> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 15),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -28,14 +31,15 @@ class CustomerOrdersView extends GetView<CustomerOrdersController> {
                 //   icon: Icons.arrow_back,
                 //   iconColor: Colors.white,
                 // ),
-                SizedBox(height: 10.h),
+                SizedBox(height: 5.h),
+                Text("My Bookings",style: AppTextStyles.bold20,),
                 ListView.builder(
                   itemCount: 5,
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
                   itemBuilder: (context, index) {
                     return OrderCard(
-                      orderName: "Crop Spraying",
+                      serviceName: "Crop Spraying",
                       status: "In Progress",
                       date: "Mon, Sep 10",
                       time: "12:00 AM - 3:00 PM",
@@ -47,6 +51,26 @@ class CustomerOrdersView extends GetView<CustomerOrdersController> {
                       },
                     );
                   },
+                ),
+                SizedBox(height: 12.h,),
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: (){
+                      Get.toNamed(Routes.CUSTOMER_SERVICE_DETAILS);
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 15),
+                      child: Text(
+                        "Book A Service",
+                        style: const TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),

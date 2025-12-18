@@ -74,7 +74,6 @@ class CustomerInfo1View extends GetView<CustomerInfo1Controller> {
                           hintText: '98********',
                         ),
                       ),
-
                     ],
                   ),
                   CustomTextFormField(
@@ -86,7 +85,7 @@ class CustomerInfo1View extends GetView<CustomerInfo1Controller> {
                     hintText: 'Enter your Address',
                   ),
                   CustomLocationField(
-                    hintText: 'Geo Location',
+                    hintText: 'Go Location',
                     onPressed: () => Get.toNamed(Routes.MAP),
                   ),
                   CustomDropdownField(

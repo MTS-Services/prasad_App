@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:get/get.dart';
-
 import '../../../customer/customer_registration/customer_info1/widget/file_upload_container.dart';
 import '../../../data/app_text_styles.dart';
-import '../../../operator/operator_registration/operator_info1/widget/custom_operator_location_field.dart';
 import '../../../routes/app_pages.dart';
 import '../../../shared_screen/common_widget/custom_dropdown_field.dart';
 import '../../../shared_screen/common_widget/custom_elevated_and_outline_button.dart';
+import '../../../shared_screen/common_widget/custom_location_field.dart';
 import '../../../shared_screen/common_widget/custom_text_from_field.dart';
 import '../controllers/agent_registration1_controller.dart';
 
@@ -77,7 +75,6 @@ class AgentRegistration1View extends GetView<AgentRegistration1Controller> {
                           hintText: '98********',
                         ),
                       ),
-
                     ],
                   ),
                   CustomTextFormField(
@@ -87,6 +84,10 @@ class AgentRegistration1View extends GetView<AgentRegistration1Controller> {
                   CustomTextFormField(
                     labelText: 'address line 2',
                     hintText: 'Enter your Address',
+                  ),
+                  CustomLocationField(
+                    hintText: 'Go Location',
+                    onPressed: () => Get.toNamed(Routes.MAP),
                   ),
                   CustomDropdownField(
                     label: 'Country',

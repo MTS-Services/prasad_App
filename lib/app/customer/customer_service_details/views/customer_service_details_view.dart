@@ -111,7 +111,7 @@ class CustomerServiceDetailsView
                       Get.toNamed("/customer-schedule");
                     },
                     child: Text(
-                      "Request A Service",
+                      "Book A Service",
                       style: TextStyle(fontSize: 14.sp),
                     ),
                   ),

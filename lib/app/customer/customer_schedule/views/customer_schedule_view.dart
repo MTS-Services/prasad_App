@@ -47,7 +47,7 @@ class CustomerScheduleView extends GetView<CustomerScheduleController> {
                 SizedBox(height: 5),
                 TimePickerField(),
                 SizedBox(height: 15),
-                Text("Service Locations", style: AppTextStyles.bold20),
+                Text("Select Crops", style: AppTextStyles.bold20),
                 SizedBox(height: 5),
                 Obx(() {
                   final selected = controller.selectedLocations;
@@ -61,13 +61,12 @@ class CustomerScheduleView extends GetView<CustomerScheduleController> {
                   );
                 }),
                 SizedBox(height: 15),
-                Text("Add account info", style: AppTextStyles.bold20),
+                Text("Add account info",style: AppTextStyles.bold20),
                 PaymentMethodWidget(
                   onPlaceOrder: () {
                     bottomController.changeIndex(1);
                     Get.to(() => const CustomerBottomNaviBarView());
                   },
-
                 ),
               ],
             ),

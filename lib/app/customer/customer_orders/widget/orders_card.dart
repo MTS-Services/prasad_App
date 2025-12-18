@@ -6,16 +6,18 @@ import 'package:prasad/app/data/app_text_styles.dart';
 import 'package:prasad/app/shared_screen/common_widget/custom_elevated_and_outline_button.dart';
 
 class OrderCard extends StatelessWidget {
-  final String orderName;
+  final String serviceName;
   final String status;
   final String date;
   final String time;
   final VoidCallback onTrackNow;
   final VoidCallback onCancel;
 
+
+
   const OrderCard({
     Key? key,
-    required this.orderName,
+    required this.serviceName,
     required this.status,
     required this.date,
     required this.time,
@@ -42,7 +44,7 @@ class OrderCard extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 8.w, vertical: 8.h),
+      margin: EdgeInsets.symmetric( vertical: 8.h),
       padding: EdgeInsets.all(16.w),
       decoration: BoxDecoration(
         color: isDark ? Colors.grey[900] : Colors.white,
@@ -64,7 +66,7 @@ class OrderCard extends StatelessWidget {
             children: [
               Expanded(
                 child: Text(
-                  "Order name:  $orderName",
+                  "Service name:  $serviceName",
                   style: AppTextStyles.bold13,
                   overflow: TextOverflow.ellipsis,
                 ),
