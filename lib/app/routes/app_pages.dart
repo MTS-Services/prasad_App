@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-
 import '../customer/customer_bottom_navi_bar/bindings/customer_bottom_navi_bar_binding.dart';
 import '../customer/customer_bottom_navi_bar/views/customer_bottom_navi_bar_view.dart';
 import '../customer/customer_chat_room/bindings/customer_chat_room_binding.dart';
@@ -140,7 +139,6 @@ import '../shared_screen/common_screen/fingure_print/bindings/fingure_print_bind
 import '../shared_screen/common_screen/fingure_print/views/fingure_print_view.dart';
 import '../shared_screen/common_screen/map/bindings/map_binding.dart';
 import '../shared_screen/common_screen/map/views/map_view.dart';
-
 part 'app_routes.dart';
 
 class AppPages {
