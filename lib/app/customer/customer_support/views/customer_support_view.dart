@@ -57,6 +57,12 @@ class CustomerSupportView extends GetView<CustomerSupportController> {
                   Get.toNamed(Routes.CUSTOMER_SUPPORT_TICKET);
                 },
               ),
+              SizedBox(height: 15.h,),
+              buildListTile(
+                title: "FAQ",
+                imagePath: ImagePath.faqIcon,
+                onTap: () => Get.toNamed(Routes.CUSTOMER_FAQ),
+              ),
             ],
           ),
         ),

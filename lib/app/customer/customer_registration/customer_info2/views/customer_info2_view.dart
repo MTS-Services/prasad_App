@@ -31,6 +31,7 @@ class CustomerInfo2View extends GetView<CustomerInfo2Controller> {
                 CustomTextFormField(
                   labelText: 'KYC Number',
                   hintText: 'KYC number',
+                  requiredText: true,
                 ),
                 CustomLocationField(
                   hintText: 'KYC Documents Upload',
@@ -51,7 +52,7 @@ class CustomerInfo2View extends GetView<CustomerInfo2Controller> {
                     ),
                     Flexible(
                       child: CustomDropdownField(
-                        label: "State",
+                        labelText: "State",
                         items: controller.items,
                         selectedValue: controller.selectedValue.value,
                         onChanged: controller.onSelectedItem,
@@ -77,7 +78,7 @@ class CustomerInfo2View extends GetView<CustomerInfo2Controller> {
                   ],
                 ),
                 CustomDropdownField(
-                  label: "Service",
+                  labelText: "Service",
                   items: controller.items,
                   selectedValue: controller.selectedValue.value,
                   onChanged: controller.onSelectedItem,

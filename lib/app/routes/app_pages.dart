@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+
 import '../customer/customer_bottom_navi_bar/bindings/customer_bottom_navi_bar_binding.dart';
 import '../customer/customer_bottom_navi_bar/views/customer_bottom_navi_bar_view.dart';
 import '../customer/customer_chat_room/bindings/customer_chat_room_binding.dart';
@@ -7,6 +8,8 @@ import '../customer/customer_complete_service_details/bindings/customer_complete
 import '../customer/customer_complete_service_details/views/customer_complete_service_details_view.dart';
 import '../customer/customer_edit_profile/bindings/customer_edit_profile_binding.dart';
 import '../customer/customer_edit_profile/views/customer_edit_profile_view.dart';
+import '../customer/customer_faq/bindings/customer_faq_binding.dart';
+import '../customer/customer_faq/views/customer_faq_view.dart';
 import '../customer/customer_history/bindings/customer_history_binding.dart';
 import '../customer/customer_history/views/customer_history_view.dart';
 import '../customer/customer_home/bindings/customer_home_binding.dart';
@@ -139,6 +142,7 @@ import '../shared_screen/common_screen/fingure_print/bindings/fingure_print_bind
 import '../shared_screen/common_screen/fingure_print/views/fingure_print_view.dart';
 import '../shared_screen/common_screen/map/bindings/map_binding.dart';
 import '../shared_screen/common_screen/map/views/map_view.dart';
+
 part 'app_routes.dart';
 
 class AppPages {
@@ -499,6 +503,11 @@ class AppPages {
       name: _Paths.AGENT_EDIT_PROFILE,
       page: () => const AgentEditProfileView(),
       binding: AgentEditProfileBinding(),
+    ),
+    GetPage(
+      name: _Paths.CUSTOMER_FAQ,
+      page: () => const CustomerFaqView(),
+      binding: CustomerFaqBinding(),
     ),
   ];
 }

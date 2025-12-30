@@ -30,7 +30,7 @@ class AgentAddCustomer2View extends GetView<AgentAddCustomer2Controller> {
                 children: [
                   Text('Service Locations', style: AppTextStyles.bold24),
                   CustomDropdownField(
-                    label: "Service",
+                    labelText: "Service",
                     items: controller.serviceItems,
                     selectedValue: controller.serviceValue.value,
                     onChanged: controller.onSelectedItem,
@@ -123,7 +123,7 @@ class AgentAddCustomer2View extends GetView<AgentAddCustomer2Controller> {
                       ),
                       Expanded(
                         child: CustomDropdownField(
-                          label: "Unit",
+                          labelText: "Unit",
                           items: controller.items,
                           selectedValue: controller.selectedValue.value,
                           onChanged: controller.onItemSelected,

@@ -49,8 +49,7 @@ class AgentAddCustomer3View extends GetView<AgentAddCustomer3Controller> {
                       ),
                       Flexible(
                         child: CustomDropdownField(
-                          label: "State",
-                          hintText: "Enter State",
+                          labelText: "State",
                           items: controller.items,
                           selectedValue: controller.selectedValue.value,
                           onChanged: controller.onSelectedItem,
@@ -76,7 +75,7 @@ class AgentAddCustomer3View extends GetView<AgentAddCustomer3Controller> {
                     ],
                   ),
                   CustomDropdownField(
-                    label: "Service",
+                    labelText: "Service",
                     items: controller.items,
                     selectedValue: controller.selectedValue.value,
                     onChanged: controller.onSelectedItem,
