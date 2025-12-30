@@ -39,7 +39,7 @@ class OperetorEquipmentDetailsView
                     hintText: 'Enter your Asset ID',
                   ),
                   CustomDropdownField(
-                    label: 'Equipment Type',
+                    labelText: 'Equipment Type',
                     items: controller.items,
                     selectedValue: controller.selectedValue.value,
                     onChanged: controller.onItemSelected,
