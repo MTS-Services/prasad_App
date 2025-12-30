@@ -7,7 +7,14 @@ class CustomLocationField extends StatelessWidget {
   final String hintText;
   final Function()? onPressed;
   final IconData? icon;
-  const CustomLocationField({super.key, required this.hintText, this.onPressed, this.icon,});
+
+  const CustomLocationField({
+    super.key,
+    required this.hintText,
+    this.onPressed,
+    this.icon,
+  });
+
   @override
   Widget build(BuildContext context) {
     return Container(
