@@ -104,7 +104,7 @@ class CustomerEditProfileView extends GetView<CustomerEditProfileController> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       CustomDropdownField(
-                        label: "Industry*",
+                        labelText: "Industry*",
                         items: controller.items,
                         selectedValue: controller.selectedValue.value,
                         onChanged: controller.onSelectedItem,

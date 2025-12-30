@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
+import '../widget/service_block.dart';
+
 class OperatorInfo1Controller extends GetxController {
   // Dropdown data
   // Dropdown items
@@ -114,5 +116,35 @@ class OperatorInfo1Controller extends GetxController {
 
   void checkBoxSelected(String key, bool value) {
     isSelectedMap[key]?.value = value;
+  }
+
+  RxList<ServiceBlock> serviceBlocks = <ServiceBlock>[].obs;
+
+  @override
+  void onInit() {
+    addServiceBlock(); // first service by default
+    super.onInit();
+  }
+
+  void addServiceBlock() {
+    serviceBlocks.add(ServiceBlock());
+  }
+
+  void onServiceSelected(ServiceBlock block, String? value) {
+    block.selectedService.value = value;
+
+    // example sub services
+    block.subServices.value = value == 'Spraying'
+        ? ['Pesticide', 'Fertilizer']
+        : ['Area Mapping', '3D Survey',];
+
+    block.selectedSubs.clear();
+    for (var s in block.subServices) {
+      block.selectedSubs[s] = false.obs;
+    }
+  }
+
+  void toggleSub(ServiceBlock block, String sub, bool value) {
+    block.selectedSubs[sub]?.value = value;
   }
 }
