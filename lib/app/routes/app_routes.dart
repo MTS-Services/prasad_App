@@ -85,6 +85,7 @@ abstract class Routes {
       _Paths.OPERATOR_SERVICE_DECLINE_CONFIRM;
   static const AGENT_PROFILE = _Paths.AGENT_PROFILE;
   static const AGENT_EDIT_PROFILE = _Paths.AGENT_EDIT_PROFILE;
+  static const CUSTOMER_FAQ =_Paths.CUSTOMER_FAQ;
 }
 
 abstract class _Paths {
@@ -167,4 +168,5 @@ abstract class _Paths {
       '/operator-service-decline-confirm';
   static const AGENT_PROFILE = '/agent-profile';
   static const AGENT_EDIT_PROFILE = '/agent-edit-profile';
+  static const CUSTOMER_FAQ = '/customer-faq';
 }
