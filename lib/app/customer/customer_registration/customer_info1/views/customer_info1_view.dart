@@ -32,6 +32,7 @@ class CustomerInfo1View extends GetView<CustomerInfo1Controller> {
                         child: CustomTextFormField(
                           labelText: 'First name',
                           hintText: 'Enter your name',
+                          requiredText: true,
                         ),
                       ),
                       Expanded(
@@ -45,6 +46,7 @@ class CustomerInfo1View extends GetView<CustomerInfo1Controller> {
                   CustomTextFormField(
                     labelText: 'Last name',
                     hintText: 'Enter your last name',
+                    requiredText: true,
                   ),
                   CustomTextFormField(
                     labelText: 'Also Known As',
@@ -53,13 +55,14 @@ class CustomerInfo1View extends GetView<CustomerInfo1Controller> {
                   CustomTextFormField(
                     labelText: 'Email',
                     hintText: 'Enter your Email',
+                    requiredText: true,
                   ),
                   Row(
                     children: [
                       Expanded(
                         flex: 2,
                         child: CustomDropdownField(
-                          label: "code",
+                          labelText: "code",
                           hintText: "code",
                           items: controller.countryCode,
                           selectedValue: controller.selectedCountryCode.value,
@@ -72,6 +75,7 @@ class CustomerInfo1View extends GetView<CustomerInfo1Controller> {
                         child: CustomTextFormField(
                           labelText: 'Phone',
                           hintText: '98********',
+                          requiredText: true,
                         ),
                       ),
                     ],
@@ -79,6 +83,7 @@ class CustomerInfo1View extends GetView<CustomerInfo1Controller> {
                   CustomTextFormField(
                     labelText: 'address line 1',
                     hintText: 'Enter your Address',
+                    requiredText: true,
                   ),
                   CustomTextFormField(
                     labelText: 'address line 2',
@@ -89,25 +94,28 @@ class CustomerInfo1View extends GetView<CustomerInfo1Controller> {
                     onPressed: () => Get.toNamed(Routes.MAP),
                   ),
                   CustomDropdownField(
-                    label: 'Country',
+                    labelText: 'Country',
+                    requiredText: true,
                     items: controller.country,
                     selectedValue: controller.selectedCountry.value,
                     onChanged: controller.onCountrySelected,
                   ),
                   CustomDropdownField(
-                    label: 'State',
+                    labelText: 'State',
+                    requiredText: true,
                     items: controller.state,
                     selectedValue: controller.selectedState.value,
                     onChanged: controller.onStateSelected,
                   ),
                   CustomDropdownField(
-                    label: 'District',
+                    labelText: 'District',
+                    requiredText: true,
                     items: controller.districts,
                     selectedValue: controller.selectedDistrict.value,
                     onChanged: controller.onDistrictSelected,
                   ),
                   CustomDropdownField(
-                    label: 'Mandal',
+                    labelText: 'Mandal',
                     items: controller.mandals,
                     selectedValue: controller.selectedMandal.value,
                     onChanged: controller.onMandalSelected,

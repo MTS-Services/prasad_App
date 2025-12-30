@@ -24,20 +24,18 @@ class OperatorDroneDetailsView extends GetView<OperatorDroneDetailsController> {
               crossAxisAlignment: CrossAxisAlignment.start,
               spacing: 12.h,
               children: [
-                Text('Drone Operator Info', style: AppTextStyles.bold24),
-
+                Text('Drone Info', style: AppTextStyles.bold24),
                 // Show multiple drones dynamically
                 for (int i = 0; i < controller.drones.length; i++) ...[
                   Text('Drone ${i + 1}', style: AppTextStyles.bold24),
                   CustomDropdownField(
-                    label: 'Asset ID',
-                    hintText: "Start with Asset ID",
+                    labelText: 'Asset ID',
                     items: controller.assetTypes,
                     selectedValue: controller.selectedAssetType.value,
                     onChanged: controller.onAssetTypeChanged,
                   ),
                   CustomDropdownField(
-                    label: 'Asset Type',
+                    labelText: 'Asset Type',
                     items: controller.assetTypes,
                     selectedValue: controller.selectedAssetType.value,
                     onChanged: controller.onAssetTypeChanged,
@@ -45,11 +43,13 @@ class OperatorDroneDetailsView extends GetView<OperatorDroneDetailsController> {
 
                   CustomTextFormField(
                     labelText: "Drone UIN UK",
+                    requiredText: true,
                     controller: controller.drones[i]['uin'],
                     hintText: "DGCI UIN Unique Identification Number",
                   ),
                   CustomTextFormField(
                     labelText: "Service Capabilities",
+                    requiredText: true,
                     controller: controller.drones[i]['serviceCapabilities'],
                     hintText: "What services the drone can perform",
                   ),
@@ -70,11 +70,13 @@ class OperatorDroneDetailsView extends GetView<OperatorDroneDetailsController> {
                   ),
                   CustomTextFormField(
                     labelText: "Serial Number",
+                    requiredText: true,
                     controller: controller.drones[i]['serialNumber'],
                     hintText: "Drone serial number",
                   ),
                   CustomTextFormField(
                     labelText: "Manufacturer Name",
+                    requiredText: true,
                     controller: controller.drones[i]['manufacturer'],
                     hintText: "Manufacturer name",
                   ),
@@ -90,19 +92,19 @@ class OperatorDroneDetailsView extends GetView<OperatorDroneDetailsController> {
                     isDatePicker: true,
                   ),
                   CustomDropdownField(
-                    label: 'Insurance Status',
+                    labelText: 'Insurance Status',
                     items: controller.insuranceStatus,
                     selectedValue: controller.selectedInsuranceStatus.value,
                     onChanged: controller.onInsuranceChanged,
                   ),
                   CustomDropdownField(
-                    label: 'Rent Status',
+                    labelText: 'Rent Status',
                     items: controller.rentStatus,
                     selectedValue: controller.selectedRentStatus.value,
                     onChanged: controller.onRentChanged,
                   ),
                   CustomDropdownField(
-                    label: 'Operational Status',
+                    labelText: 'Operational Status',
                     items: controller.operationalStatus,
                     selectedValue: controller.selectedOperationalStatus.value,
                     onChanged: controller.onOperationalChanged,
@@ -110,6 +112,7 @@ class OperatorDroneDetailsView extends GetView<OperatorDroneDetailsController> {
 
                   CustomTextFormField(
                     labelText: "Battery type",
+                    requiredText: true,
                     controller: controller.drones[i]['batteryType'],
                     hintText: "Enter battery type",
                   ),
@@ -120,12 +123,14 @@ class OperatorDroneDetailsView extends GetView<OperatorDroneDetailsController> {
                   ),
                   CustomTextFormField(
                     labelText: "Battery Capacity",
+                    requiredText: true,
                     controller: controller.drones[i]['batteryCapacity'],
                     hintText: "Enter battery capacity",
                   ),
 
                   CustomDropdownField(
-                    label: 'Drone_Condition',
+                    labelText: 'Drone_Condition',
+                    requiredText: true,
                     items: controller.droneCondition,
                     selectedValue: controller.selectedDroneCondition.value,
                     onChanged: controller.onDroneConditionChanged,

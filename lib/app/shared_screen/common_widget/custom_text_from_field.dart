@@ -12,6 +12,7 @@ class CustomTextFormField extends StatelessWidget {
   final Function()? onTap;
   final Widget? suffixIcon;
   final bool obscureText;
+  final bool? requiredText;
 
   const CustomTextFormField({
     super.key,
@@ -19,7 +20,10 @@ class CustomTextFormField extends StatelessWidget {
     required this.hintText,
     this.controller,
     this.validator,
-    this.onTap, this.suffixIcon, this.obscureText = false,
+    this.onTap,
+    this.suffixIcon,
+    this.obscureText = false,
+    this.requiredText = false,
   });
 
   @override
@@ -34,8 +38,21 @@ class CustomTextFormField extends StatelessWidget {
         decoration: InputDecoration(
           suffixIcon: suffixIcon,
           hintText: hintText,
-          labelText: labelText,//label always show korbe
-          labelStyle: AppTextStyles.medium16,
+          label: RichText(
+            text: TextSpan(
+              children: [
+                TextSpan(
+                  text: labelText,
+                  style: AppTextStyles.medium16.copyWith(color: Colors.black),
+                ),
+                if (requiredText!)
+                  TextSpan(
+                    text: ' *',
+                    style: AppTextStyles.medium16.copyWith(color: Colors.red),
+                  ),
+              ],
+            ),
+          ),
           floatingLabelStyle: AppTextStyles.medium20.copyWith(
             color: AppColors.primaryColor,
           ),

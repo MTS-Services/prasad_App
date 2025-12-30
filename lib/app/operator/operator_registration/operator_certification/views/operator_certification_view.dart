@@ -36,6 +36,7 @@ class OperatorCertificationView
                 ),
                 CustomTextFormField(
                   labelText: 'License Number',
+                  requiredText: true,
                   hintText: 'Enter your address',
                   controller: controller.licenseNumberController,
                 ),
