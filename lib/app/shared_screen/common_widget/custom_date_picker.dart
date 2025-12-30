@@ -6,6 +6,7 @@ import '../../data/app_text_styles.dart';
 class CustomDatePicker extends StatelessWidget {
   final String labelText;
   final String hintText;
+  final bool? requiredText;
   final TextEditingController? controller;
   final String? Function(String?)? validator;
 
@@ -19,6 +20,7 @@ class CustomDatePicker extends StatelessWidget {
     this.controller,
     this.validator,
     this.isDatePicker = false,
+    this.requiredText = false,
   });
 
   Future<void> _handleTap(BuildContext context) async {
@@ -46,14 +48,17 @@ class CustomDatePicker extends StatelessWidget {
       child: TextFormField(
         validator: validator,
         controller: controller,
-        readOnly: isDatePicker, // stop keyboard if date picker
-        onTap: () => _handleTap(context), // internal calendar
+        readOnly: isDatePicker,
+        // stop keyboard if date picker
+        onTap: () => _handleTap(context),
+        // internal calendar
         decoration: InputDecoration(
           hintText: hintText,
           labelText: labelText,
           labelStyle: AppTextStyles.medium16,
-          floatingLabelStyle: AppTextStyles.medium20
-              .copyWith(color: AppColors.primaryColor),
+          floatingLabelStyle: AppTextStyles.medium20.copyWith(
+            color: AppColors.primaryColor,
+          ),
         ),
       ),
     );
