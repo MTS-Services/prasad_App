@@ -33,6 +33,7 @@ class AgentRegistration1View extends GetView<AgentRegistration1Controller> {
                         child: CustomTextFormField(
                           labelText: 'First name',
                           hintText: 'Enter your name',
+                          requiredText: true,
                         ),
                       ),
                       Expanded(
@@ -46,6 +47,7 @@ class AgentRegistration1View extends GetView<AgentRegistration1Controller> {
                   CustomTextFormField(
                     labelText: 'Last name',
                     hintText: 'Enter your last name',
+                    requiredText: true,
                   ),
                   CustomTextFormField(
                     labelText: 'Also Known As',
@@ -54,14 +56,15 @@ class AgentRegistration1View extends GetView<AgentRegistration1Controller> {
                   CustomTextFormField(
                     labelText: 'Email',
                     hintText: 'Enter your Email',
+                    requiredText: true,
                   ),
                   Row(
                     children: [
                       Expanded(
                         flex: 2,
                         child: CustomDropdownField(
-                          label: "code",
-                          hintText: "code",
+                          labelText: "code",
+                          requiredText: true,
                           items: controller.countryCode,
                           selectedValue: controller.selectedcountryCode.value,
                           onChanged: controller.onCountryCodeSelected,
@@ -79,6 +82,7 @@ class AgentRegistration1View extends GetView<AgentRegistration1Controller> {
                   ),
                   CustomTextFormField(
                     labelText: 'address line 1',
+                    requiredText: true,
                     hintText: 'Enter your Address',
                   ),
                   CustomTextFormField(
@@ -90,25 +94,28 @@ class AgentRegistration1View extends GetView<AgentRegistration1Controller> {
                     onPressed: () => Get.toNamed(Routes.MAP),
                   ),
                   CustomDropdownField(
-                    label: 'Country',
+                    labelText: 'Country',
+                    requiredText: true,
                     items: controller.country,
                     selectedValue: controller.selectedCountry.value,
                     onChanged: controller.onCountrySelected,
                   ),
                   CustomDropdownField(
-                    label: 'State',
+                    labelText: 'State',
+                    requiredText: true,
                     items: controller.state,
                     selectedValue: controller.selectedState.value,
                     onChanged: controller.onStateSelected,
                   ),
                   CustomDropdownField(
-                    label: 'District',
+                    labelText: 'District',
+                    requiredText: true,
                     items: controller.districts,
                     selectedValue: controller.selectedDistrict.value,
                     onChanged: controller.onDistrictSelected,
                   ),
                   CustomDropdownField(
-                    label: 'Mandal',
+                    labelText: 'Mandal',
                     items: controller.mandals,
                     selectedValue: controller.selectedMandal.value,
                     onChanged: controller.onMandalSelected,
@@ -118,7 +125,8 @@ class AgentRegistration1View extends GetView<AgentRegistration1Controller> {
                     hintText: 'Enter your Village',
                   ),
                   CustomDropdownField(
-                    label: 'Service',
+                    labelText: 'Service',
+                    requiredText: true,
                     items: controller.items,
                     selectedValue: controller.selectedValue.value,
                     onChanged: controller.onSelectedItem,
