@@ -31,7 +31,8 @@ class CustomerServiceLocationView
                 children: [
                   Text('Service Locations', style: AppTextStyles.bold24),
                   CustomDropdownField(
-                    label: "Service",
+                    labelText: "Service",
+                    requiredText: true,
                     items: controller.serviceItems,
                     selectedValue: controller.serviceValue.value,
                     onChanged: controller.onSelectedItem,
@@ -57,6 +58,7 @@ class CustomerServiceLocationView
                   ),
                   CustomTextFormField(
                     labelText: 'Location Name',
+                    requiredText: true,
                     hintText: 'e.g., North GeoCoordinates',
                   ),
                   controller.serviceValue.value == 'agriculture'
@@ -124,7 +126,7 @@ class CustomerServiceLocationView
                       ),
                       Expanded(
                         child: CustomDropdownField(
-                          label: "Unit",
+                          labelText: "Unit",
                           items: controller.items,
                           selectedValue: controller.selectedValue.value,
                           onChanged: controller.onItemSelected,

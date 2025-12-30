@@ -37,14 +37,13 @@ class AgentCreateServiceView extends GetView<AgentCreateServiceController> {
                 hintText: "Agro Drone Service",
               ),
               CustomDropdownField(
-                label: "Service Price",
-                hintText: "Select Price",
+                labelText: "Service Price",
                 items: controller.servicePrice,
                 selectedValue: controller.selectedServicePrice.value,
                 onChanged: controller.onServicePriceSelected,
               ),
               CustomDropdownField(
-                label: 'Industry',
+                labelText: 'Industry',
                 items: controller.industryItems,
                 selectedValue: controller.selectedIndustry.value,
                 onChanged: controller.onIndustrySelected,
