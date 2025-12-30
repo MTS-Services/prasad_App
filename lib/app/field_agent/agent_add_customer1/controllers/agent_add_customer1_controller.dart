@@ -6,16 +6,16 @@ import 'package:image_picker/image_picker.dart';
 class AgentAddCustomer1Controller extends GetxController {
   // Dropdown items
   final districts = ['Dhaka', 'Chattogram', 'Sylhet', 'Khulna'];
+  final country = ['Dhaka', 'Chattogram', 'Sylhet', 'Khulna'];
+  final state = ['Dhaka', 'Chattogram', 'Sylhet', 'Khulna'];
   final mandals = ['Mandal 1', 'Mandal 2', 'Mandal 3'];
-  final villages = ['Village 1', 'Village 2', 'Village 3'];
-  final registeredBy = ['Admin', 'Agent', 'Self'];
   final countryCode = ['+91', '+11', '+57'];
 
   // Selected values
   final selectedDistrict = RxnString();
+  final selectedCountry = RxnString();
+  final selectedState = RxnString();
   final selectedMandal = RxnString();
-  final selectedVillage = RxnString();
-  final selectedRegisteredBy = RxnString();
   final selectedCountryCode = RxnString();
 
   // Text fields
@@ -25,16 +25,14 @@ class AgentAddCustomer1Controller extends GetxController {
   final alsoKnownAs = ''.obs;
   final phone = ''.obs;
   final email = ''.obs;
+  final village = ''.obs;
 
   // Dropdown setters
   void onDistrictSelected(String? value) => selectedDistrict.value = value;
+  void onCountrySelected(String? value) => selectedCountry.value = value;
+  void onStateSelected(String? value) => selectedState.value = value;
   void onMandalSelected(String? value) => selectedMandal.value = value;
-  void onVillageSelected(String? value) => selectedVillage.value = value;
-  void onRegisteredBySelected(String? value) =>
-      selectedRegisteredBy.value = value;
-
-  void onCountryCodeSelected(String? value) =>
-      selectedCountryCode.value = value;
+  void onCountryCodeSelected(String? value) => selectedCountryCode.value = value;
 
   // Text field setters
   void setFirstName(String value) => firstName.value = value;
@@ -50,9 +48,7 @@ class AgentAddCustomer1Controller extends GetxController {
 
   // Pick image from gallery
   Future<void> pickImage() async {
-    final XFile? pickedFile = await _picker.pickImage(
-      source: ImageSource.gallery,
-    );
+    final XFile? pickedFile = await _picker.pickImage(source: ImageSource.gallery);
     if (pickedFile != null) {
       selectedImage.value = File(pickedFile.path);
     }
